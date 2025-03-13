@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import AnimatedCursor from "@/components/cursor";
+import { ThemeProvider } from "next-themes";
 import type { Metadata } from "next";
 import ReactLenis from "lenis/react";
 import "./globals.css";
@@ -29,10 +30,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ReactLenis root options={{ lerp: 0.05 }}>
-          {children}
-        </ReactLenis>
-        <AnimatedCursor />
+        <ThemeProvider
+          enableSystem
+          disableTransitionOnChange
+          defaultTheme="system"
+          attribute="class"
+        >
+          <ReactLenis root options={{ lerp: 0.05 }}>
+            {children}
+          </ReactLenis>
+          <AnimatedCursor />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -3,7 +3,7 @@
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useState, useEffect } from "react";
 
-export default function AnimatedCursor({ size = 20, activateHover = false }) {
+export default function AnimatedCursor({ size = 15, activateHover = false }) {
   const [cursorState, setCursorState] = useState({
     clicked: false,
     hidden: false,
@@ -73,8 +73,8 @@ export default function AnimatedCursor({ size = 20, activateHover = false }) {
           position: "fixed",
           left: 0,
           top: 0,
-          width: size,
-          height: size,
+          width: String(size * 0.066) + "vw",
+          height: String(size * 0.066) + "vw",
           backgroundColor: "#fff",
           borderRadius: "50%",
           pointerEvents: "none",

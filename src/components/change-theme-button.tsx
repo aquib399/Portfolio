@@ -26,7 +26,7 @@ export default function ChangeThemeButton() {
     setTheme(
       document.documentElement.classList.contains("dark") ? "dark" : "light",
     );
-  }, []);
+  }, [setTheme]);
   if (!mounted) return null;
 
   return (

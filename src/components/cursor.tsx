@@ -1,9 +1,16 @@
 "use client";
 
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 export default function AnimatedCursor({ size = 15, activateHover = false }) {
+  const isMobile = useMemo(
+    () => typeof window !== "undefined" && window.innerWidth <= 768,
+    [],
+  );
+
+  if (isMobile) return null;
+
   const [cursorState, setCursorState] = useState({
     clicked: false,
     hidden: false,

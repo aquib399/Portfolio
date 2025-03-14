@@ -1,4 +1,5 @@
 import { Rye, Outfit, Paytone_One } from "next/font/google";
+import NameOverlay from "@/components/name-overlay";
 import AnimatedCursor from "@/components/cursor";
 import { ThemeProvider } from "next-themes";
 import type { Metadata } from "next";
@@ -57,12 +58,13 @@ export default function RootLayout({
           defaultTheme="system"
           attribute="class"
         >
+          <NameOverlay />
           <ReactLenis root options={{ lerp: 0.05 }}>
-            <div className="border-foreground min-h-screen border-[16px] lg:border-[16px]">
+            <div className="border-foreground min-h-screen border-[1vw]">
               {children}
             </div>
           </ReactLenis>
-          {/* <AnimatedCursor /> */}
+          <AnimatedCursor />
         </ThemeProvider>
       </body>
     </html>

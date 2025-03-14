@@ -1,5 +1,8 @@
 import { cn } from "./utils";
 
+export const PROFILE_1 =
+  "https://res.cloudinary.com/drcglvpzt/image/upload/v1741913032/h8xvx8l0rudymwquvjtg.jpg";
+
 export const SunIconSVG = ({ className = "" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

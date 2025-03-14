@@ -1,9 +1,11 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function NameOverlay() {
+  if (process.env.NODE_ENV === "development") return null;
   const [showOverlay, setShowOverlay] = useState(true);
 
   const name = "AQUIB ALAM";

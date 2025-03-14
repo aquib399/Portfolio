@@ -3,15 +3,28 @@ import { MoonIconSVG, PROFILE_1, SunIconSVG } from "@/lib/asset";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HomepageHero() {
   const { setTheme } = useTheme();
 
   return (
     <section className="relative w-full px-3">
+      {/* Side Email Link */}
+      <Link
+        href={
+          "mailto:aquibalam399@gmail.com?subject=Hello%20Aquib&body=I%20would%20like%20to%20discuss%20a%20project%20with%20you."
+        }
+        className="text-muted-foreground hover:text-foreground absolute top-[50vh] left-[-62px] z-50 rotate-90 transform text-xs transition-colors"
+      >
+        aquibalam399@gmail.com
+      </Link>
+
       {/* Theme buttons */}
       <>
         <button
+          title="Light Theme"
+          aria-label="Light Theme"
           type="button"
           onClick={() => setTheme("light")}
           className="absolute top-0 left-0 cursor-pointer overflow-hidden rounded-br-[12vw]"
@@ -19,6 +32,8 @@ export default function HomepageHero() {
           <SunIconSVG className="fill-foreground hover:fill-background w-[27vw] transition-colors duration-150 sm:w-[16vw]" />
         </button>
         <button
+          title="Dark Theme"
+          aria-label="Dark Theme"
           type="button"
           onClick={() => setTheme("dark")}
           className="absolute top-0 right-0 cursor-pointer overflow-hidden rounded-bl-[12vw]"
@@ -26,6 +41,7 @@ export default function HomepageHero() {
           <MoonIconSVG className="fill-foreground hover:fill-background w-[27vw] transition-colors duration-150 sm:w-[16vw]" />
         </button>
       </>
+      
       {/* AA Center text */}
       <div className="relative flex justify-center">
         <div className="bg-foreground text-background absolute -top-[2rem] size-16 rotate-45">
@@ -79,7 +95,7 @@ export default function HomepageHero() {
         <div className="bg-background absolute -top-3.5 w-full max-w-36 rounded border px-2 py-1 text-center text-[10px] uppercase">
           Working 🤝 Together
         </div>
-        <p>Let&apos;s Work Together!</p>
+        <p className="font-paytoneOne">Let&apos;s Work Together!</p>
         <Button className="font-paytoneOne custom-shadow-button cursor-pointer rounded uppercase">
           Contact
         </Button>

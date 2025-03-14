@@ -1,5 +1,6 @@
 "use client";
 import { MoonIconSVG, PROFILE_1, SunIconSVG } from "@/lib/asset";
+import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 
@@ -7,7 +8,7 @@ export default function HomepageHero() {
   const { setTheme } = useTheme();
 
   return (
-    <section className="relative min-h-[200vh] w-full">
+    <section className="relative w-full px-3">
       {/* Theme buttons */}
       <>
         <button
@@ -35,9 +36,8 @@ export default function HomepageHero() {
       </div>
 
       {/* Hero text */}
-
       <div className="flex flex-col items-center justify-center gap-[3vh] pt-16">
-        <p className="text-xs uppercase">The Official Portfolio</p>
+        <p className="text-sm">Oh, hey! You found me. I&apos;m:</p>
         <h1 className="font-rye space-x-[0.5vw] text-4xl uppercase sm:text-[5.7vw]">
           <span>AQUIB</span>
           <span className="rounded-[1vw] border-[0.1vw] px-[1vw]">ALAM</span>
@@ -45,8 +45,8 @@ export default function HomepageHero() {
       </div>
 
       {/* Curved Text and image*/}
-      <div className="relative mt-8 flex w-full items-center justify-center">
-        <svg width="400" height="250" viewBox="0 0 400 200">
+      <div className="relative mt-4 flex w-full items-center justify-center pb-24">
+        <svg width="270" height="180" viewBox="0 0 400 200">
           <defs>
             <path
               id="curvePath"
@@ -57,10 +57,10 @@ export default function HomepageHero() {
 
           <text
             textAnchor="middle"
-            className="font-rye fill-foreground text-5xl"
+            className="font-rye fill-foreground text-3xl"
           >
             <textPath href="#curvePath" startOffset="50%">
-              FULLSTACK DEV
+              FULLSTACK DEVELOPER
             </textPath>
           </text>
         </svg>
@@ -70,8 +70,19 @@ export default function HomepageHero() {
           width={1080}
           height={1080}
           quality={100}
-          className="absolute top-[64px] size-[280px] rounded-full object-cover"
+          className="absolute top-12 size-48 rounded-full object-cover"
         />
+      </div>
+
+      {/* Contact */}
+      <div className="custom-shadow relative mx-auto flex max-w-xs flex-col items-center gap-2 rounded-md border p-[30px_8px_25px]">
+        <div className="bg-background absolute -top-3.5 w-full max-w-36 rounded border px-2 py-1 text-center text-[10px] uppercase">
+          Working 🤝 Together
+        </div>
+        <p>Let&apos;s Work Together!</p>
+        <Button className="font-paytoneOne custom-shadow-button cursor-pointer rounded uppercase">
+          Contact
+        </Button>
       </div>
     </section>
   );

@@ -5,6 +5,9 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useState, useEffect, useMemo } from "react";
 
 export default function AnimatedCursor({ size = 15, activateHover = false }) {
+  if (process.env.NODE_ENV === "development") {
+    return null;
+  }
   const isMobile = useMemo(
     () => typeof window !== "undefined" && window.innerWidth <= 768,
     [],

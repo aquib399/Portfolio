@@ -116,3 +116,11 @@ html {
 ::-webkit-scrollbar-thumb {
   background: #ff0000;
 }
+
+.custom-shadow {
+  box-shadow: 4px 4px 0px 1px var(--foreground);
+}
+
+.custom-shadow-button {
+  box-shadow: 2px 2px 0px 1px var(--foreground);
+}

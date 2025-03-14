@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "aquib-alam-portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "freshbuild": "(if exist .next rmdir /s /q .next) & npm run format & npm run build",
-    "freshbuild:linux": "rm -rf .next & npm run format & npm run build"
+    "freshbuild": "(if exist .next rmdir /s /q .next) && npm run format && npm run build",
+    "freshbuild:linux": "rm -rf .next && npm run format && npm run build"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.2",

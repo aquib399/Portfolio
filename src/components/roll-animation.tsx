@@ -73,24 +73,18 @@ export default function RollAnimation({
   }, [chars.length, holdDuration]);
 
   return (
-    <div
-      className="section relative flex min-h-48 items-center justify-center bg-black p-12 text-white"
-      ref={containerRef}
-    >
-      <code className="absolute top-0 left-0 w-full border-b border-[#0d0d0d] p-0 px-6">
-        Roll
-      </code>
-      <h1 className="section__title section__title--3 absolute top-1/2 left-1/2 flex h-[calc(2.5rem*1.5)] -translate-x-1/2 -translate-y-1/2 overflow-hidden text-4xl leading-[1.5] uppercase">
+    <div className="relative items-center justify-center" ref={containerRef}>
+      <h3 className="font-rye section__title--3 flex h-[calc(2.5rem*1.5)] overflow-hidden text-4xl leading-[1.5] uppercase">
         {chars.map((char, index) => (
           <div
-            className="section__title__char font-paytoneOne flex flex-col tracking-wider"
+            className="section__title__char flex w-full flex-col whitespace-nowrap"
             key={index}
           >
             <span>{char}</span>
             <span>{char}</span>
           </div>
         ))}
-      </h1>
+      </h3>
     </div>
   );
 }

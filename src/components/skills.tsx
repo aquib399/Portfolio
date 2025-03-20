@@ -1,5 +1,7 @@
 "use client";
-
+import SlideUpAnimation from "@/components/slide-up-animation";
+import MultiFlipText from "@/components/multi-flip-text";
+import RollAnimation from "@/components/roll-animation";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
@@ -26,7 +28,7 @@ const techSkills = [
   "REST APIs",
   "Stripe",
   "MongoDB",
-  "Prisma (Basic)",
+  "Prisma",
   "C",
   "C++",
   "Java",
@@ -45,7 +47,21 @@ export default function SkillsShowcase() {
 }
 
 function MobileTabSkills({ className = "" }) {
-  return <section className={cn("", className)}></section>;
+  return (
+    <section className={cn("px-4 py-12", className)}>
+      <h2 className="mb-8 text-center text-3xl font-bold">Technical Skills</h2>
+      <div className="grid grid-cols-2 gap-4">
+        {techSkills.map((skill) => (
+          <div
+            key={skill}
+            className="border-foreground/20 bg-background hover:border-foreground/50 flex h-16 items-center justify-center rounded-lg border p-4 text-center shadow-sm transition-all hover:scale-105"
+          >
+            {skill}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
 
 function DesktopSkills({ className = "" }) {
@@ -104,7 +120,7 @@ function DesktopSkills({ className = "" }) {
     <section
       ref={sectionRef}
       className={cn(
-        "border-y-foreground relative h-[1500svh] border-y",
+        "border-y-foreground relative h-[300svh] border-y",
         className,
       )}
     >
@@ -117,27 +133,27 @@ function DesktopSkills({ className = "" }) {
           <div className="relative w-full">
             <div ref={horizontalRef} className="flex items-center">
               <div className="flex flex-nowrap gap-16 px-4 md:gap-24">
-                {techSkills.map((skill, index) => (
-                  <SkillBadge key={index} skill={skill} index={index} />
-                ))}
+                {techSkills.map((skill, index) => {
+                  const AnimationComponent =
+                    index % 3 === 0
+                      ? SlideUpAnimation
+                      : index % 3 === 1
+                        ? MultiFlipText
+                        : RollAnimation;
+
+                  return (
+                    <AnimationComponent
+                      text={skill}
+                      key={skill}
+                      holdDuration={1 + (index % 3) + index * 0.125}
+                    />
+                  );
+                })}
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function SkillBadge({ skill, index }: { skill: string; index: number }) {
-  return (
-    <span
-      className="font-paytoneOne cursor-default text-5xl whitespace-nowrap transition-all duration-300 hover:scale-110 md:text-7xl"
-      style={{
-        animationDelay: `${index * 0.1}s`,
-      }}
-    >
-      {skill}
-    </span>
   );
 }

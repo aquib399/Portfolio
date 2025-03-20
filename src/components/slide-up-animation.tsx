@@ -66,18 +66,12 @@ export default function SlideUpAnimation({
   };
 
   return (
-    <div className="section relative flex min-h-48 items-center justify-center bg-black p-12 text-white">
-      <code className="absolute top-0 left-0 w-full border-b border-[#0d0d0d] p-0 px-6">
-        Slide Up
-      </code>
-      <h1
-        className="section__title section__title--2 text-4xl uppercase"
-        ref={containerRef}
-      >
-        <div className="section__title__word font-paytoneOne inline-block tracking-wider">
+    <div className="relative flex w-auto items-center justify-center">
+      <div className="section__title text-4xl uppercase" ref={containerRef}>
+        <h3 className="font-rye w-fit text-4xl font-bold whitespace-nowrap">
           {renderCharacters(text)}
-        </div>
-      </h1>
+        </h3>
+      </div>
     </div>
   );
 }

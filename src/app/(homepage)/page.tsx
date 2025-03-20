@@ -9,7 +9,8 @@ export default function Home() {
       <WhoAmI />
       <Skills />
 
-      <div className="h-[500rem] w-full bg-gradient-to-b from-red-500 via-yellow-200 to-blue-800"></div>
+      {/* <div className="h-[500rem] w-full bg-gradient-to-b from-pink-500 via-yellow-400 to-red-600"></div> */}
+      <div className="mt-40 flex flex-col items-center justify-center"></div>
     </main>
   );
 }

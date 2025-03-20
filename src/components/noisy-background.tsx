@@ -19,7 +19,7 @@ interface ParticleBackgroundProps {
   speedFactor?: number;
   /** Density factor - lower means more particles (default: 15000) */
   densityFactor?: number;
-  /** Opacity of the background (default 25) */
+  /** Opacity of the background (default 35) */
   opacity?: number;
 }
 
@@ -27,7 +27,7 @@ export default function ParticleBackground({
   maxParticles = 1000,
   speedFactor = 0.4,
   densityFactor = 1500,
-  opacity = 25,
+  opacity = 35,
 }: ParticleBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { theme, resolvedTheme } = useTheme();

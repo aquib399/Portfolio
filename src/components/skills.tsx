@@ -6,21 +6,33 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Badge } from "@/components/ui/badge";
 
 const techSkills = [
+  "HTML/CSS",
   "JavaScript",
-  "React.js",
-  "Node.js",
-  "Vue.js",
-  "Angular",
   "TypeScript",
+  "Tailwind CSS",
+  "Node.js",
   "Express.js",
-  "MongoDB",
+  "React.js",
+  "Next.js",
+  "Git/GitHub",
+  "JWT",
+  "Lucia Auth",
+  "Next-Auth",
+  "React Query",
   "Redux",
-  "Jest (Testing)",
-  "GraphQL",
-  "ES6+ Features",
-  "Web APIs",
-  "RESTful APIs",
-  "CSS-in-JS (Styled Components)",
+  "Jotai",
+  "Zustand",
+  "Cloudinary",
+  "REST APIs",
+  "Stripe",
+  "MongoDB",
+  "Prisma (Basic)",
+  "C",
+  "C++",
+  "Java",
+  "Python",
+  "Shadcn UI",
+  "SEO",
 ];
 
 export default function SkillsShowcase() {
@@ -54,13 +66,14 @@ export default function SkillsShowcase() {
     tl.fromTo(
       horizontal,
       {
-        x: -horizontalWidth + window.innerWidth * 0.5,
+        x: window.innerWidth * 0.95,
       },
       {
-        x: 0,
+        x: -horizontalWidth + window.innerWidth * 0.5,
         ease: "none",
       },
     );
+
     const handleResize = () => {
       horizontalWidth = horizontal.scrollWidth;
       ScrollTrigger.refresh();
@@ -75,16 +88,17 @@ export default function SkillsShowcase() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-background relative">
-      <div ref={triggerRef} className="h-[300vh]">
+    <section
+      ref={sectionRef}
+      className="border-y-foreground relative h-[550vh] border-y"
+    >
+      <div ref={triggerRef}>
         <div className="sticky top-0 flex h-screen flex-col items-center justify-center overflow-hidden">
           <h2 className="relative z-10 mb-12 text-center text-4xl font-bold md:text-6xl">
             Technical Skills
           </h2>
 
-          {/* Horizontal scrolling container */}
           <div className="relative w-full">
-            {/* This is the element that moves horizontally */}
             <div ref={horizontalRef} className="flex items-center">
               <div className="flex flex-nowrap gap-6 px-4">
                 {techSkills.map((skill, index) => (

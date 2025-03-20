@@ -8,6 +8,8 @@ export default function Home() {
       <HomepageHero />
       <WhoAmI />
       <Skills />
+
+      <div className="h-[500rem] w-full bg-gradient-to-b from-red-500 via-yellow-200 to-blue-800"></div>
     </main>
   );
 }

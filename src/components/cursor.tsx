@@ -5,7 +5,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useState, useEffect, useMemo } from "react";
 
 export default function AnimatedCursor({ size = 15, activateHover = false }) {
-  if (process.env.NODE_ENV === "development") return null;
+  // if (process.env.NODE_ENV === "development") return null;
 
   const isMobile = useMemo(
     () => typeof window !== "undefined" && window.innerWidth <= 768,
@@ -17,7 +17,7 @@ export default function AnimatedCursor({ size = 15, activateHover = false }) {
   const [cursorState, setCursorState] = useState({
     clicked: false,
     hidden: false,
-    linkHovered: false,
+    highlighted: false,
   });
 
   const mouseX = useMotionValue(0);
@@ -25,6 +25,17 @@ export default function AnimatedCursor({ size = 15, activateHover = false }) {
 
   const dotX = useSpring(mouseX, { stiffness: 300, damping: 25, mass: 0.5 });
   const dotY = useSpring(mouseY, { stiffness: 300, damping: 25, mass: 0.5 });
+
+  const hoveredDotX = useSpring(mouseX, {
+    stiffness: 250,
+    damping: 5,
+    mass: 0.01,
+  });
+  const hoveredDotY = useSpring(mouseY, {
+    stiffness: 250,
+    damping: 5,
+    mass: 0.01,
+  });
 
   useEffect(() => {
     const onMouseMove = (e: { clientX: number; clientY: number }) => {
@@ -41,10 +52,10 @@ export default function AnimatedCursor({ size = 15, activateHover = false }) {
     const onMouseEnter = () =>
       setCursorState((prev) => ({ ...prev, hidden: false }));
 
-    const handleLinkHover = () =>
-      setCursorState((prev) => ({ ...prev, linkHovered: true }));
-    const handleLinkOut = () =>
-      setCursorState((prev) => ({ ...prev, linkHovered: false }));
+    const handleHighlightElementsHover = () =>
+      setCursorState((prev) => ({ ...prev, highlighted: true }));
+    const handleHighlightElementsOut = () =>
+      setCursorState((prev) => ({ ...prev, highlighted: false }));
 
     document.addEventListener("mousemove", onMouseMove);
     document.addEventListener("mousedown", onMouseDown);
@@ -52,10 +63,10 @@ export default function AnimatedCursor({ size = 15, activateHover = false }) {
     document.addEventListener("mouseleave", onMouseLeave);
     document.addEventListener("mouseenter", onMouseEnter);
 
-    const highlightElements = document.querySelectorAll("a, h1");
+    const highlightElements = document.querySelectorAll("a, h1, button");
     highlightElements.forEach((el) => {
-      el.addEventListener("mouseover", handleLinkHover);
-      el.addEventListener("mouseout", handleLinkOut);
+      el.addEventListener("mouseover", handleHighlightElementsHover);
+      el.addEventListener("mouseout", handleHighlightElementsOut);
     });
 
     return () => {
@@ -65,8 +76,8 @@ export default function AnimatedCursor({ size = 15, activateHover = false }) {
       document.removeEventListener("mouseleave", onMouseLeave);
       document.removeEventListener("mouseenter", onMouseEnter);
       highlightElements.forEach((el) => {
-        el.removeEventListener("mouseover", handleLinkHover);
-        el.removeEventListener("mouseout", handleLinkOut);
+        el.removeEventListener("mouseover", handleHighlightElementsHover);
+        el.removeEventListener("mouseout", handleHighlightElementsOut);
       });
     };
   }, [mouseX, mouseY]);
@@ -97,12 +108,38 @@ export default function AnimatedCursor({ size = 15, activateHover = false }) {
         }}
         animate={{
           scale:
-            cursorState.linkHovered || activateHover
+            cursorState.highlighted || activateHover
               ? cursorState.clicked
                 ? 2
                 : 3.5
               : 1,
           opacity: cursorState.hidden ? 0 : 1,
+        }}
+        transition={{
+          scale: { type: "spring", stiffness: 300, damping: 25, mass: 0.5 },
+          opacity: { duration: 0.1 },
+        }}
+      />
+      <motion.div
+        style={{
+          position: "fixed",
+          left: 0,
+          top: 0,
+          width: String(size * 0.066) + "vw",
+          height: String(size * 0.066) + "vw",
+          backgroundColor: "#fff",
+          borderRadius: "50%",
+          pointerEvents: "none",
+          zIndex: 999,
+          mixBlendMode: "difference",
+          x: hoveredDotX,
+          y: hoveredDotY,
+          translateX: "-50%",
+          translateY: "-50%",
+        }}
+        animate={{
+          scale: 1,
+          opacity: cursorState.highlighted ? 1 : 0,
         }}
         transition={{
           scale: { type: "spring", stiffness: 300, damping: 25, mass: 0.5 },

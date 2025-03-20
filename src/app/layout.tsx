@@ -1,4 +1,5 @@
 import { Rye, Outfit, Paytone_One } from "next/font/google";
+import NoisyBackground from "@/components/noisy-background";
 import NameOverlay from "@/components/name-overlay";
 import AnimatedCursor from "@/components/cursor";
 import { ThemeProvider } from "next-themes";
@@ -46,7 +47,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "font-outfit antialiased",
+          "font-outfit relative antialiased",
           rye.variable,
           outfit.variable,
           paytoneOne.variable,
@@ -65,6 +66,7 @@ export default function RootLayout({
             </div>
           </ReactLenis>
           <AnimatedCursor />
+          <NoisyBackground />
         </ThemeProvider>
       </body>
     </html>

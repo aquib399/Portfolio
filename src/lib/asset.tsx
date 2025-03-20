@@ -2,6 +2,10 @@ import { cn } from "./utils";
 
 export const PROFILE_1 =
   "https://res.cloudinary.com/drcglvpzt/image/upload/v1741913032/h8xvx8l0rudymwquvjtg.jpg";
+export const PROFILE_1_TRANSPARENT =
+  "https://res.cloudinary.com/drcglvpzt/image/upload/v1742384281/z9gyp0a8dyfsuocwcxrq.png";
+
+export const WHO_AM_I_BG = "/asset/who-am-i-bg.webp";
 
 export const SunIconSVG = ({ className = "" }) => (
   <svg

@@ -6,7 +6,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { gsap } from "gsap";
-import { GITHUB, HTML, NEXTJS } from "@/lib/asset";
 
 export default function SkillsShowcase() {
   return (
@@ -50,12 +49,12 @@ function DesktopSkills({ className = "" }) {
 
     let horizontalWidth = horizontal.scrollWidth;
 
-    const speedFactor = 1 / 1.5;
+    const speedFactor = 2.5;
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: triggerRef.current,
         start: "top top",
-        end: () => `+=${horizontalWidth * speedFactor}`,
+        end: () => `+=${horizontalWidth * (1 / speedFactor)}`,
         scrub: true,
         pin: true,
         anticipatePin: 1,
@@ -125,33 +124,62 @@ function DesktopSkills({ className = "" }) {
 }
 
 const techSkills = [
-  { text: "HTML", src: NEXTJS },
-  { text: "CSS", src: GITHUB },
-  { text: "JavaScript", src: HTML },
-  { text: "TypeScript", src: NEXTJS },
-  { text: "Tailwind CSS", src: GITHUB },
-  { text: "Node.js", src: HTML },
-  { text: "Express.js", src: NEXTJS },
-  { text: "React.js", src: GITHUB },
-  { text: "Next.js", src: HTML },
-  { text: "GIT", src: NEXTJS },
-  { text: "GitHub", src: GITHUB },
-  { text: "JWT", src: HTML },
-  { text: "Lucia Auth", src: NEXTJS },
-  { text: "Next-Auth", src: GITHUB },
-  { text: "React Query", src: HTML },
-  { text: "Redux", src: NEXTJS },
-  { text: "Jotai", src: GITHUB },
-  { text: "Zustand", src: HTML },
-  { text: "Cloudinary", src: NEXTJS },
-  { text: "REST APIs", src: GITHUB },
-  { text: "Stripe", src: HTML },
-  { text: "MongoDB", src: NEXTJS },
-  { text: "Prisma", src: GITHUB },
-  { text: "C", src: HTML },
-  { text: "C++", src: NEXTJS },
-  { text: "Java", src: GITHUB },
-  { text: "Python", src: HTML },
-  { text: "Shadcn UI", src: NEXTJS },
-  { text: "SEO", src: GITHUB },
+  { text: "HTML" },
+  { text: "CSS" },
+  { text: "JavaScript" },
+  { text: "TypeScript" },
+  { text: "Tailwind-CSS" },
+  { text: "Shadcn.UI" },
+  { text: "Material.UI" },
+  { text: "Styled" },
+  { text: "Chakra.UI" },
+  { text: "Framer-Motion" },
+  { text: "G.S.A.P" },
+
+  { text: "Tanstack Query" },
+  { text: "Redux" },
+  { text: "Jotai" },
+  { text: "Zustand" },
+
+  { text: "Node.js" },
+  { text: "Express.js" },
+  { text: "React.js" },
+  { text: "Next.js" },
+
+  { text: "GIT" },
+  { text: "GitHub" },
+  { text: "Docker" },
+
+  { text: "Lucia-Auth" },
+  { text: "Clerk" },
+  { text: "Next-Auth" },
+  { text: "0Auth" },
+  { text: "Better-Auth" },
+  { text: "Arctic" },
+
+  { text: "Jest" },
+  { text: "Mocha" },
+  { text: "Postman" },
+
+  { text: "REST APIs" },
+  { text: "Stripe" },
+
+  { text: "Socket.io" },
+  { text: "Postgres" },
+  { text: "MongoDB" },
+  { text: "Prisma" },
+  { text: "Drizzle" },
+  { text: "Redis" },
+
+  { text: "Vercel" },
+  { text: "AWS" },
+  { text: "Cloudinary" },
+  { text: "Google-Search-Console" },
+
+  { text: "C" },
+  { text: "C++" },
+  { text: "Java" },
+  { text: "Python" },
+  { text: "Rust" },
+  { text: "Go" },
 ];

@@ -2,15 +2,18 @@
 
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
+import { cn } from "@/lib/utils";
 
 interface MultiFlipTextProps {
   text: string;
   holdDuration?: number;
+  className?: string;
 }
 
 export default function MultiFlipText({
   text,
   holdDuration = 3.5,
+  className,
 }: MultiFlipTextProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const sentences = text.split(" ");
@@ -26,7 +29,7 @@ export default function MultiFlipText({
 
     const mainTimeline = gsap.timeline({
       repeat: -1,
-      repeatDelay: 1,
+      repeatDelay: 0.2,
       onRepeat: () => {
         gsap.set(sentenceElements, { autoAlpha: 0 });
         gsap.set(sentenceElements[0], { autoAlpha: 1 });
@@ -78,22 +81,29 @@ export default function MultiFlipText({
   }, [sentences, holdDuration]);
 
   return (
-    <div
-      className="section relative flex items-center justify-center"
-      ref={containerRef}
-    >
-      <h3 className="section__title section__title--0 font-paytoneOne text-center text-4xl uppercase">
-        <div className="section__title__container relative w-fit whitespace-nowrap">
+    <div className="section relative inline-block" ref={containerRef}>
+      <h3 className={cn("font-paytoneOne text-center uppercase", className)}>
+        <div className="relative">
+          <span className="invisible flex">
+            {sentences
+              .reduce((longest, current) =>
+                current.length > longest.length ? current : longest,
+              )
+              .split("")
+              .map((char, charIndex) => (
+                <div key={charIndex} className="section__title__char mx-[1px]">
+                  {char}
+                </div>
+              ))}
+          </span>
+
           {sentences.map((sentence, index) => (
             <span
               key={index}
-              className="section__title__sentence inline-block transform"
+              className="section__title__sentence absolute top-[100%] left-1/2 flex -translate-x-1/2 -translate-y-1/2"
             >
               {sentence.split("").map((char, charIndex) => (
-                <div
-                  key={charIndex}
-                  className="section__title__char mx-[1px] inline-block"
-                >
+                <div key={charIndex} className="section__title__char mx-[1px]">
                   {char}
                 </div>
               ))}

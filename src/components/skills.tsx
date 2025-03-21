@@ -6,36 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { gsap } from "gsap";
-
-const techSkills = [
-  "HTML/CSS",
-  "JavaScript",
-  "TypeScript",
-  "Tailwind CSS",
-  "Node.js",
-  "Express.js",
-  "React.js",
-  "Next.js",
-  "Git/GitHub",
-  "JWT",
-  "Lucia Auth",
-  "Next-Auth",
-  "React Query",
-  "Redux",
-  "Jotai",
-  "Zustand",
-  "Cloudinary",
-  "REST APIs",
-  "Stripe",
-  "MongoDB",
-  "Prisma",
-  "C",
-  "C++",
-  "Java",
-  "Python",
-  "Shadcn UI",
-  "SEO",
-];
+import { GITHUB, HTML, NEXTJS } from "@/lib/asset";
 
 export default function SkillsShowcase() {
   return (
@@ -50,13 +21,13 @@ function MobileTabSkills({ className = "" }) {
   return (
     <section className={cn("px-4 py-12", className)}>
       <h2 className="mb-8 text-center text-3xl font-bold">Technical Skills</h2>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
         {techSkills.map((skill) => (
           <div
-            key={skill}
+            key={skill.text}
             className="border-foreground/20 bg-background hover:border-foreground/50 flex h-16 items-center justify-center rounded-lg border p-4 text-center shadow-sm transition-all hover:scale-105"
           >
-            {skill}
+            {skill.text}
           </div>
         ))}
       </div>
@@ -79,11 +50,12 @@ function DesktopSkills({ className = "" }) {
 
     let horizontalWidth = horizontal.scrollWidth;
 
+    const speedFactor = 1 / 1.5;
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: triggerRef.current,
         start: "top top",
-        end: () => `+=${horizontalWidth}`,
+        end: () => `+=${horizontalWidth * speedFactor}`,
         scrub: true,
         pin: true,
         anticipatePin: 1,
@@ -119,20 +91,13 @@ function DesktopSkills({ className = "" }) {
   return (
     <section
       ref={sectionRef}
-      className={cn(
-        "border-y-foreground relative h-[300svh] border-y",
-        className,
-      )}
+      className={cn("border-y-foreground relative h-auto", className)}
     >
       <div ref={triggerRef}>
         <div className="sticky top-0 flex h-screen flex-col items-center justify-center overflow-hidden">
-          <h2 className="relative z-10 mb-12 text-center text-4xl font-bold md:text-6xl">
-            Technical Skills
-          </h2>
-
           <div className="relative w-full">
             <div ref={horizontalRef} className="flex items-center">
-              <div className="flex flex-nowrap gap-16 px-4 md:gap-24">
+              <div className="flex flex-nowrap gap-52">
                 {techSkills.map((skill, index) => {
                   const AnimationComponent =
                     index % 3 === 0
@@ -143,9 +108,10 @@ function DesktopSkills({ className = "" }) {
 
                   return (
                     <AnimationComponent
-                      text={skill}
-                      key={skill}
-                      holdDuration={1 + (index % 3) + index * 0.125}
+                      text={skill.text}
+                      key={skill.text}
+                      holdDuration={3.5}
+                      className="text-7xl lg:text-8xl xl:text-9xl"
                     />
                   );
                 })}
@@ -157,3 +123,35 @@ function DesktopSkills({ className = "" }) {
     </section>
   );
 }
+
+const techSkills = [
+  { text: "HTML", src: NEXTJS },
+  { text: "CSS", src: GITHUB },
+  { text: "JavaScript", src: HTML },
+  { text: "TypeScript", src: NEXTJS },
+  { text: "Tailwind CSS", src: GITHUB },
+  { text: "Node.js", src: HTML },
+  { text: "Express.js", src: NEXTJS },
+  { text: "React.js", src: GITHUB },
+  { text: "Next.js", src: HTML },
+  { text: "GIT", src: NEXTJS },
+  { text: "GitHub", src: GITHUB },
+  { text: "JWT", src: HTML },
+  { text: "Lucia Auth", src: NEXTJS },
+  { text: "Next-Auth", src: GITHUB },
+  { text: "React Query", src: HTML },
+  { text: "Redux", src: NEXTJS },
+  { text: "Jotai", src: GITHUB },
+  { text: "Zustand", src: HTML },
+  { text: "Cloudinary", src: NEXTJS },
+  { text: "REST APIs", src: GITHUB },
+  { text: "Stripe", src: HTML },
+  { text: "MongoDB", src: NEXTJS },
+  { text: "Prisma", src: GITHUB },
+  { text: "C", src: HTML },
+  { text: "C++", src: NEXTJS },
+  { text: "Java", src: GITHUB },
+  { text: "Python", src: HTML },
+  { text: "Shadcn UI", src: NEXTJS },
+  { text: "SEO", src: GITHUB },
+];

@@ -2,15 +2,18 @@
 
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
+import { cn } from "@/lib/utils";
 
 interface SlideUpAnimationProps {
   text: string;
   holdDuration?: number;
+  className?: string;
 }
 
 export default function SlideUpAnimation({
   text,
   holdDuration = 4,
+  className,
 }: SlideUpAnimationProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -23,7 +26,7 @@ export default function SlideUpAnimation({
 
     const tl = gsap.timeline({
       repeat: -1,
-      repeatDelay: 1,
+      repeatDelay: 0,
     });
 
     gsap.set(chars, {
@@ -33,7 +36,7 @@ export default function SlideUpAnimation({
     });
 
     tl.to(chars, {
-      duration: 0.5,
+      duration: 0.2,
       opacity: 1,
       scale: 1,
       y: 0,
@@ -67,8 +70,10 @@ export default function SlideUpAnimation({
 
   return (
     <div className="relative flex w-auto items-center justify-center">
-      <div className="section__title text-4xl uppercase" ref={containerRef}>
-        <h3 className="font-rye w-fit text-4xl font-bold whitespace-nowrap">
+      <div className="section__title uppercase" ref={containerRef}>
+        <h3
+          className={cn("font-rye w-fit text-4xl whitespace-nowrap", className)}
+        >
           {renderCharacters(text)}
         </h3>
       </div>

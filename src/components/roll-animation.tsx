@@ -2,15 +2,18 @@
 
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
+import { cn } from "@/lib/utils";
 
 interface RollAnimationProps {
   text: string;
   holdDuration?: number;
+  className?: string;
 }
 
 export default function RollAnimation({
   text,
   holdDuration = 3.5,
+  className,
 }: RollAnimationProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const chars = text.split("");
@@ -73,8 +76,13 @@ export default function RollAnimation({
   }, [chars.length, holdDuration]);
 
   return (
-    <div className="relative items-center justify-center" ref={containerRef}>
-      <h3 className="font-rye section__title--3 flex h-[calc(2.5rem*1.5)] overflow-hidden text-4xl leading-[1.5] uppercase">
+    <div className="relative flex items-center" ref={containerRef}>
+      <h3
+        className={cn(
+          "font-bangers section__title--3 flex h-1/2 overflow-hidden px-4 text-4xl uppercase",
+          className,
+        )}
+      >
         {chars.map((char, index) => (
           <div
             className="section__title__char flex w-full flex-col whitespace-nowrap"

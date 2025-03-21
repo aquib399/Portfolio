@@ -1,4 +1,4 @@
-import { Rye, Outfit, Paytone_One } from "next/font/google";
+import { Rye, Outfit, Paytone_One, Bangers } from "next/font/google";
 import NoisyBackground from "@/components/noisy-background";
 import NameOverlay from "@/components/name-overlay";
 import AnimatedCursor from "@/components/cursor";
@@ -13,6 +13,7 @@ const rye = Rye({
   subsets: ["latin"],
   weight: "400",
 });
+
 const outfit = Outfit({
   variable: "--font-outfit-sans",
   subsets: ["latin"],
@@ -20,6 +21,12 @@ const outfit = Outfit({
 
 const paytoneOne = Paytone_One({
   variable: "--font-paytoneOne",
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const bangers = Bangers({
+  variable: "--font-bangers",
   subsets: ["latin"],
   weight: "400",
 });
@@ -50,6 +57,7 @@ export default function RootLayout({
           "font-outfit relative antialiased",
           rye.variable,
           outfit.variable,
+          bangers.variable,
           paytoneOne.variable,
         )}
       >

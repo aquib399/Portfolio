@@ -277,3 +277,8 @@ export const MoonIconSVG = ({ className = "" }) => (
     </g>
   </svg>
 );
+
+// tech icons
+export const NEXTJS = "/asset/tech/next.png";
+export const GITHUB = "/asset/tech/github.png";
+export const HTML = "/asset/tech/html.png";

@@ -8,6 +8,11 @@ export default function Home() {
       <HomepageHero />
       <WhoAmI />
       <Skills />
+      <WhoAmI />
+
+      <WhoAmI />
+
+      <WhoAmI />
     </main>
   );
 }

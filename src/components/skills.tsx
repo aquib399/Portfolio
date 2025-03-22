@@ -3,7 +3,9 @@ import SlideUpAnimation from "@/components/slide-up-animation";
 import MultiFlipText from "@/components/multi-flip-text";
 import RollAnimation from "@/components/roll-animation";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useInView, motion } from "framer-motion";
 import { useEffect, useRef } from "react";
+import CurvedText from "./curved-text";
 import { cn } from "@/lib/utils";
 import { gsap } from "gsap";
 
@@ -39,9 +41,9 @@ function DesktopSkills({ className = "" }) {
   const triggerRef = useRef<HTMLDivElement>(null);
   const horizontalRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 
+  useEffect(() => {
     const horizontal = horizontalRef.current;
     const section = sectionRef.current;
 
@@ -66,7 +68,7 @@ function DesktopSkills({ className = "" }) {
     tl.fromTo(
       horizontal,
       {
-        x: window.innerWidth * 0.95,
+        x: window.innerWidth * 0.2,
       },
       {
         x: -horizontalWidth + window.innerWidth * 0.5,
@@ -87,12 +89,31 @@ function DesktopSkills({ className = "" }) {
     };
   }, []);
 
+  const inView = useInView(triggerRef, {
+    once: false,
+    amount: 0.5,
+  });
+
   return (
     <section
       ref={sectionRef}
       className={cn("border-y-foreground relative h-auto", className)}
     >
       <div ref={triggerRef}>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{
+            opacity: { duration: 0.5 },
+            y: { duration: 1 },
+            ease: "easeIn",
+          }}
+          className="absolute top-4 flex w-full flex-col items-center text-5xl sm:top-8 md:top-10 lg:top-12 xl:top-14 2xl:top-16"
+        >
+          <CurvedText arcHeight={100} fontSize={24}>
+            TECHNOLOGIES
+          </CurvedText>
+        </motion.div>
         <div className="sticky top-0 flex h-screen flex-col items-center justify-center overflow-hidden">
           <div className="relative w-full">
             <div ref={horizontalRef} className="flex items-center">
@@ -110,7 +131,7 @@ function DesktopSkills({ className = "" }) {
                       text={skill.text}
                       key={skill.text}
                       holdDuration={3.5}
-                      className="text-7xl lg:text-8xl xl:text-9xl"
+                      className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
                     />
                   );
                 })}
@@ -118,6 +139,17 @@ function DesktopSkills({ className = "" }) {
             </div>
           </div>
         </div>
+        <motion.p
+          initial={{ opacity: 0, y: -50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{
+            duration: 1,
+            ease: "easeOut",
+          }}
+          className="absolute right-4 bottom-2 text-xs"
+        >
+          Scroll ↓
+        </motion.p>
       </div>
     </section>
   );

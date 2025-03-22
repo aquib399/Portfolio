@@ -1,5 +1,9 @@
-module.exports = {
+/**
+ * @type {import('next-sitemap').IConfig}
+ */
+const config = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL,
+  changefreq: "monthly",
   generateRobotsTxt: true,
   sitemapSize: Infinity,
   priority: 0.7,
@@ -10,3 +14,5 @@ module.exports = {
     },
   ],
 };
+
+module.exports = config;

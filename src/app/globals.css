@@ -124,5 +124,18 @@ html {
 }
 
 .custom-shadow-button {
-  box-shadow: 2px 2px 0px 1px var(--foreground);
+  box-shadow: 3px 3px 0px 0px var(--foreground);
+  transition:
+    box-shadow 150ms ease-in-out,
+    transform 150ms ease-in-out;
+}
+
+.custom-shadow-button:hover {
+  box-shadow: 6px 6px 0px var(--foreground);
+  transform: translate(-3px, -3px);
+}
+
+.custom-shadow-button:active {
+  box-shadow: 3px 3px 0px var(--foreground);
+  transform: translate(0, 0);
 }

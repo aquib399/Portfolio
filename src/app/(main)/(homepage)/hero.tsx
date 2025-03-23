@@ -1,6 +1,6 @@
 "use client";
 import { MoonIconSVG, PROFILE_1, SunIconSVG } from "@/lib/asset";
-import { Button } from "@/components/ui/button";
+import ContactButton from "@/components/contact-button";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
@@ -92,12 +92,10 @@ export default function HomepageHero() {
       {/* Contact */}
       <div className="custom-shadow relative mx-auto flex max-w-xs flex-col items-center gap-2 rounded-md border p-[30px_8px_25px]">
         <div className="bg-background absolute -top-3.5 w-full max-w-36 rounded border px-2 py-1 text-center text-[10px] uppercase">
-          Working 🤝 Together
+          Working <span>🤝</span> Together
         </div>
         <p className="font-paytoneOne">Let&apos;s Work Together!</p>
-        <Button className="font-paytoneOne custom-shadow-button cursor-pointer rounded uppercase">
-          Contact
-        </Button>
+        <ContactButton />
       </div>
     </section>
   );

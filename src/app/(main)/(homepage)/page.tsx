@@ -1,4 +1,6 @@
 import Skills from "@/components/skills";
+import Testimonials from "./testimonials";
+import WhatIDo from "./what-i-do";
 import HomepageHero from "./hero";
 import WhoAmI from "./who-am-i";
 
@@ -7,12 +9,9 @@ export default function Home() {
     <main>
       <HomepageHero />
       <WhoAmI />
+      <WhatIDo />
       <Skills />
-      <WhoAmI />
-
-      <WhoAmI />
-
-      <WhoAmI />
+      <Testimonials />
     </main>
   );
 }

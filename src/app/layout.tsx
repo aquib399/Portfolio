@@ -1,12 +1,9 @@
 import { Rye, Outfit, Paytone_One, Bangers } from "next/font/google";
-import NoisyBackground from "@/components/noisy-background";
-import NameOverlay from "@/components/name-overlay";
 import AnimatedCursor from "@/components/cursor";
-import { ThemeProvider } from "next-themes";
 import type { Metadata } from "next";
 import ReactLenis from "lenis/react";
 import { cn } from "@/lib/utils";
-import "./globals.css";
+import "@/app/globals.css";
 
 const rye = Rye({
   variable: "--font-rye",
@@ -61,21 +58,10 @@ export default function RootLayout({
           paytoneOne.variable,
         )}
       >
-        <ThemeProvider
-          enableSystem
-          disableTransitionOnChange
-          defaultTheme="system"
-          attribute="class"
-        >
-          <NameOverlay />
-          <ReactLenis root options={{ lerp: 0.05 }}>
-            <div className="border-foreground min-h-screen border-[1vw]">
-              {children}
-            </div>
-          </ReactLenis>
-          <AnimatedCursor />
-          <NoisyBackground />
-        </ThemeProvider>
+        <ReactLenis root options={{ lerp: 0.05 }}>
+          {children}
+        </ReactLenis>
+        <AnimatedCursor />
       </body>
     </html>
   );

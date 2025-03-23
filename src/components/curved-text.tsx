@@ -4,20 +4,22 @@ import { useState, useEffect, PropsWithChildren } from "react";
 import { cn } from "@/lib/utils";
 
 interface CurvedTextProps extends PropsWithChildren {
+  width?: number;
   fontSize?: number;
   arcHeight: number;
-  width?: number;
-  letterSpacing?: number;
   className?: string;
+  letterSpacing?: number;
+  textClassName?: string;
 }
 
 export default function CurvedText({
-  fontSize = 36,
-  arcHeight,
   width = 500,
-  letterSpacing = 2,
-  className,
+  fontSize = 36,
   children,
+  className,
+  arcHeight,
+  textClassName,
+  letterSpacing = 2,
 }: CurvedTextProps) {
   const [id, setId] = useState<string>("");
 
@@ -30,7 +32,7 @@ export default function CurvedText({
   const marginBottom = arcHeight / 72;
   return (
     <div
-      className="overflow-hidden"
+      className="z-[1] overflow-hidden"
       style={{
         marginTop: `-${marginTop}rem`,
         marginBottom: `-${marginBottom}rem`,
@@ -42,7 +44,12 @@ export default function CurvedText({
           className,
         )}
       >
-        <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`}>
+        <svg
+          width={width}
+          height={height}
+          viewBox={`0 0 ${width} ${height}`}
+          // className="group"
+        >
           <defs>
             <path
               id={id}
@@ -58,7 +65,7 @@ export default function CurvedText({
               fontSize: `${fontSize}px`,
               letterSpacing: `${letterSpacing}px`,
             }}
-            className="fill-foreground"
+            className={textClassName || "fill-foreground"}
           >
             <textPath href={`#${id}`} textAnchor="middle" startOffset="50%">
               {children}

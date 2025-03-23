@@ -2,7 +2,7 @@ import SlideUpAnimation from "@/components/slide-up-animation";
 import RollAnimation from "@/components/roll-animation";
 import MultiFlipText from "@/components/multi-flip-text";
 
-export default function TestPage() {
+export default function TextsPage() {
   return (
     <main className="min-h-[95vh]">
       <div className="">

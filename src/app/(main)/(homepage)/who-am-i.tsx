@@ -56,9 +56,9 @@ export default function WhoAmI() {
             </motion.p>
             <motion.p
               className="my-2 text-center"
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: 2.5, duration: 0.8 }}
+              transition={{ delay: 2, duration: 0.2 }}
             >
               <span className="font-paytoneOne text-[8px]">
                 (also an OCD person.)
@@ -67,12 +67,12 @@ export default function WhoAmI() {
           </div>
         </div>
         <motion.div
-          className="text-muted-foreground max-w-[450px] text-lg"
+          className="max-w-lg text-lg"
           initial={{ opacity: 0, y: 15 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{
-            delay: 2,
-            duration: 1,
+            delay: 1.5,
+            duration: 0.5,
             ease: "easeInOut",
           }}
         >

@@ -30,6 +30,7 @@ export default function NotFoundClient() {
         style={{
           backgroundImage: `url(${src})`,
         }}
+        suppressHydrationWarning
       />
       <h1 className="z-10 text-xl text-white">404 Page Not Found</h1>
     </section>

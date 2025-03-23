@@ -1,7 +1,4 @@
-export const metadata = {
-  title: "Not Found",
-  description: "Page not found",
-};
+"use client";
 
 function shuffleArray(arr: number[]) {
   const newArray = [...arr];
@@ -19,7 +16,7 @@ function shuffleArray(arr: number[]) {
   return newArray;
 }
 
-export default function NotFoundPage() {
+export default function NotFoundClient() {
   const random = Math.floor(Math.random() * 30);
   const nums = Array.from({ length: 30 }, (_, i) => i + 1);
   const shuffledNums = shuffleArray(nums);

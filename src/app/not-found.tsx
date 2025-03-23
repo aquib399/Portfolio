@@ -1,3 +1,6 @@
+"use client";
+import { useEffect, useState } from "react";
+
 function shuffleArray(arr: number[]) {
   const newArray = [...arr];
   let currentIndex = newArray.length,
@@ -15,11 +18,16 @@ function shuffleArray(arr: number[]) {
 }
 
 export default function NotFoundClient() {
-  const random = Math.floor(Math.random() * 30);
-  const nums = Array.from({ length: 30 }, (_, i) => i + 1);
-  const shuffledNums = shuffleArray(nums);
-  const num = shuffledNums[random];
-  const src = `/asset/fail/fail-${num}.gif?${Date.now()}`;
+  const [src, setSrc] = useState("");
+
+  useEffect(() => {
+    const random = Math.floor(Math.random() * 30);
+    const nums = Array.from({ length: 30 }, (_, i) => i + 1);
+    const shuffledNums = shuffleArray(nums);
+    const num = shuffledNums[random];
+    const newSrc = `/asset/fail/fail-${num}.gif?${Date.now()}`;
+    setSrc(newSrc);
+  }, []);
 
   return (
     <section className="grid h-screen w-full place-items-center">

@@ -1,5 +1,3 @@
-"use client";
-
 function shuffleArray(arr: number[]) {
   const newArray = [...arr];
   let currentIndex = newArray.length,
@@ -21,7 +19,7 @@ export default function NotFoundClient() {
   const nums = Array.from({ length: 30 }, (_, i) => i + 1);
   const shuffledNums = shuffleArray(nums);
   const num = shuffledNums[random];
-  const src = `/asset/fail/fail-${num}.gif`;
+  const src = `/asset/fail/fail-${num}.gif?${Date.now()}`;
 
   return (
     <section className="grid h-screen w-full place-items-center">

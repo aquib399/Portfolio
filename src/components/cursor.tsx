@@ -22,20 +22,9 @@ export default function AnimatedCursor({ size = 15, activateHover = false }) {
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-
-  const dotX = useSpring(mouseX, { stiffness: 300, damping: 25, mass: 0.5 });
-  const dotY = useSpring(mouseY, { stiffness: 300, damping: 25, mass: 0.5 });
-
-  const hoveredDotX = useSpring(mouseX, {
-    stiffness: 250,
-    damping: 5,
-    mass: 0.01,
-  });
-  const hoveredDotY = useSpring(mouseY, {
-    stiffness: 250,
-    damping: 5,
-    mass: 0.01,
-  });
+  const config = { stiffness: 500, damping: 35, mass: 0.5 };
+  const dotX = useSpring(mouseX, config);
+  const dotY = useSpring(mouseY, config);
 
   useEffect(() => {
     const onMouseMove = (e: { clientX: number; clientY: number }) => {
@@ -89,63 +78,41 @@ export default function AnimatedCursor({ size = 15, activateHover = false }) {
           cursor: none !important;
         }
       `}</style>
-      <motion.div
+
+      <motion.svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
         style={{
           position: "fixed",
           left: 0,
           top: 0,
           width: String(size * 0.066) + "vw",
           height: String(size * 0.066) + "vw",
-          backgroundColor: "#fff",
-          borderRadius: "50%",
           pointerEvents: "none",
           zIndex: 999,
           mixBlendMode: "difference",
           x: dotX,
           y: dotY,
-          translateX: "-50%",
-          translateY: "-50%",
+          transformOrigin: "4.5px 0.79px",
+          transform: "translate(-4.5px, -0.79px)",
+          fill: "#fff",
         }}
         animate={{
           scale:
             cursorState.highlighted || activateHover
               ? cursorState.clicked
-                ? 2
-                : 3.5
+                ? 1.5
+                : 2
               : 1,
           opacity: cursorState.hidden ? 0 : 1,
         }}
         transition={{
-          scale: { type: "spring", stiffness: 300, damping: 25, mass: 0.5 },
-          opacity: { duration: 0.1 },
+          scale: { type: "spring" },
+          opacity: { duration: 0.05 },
         }}
-      />
-      <motion.div
-        style={{
-          position: "fixed",
-          left: 0,
-          top: 0,
-          width: String(size * 0.066) + "vw",
-          height: String(size * 0.066) + "vw",
-          backgroundColor: "#fff",
-          borderRadius: "50%",
-          pointerEvents: "none",
-          zIndex: 999,
-          mixBlendMode: "difference",
-          x: hoveredDotX,
-          y: hoveredDotY,
-          translateX: "-50%",
-          translateY: "-50%",
-        }}
-        animate={{
-          scale: 1,
-          opacity: cursorState.highlighted ? 1 : 0,
-        }}
-        transition={{
-          scale: { type: "spring", stiffness: 300, damping: 25, mass: 0.5 },
-          opacity: { duration: 0.1 },
-        }}
-      />
+      >
+        <path d="M4.5.79v22.42l6.56-6.57h9.29L4.5.79z" />
+      </motion.svg>
     </>
   );
 }

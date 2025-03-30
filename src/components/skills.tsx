@@ -37,6 +37,7 @@ function DesktopSkills({ className = "" }) {
     <HorizontallScroll
       heading={{ text: "TECHNOLOGIES", curveness: 100, fontSize: 40 }}
       className={cn(className)}
+      disableThemeing
     >
       <div className="flex flex-nowrap gap-8 sm:gap-12 md:gap-16 lg:gap-20 xl:gap-24">
         {techSkills.map((skill, index) => {

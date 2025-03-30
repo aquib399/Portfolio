@@ -14,18 +14,20 @@ interface HorizontallScrollProps extends PropsWithChildren {
     initialScale?: number;
   };
   className?: string;
+  disableThemeing?: boolean;
 }
 
 export default function HorizontallScroll({
   heading,
   children,
   className,
+  disableThemeing = false,
 }: HorizontallScrollProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
   const horizontalRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
-  const [swappedMode, setSwappedMode] = useState(true);
+  const [swappedMode, setSwappedMode] = useState(false);
 
   gsap.registerPlugin(ScrollTrigger);
   const scrollSpeedFactor = 2.5;
@@ -51,6 +53,7 @@ export default function HorizontallScroll({
         invalidateOnRefresh: false,
         markers: false,
         onUpdate: (self) => {
+          if (disableThemeing) return;
           const num = self.progress;
           const percentage = num * 100;
           const partitionSize = 100 / partition;
@@ -113,7 +116,7 @@ export default function HorizontallScroll({
       window.removeEventListener("resize", handleResize);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, [heading]);
+  }, [disableThemeing, heading]);
 
   const inView = useInView(triggerRef, {
     once: false,
@@ -167,7 +170,7 @@ export default function HorizontallScroll({
             duration: 1,
             ease: "easeOut",
           }}
-          className="absolute right-4 bottom-2 text-xs"
+          className="absolute bottom-1 left-2 text-xs"
         >
           Scroll ↓
         </motion.p>

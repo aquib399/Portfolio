@@ -1,4 +1,5 @@
 import NoisyBackground from "@/components/noisy-background";
+import ScrollToTop from "@/components/scroll-to-top";
 import NameOverlay from "@/components/name-overlay";
 import { ThemeProvider } from "next-themes";
 import Footer from "@/components/footer";
@@ -39,6 +40,7 @@ export default function MainLayout({
         </div>
 
         <NoisyBackground />
+        <ScrollToTop />
       </ThemeProvider>
     </>
   );

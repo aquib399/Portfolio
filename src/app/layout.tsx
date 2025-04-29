@@ -1,4 +1,4 @@
-// import { Rye, Outfit, Paytone_One, Bangers } from "next/font/google";
+import { Rye, Outfit, Paytone_One, Bangers } from "next/font/google";
 import AnimatedCursor from "@/components/cursor";
 import { PROFILE_1 } from "@/lib/asset";
 import type { Metadata } from "next";
@@ -6,28 +6,28 @@ import ReactLenis from "lenis/react";
 import { cn } from "@/lib/utils";
 import "@/app/globals.css";
 
-// const rye = Rye({
-//   variable: "--font-rye",
-//   subsets: ["latin"],
-//   weight: "400",
-// });
+const rye = Rye({
+  variable: "--font-rye",
+  subsets: ["latin"],
+  weight: "400",
+});
 
-// const outfit = Outfit({
-//   variable: "--font-outfit-sans",
-//   subsets: ["latin"],
-// });
+const outfit = Outfit({
+  variable: "--font-outfit-sans",
+  subsets: ["latin"],
+});
 
-// const paytoneOne = Paytone_One({
-//   variable: "--font-paytoneOne",
-//   subsets: ["latin"],
-//   weight: "400",
-// });
+const paytoneOne = Paytone_One({
+  variable: "--font-paytoneOne",
+  subsets: ["latin"],
+  weight: "400",
+});
 
-// const bangers = Bangers({
-//   variable: "--font-bangers",
-//   subsets: ["latin"],
-//   weight: "400",
-// });
+const bangers = Bangers({
+  variable: "--font-bangers",
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function RootLayout({
   children,
@@ -39,10 +39,10 @@ export default function RootLayout({
       <body
         className={cn(
           "font-outfit relative antialiased",
-          // rye.variable,
-          // outfit.variable,
-          // bangers.variable,
-          // paytoneOne.variable,
+          rye.variable,
+          outfit.variable,
+          bangers.variable,
+          paytoneOne.variable,
         )}
       >
         <ReactLenis root options={{ lerp: 0.05 }}>

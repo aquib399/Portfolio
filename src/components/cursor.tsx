@@ -5,7 +5,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useState, useEffect, useMemo } from "react";
 
 export default function AnimatedCursor({ size = 15, activateHover = false }) {
-  if (process.env.NODE_ENV === "development") return null;
+  // if (process.env.NODE_ENV === "development") return null;
 
   const isMobile = useMemo(
     () => typeof window !== "undefined" && window.innerWidth <= 768,
@@ -22,7 +22,7 @@ export default function AnimatedCursor({ size = 15, activateHover = false }) {
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  const config = { stiffness: 500, damping: 35, mass: 0.5 };
+  const config = { stiffness: 800, damping: 40, mass: 0.1 };
   const dotX = useSpring(mouseX, config);
   const dotY = useSpring(mouseY, config);
 

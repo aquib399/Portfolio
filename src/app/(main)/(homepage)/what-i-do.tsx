@@ -3,25 +3,32 @@ export default function WhatIDo() {
     <section className="w-full px-3 py-8 md:py-12">
       <div className="mx-auto max-w-xl space-y-3 text-xl leading-9 md:space-y-6 md:text-2xl">
         <p>
-          I always used to think that delivery projects and completing task in
-          time is all my role.
+          Early in my career I focused on delivering projects on time, sometimes
+          at the expense of code quality and long-term maintainability.
         </p>
+
         <p>
-          Writing in-efficient codes, writing 1K lines in a single file and
-          pushing it just to merely bring it to production or whatever.
+          I often relied on quick fixes and large, hard-to-navigate files that
+          made updates slow and error-prone.
         </p>
+
         <p>
-          When it comes to updating, i can&apos;t unthread that spaghetti codes
-          and the worst possible filemanagement.
+          Over time I shifted my approach: I balance delivery speed with clear
+          structure and sustainable practices so the codebase remains easy to
+          understand and evolve.
         </p>
-        <p className="flex gap-1">
-          So did you know what i did <span className="animate-bounce">?</span>
+
+        <p className="flex items-center gap-2">
+          The outcome: <span className="font-semibold">cleaner code</span>,
+          <span className="font-semibold">faster iterations</span>
+          <span>✨</span>
         </p>
+
         <p>
-          I lifted my <span className="font-rye">EGO</span> not only to write
-          good quality codes but to please myself too
+          I prioritize modular components, consistent file organization, and
+          readable tests — small habits that pay off during maintenance and
+          scaling.
         </p>
-        <p>Here&apos;s my do&apos;s and don&apos;ts i do</p>
       </div>
     </section>
   );

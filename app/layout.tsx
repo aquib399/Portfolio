@@ -1,14 +1,15 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import ThemeProvider from "@/providers/theme";
 import type { Metadata } from "next";
 import "./globals.css";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
+  variable: "--font-sans",
   subsets: ["latin"]
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+  variable: "--font-mono",
   subsets: ["latin"]
 });
 
@@ -63,11 +64,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth font-sans antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-[#F4EFEA] text-[#111111] selection:bg-[#E53826] selection:text-white">
-        {children}
-      </body>
+      <ThemeProvider>
+        <body className="flex min-h-full flex-col bg-[#F4EFEA] text-[#111111] selection:bg-[#E53826] selection:text-white">
+          {children}
+        </body>
+      </ThemeProvider>
     </html>
   );
 }

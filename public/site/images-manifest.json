@@ -1,0 +1,66 @@
+[
+  {
+    "id": "01",
+    "slug": "overview-moodboard",
+    "name": "01-overview-moodboard.jpg",
+    "url": "https://mir-s3-cdn-cf.behance.net/project_modules/source/54cf86200395959.6661934f50ff9.jpg",
+    "title": "Portfolio Overview Moodboard",
+    "description": "Full board showing all sections: Hero, Overview, About Me, Skills, Education, Work Experience, Portfolio, and Project showcases."
+  },
+  {
+    "id": "02",
+    "slug": "overview-booklet-mockup",
+    "name": "02-overview-booklet-mockup.png",
+    "url": "https://mir-s3-cdn-cf.behance.net/project_modules/source/7a0ae4200395959.6661934f518ec.png",
+    "title": "Overview & About Me Booklet Mockup",
+    "description": "Isometric floating booklet mockup displaying the Table of Contents overview card and About Me portrait card."
+  },
+  {
+    "id": "03",
+    "slug": "creative-portfolio-hero",
+    "name": "03-creative-portfolio-hero.png",
+    "url": "https://mir-s3-cdn-cf.behance.net/project_modules/source/98ea76200395959.6661934f50a0f.png",
+    "title": "Creative Portfolio Hero & Cover Spread",
+    "description": "Hero section card featuring radiating psychedelic op-art meditating figure, umbrella dome, dancing couple, and introductory typography."
+  },
+  {
+    "id": "04",
+    "slug": "showcase-grid-about-skills-portfolio-project-a",
+    "name": "04-showcase-grid-about-skills-portfolio-project-a.png",
+    "url": "https://mir-s3-cdn-cf.behance.net/project_modules/source/44d0e1200395959.6661934f52837.png",
+    "title": "Four-Quadrant Section Grid",
+    "description": "4-card layout featuring About Me (portrait), Personal Skills (Photography, Illustration, Graphic Design), Portfolio strip (Projects A, B, C), and Project A deep-dive."
+  },
+  {
+    "id": "05",
+    "slug": "laptop-mockup-hero",
+    "name": "05-laptop-mockup-hero.png",
+    "url": "https://mir-s3-cdn-cf.behance.net/project_modules/source/7645b4200395959.6661934f521f1.png",
+    "title": "Laptop Display Mockup",
+    "description": "MacBook Pro perspective mockup rendering the Creative Portfolio hero screen in a modern web environment."
+  },
+  {
+    "id": "06",
+    "slug": "project-b-surreal-eye",
+    "name": "06-project-b-surreal-eye.png",
+    "url": "https://mir-s3-cdn-cf.behance.net/project_modules/source/b23c15200395959.6661934f542b4.png",
+    "title": "Project B: Surreal Cosmic Eye",
+    "description": "Detailed linocut artwork of a mystical eye surrounded by stars and flame contours with bold typographic branding."
+  },
+  {
+    "id": "07",
+    "slug": "project-c-woodcut-textures",
+    "name": "07-project-c-woodcut-textures.png",
+    "url": "https://mir-s3-cdn-cf.behance.net/project_modules/source/883021200395959.6661934f52eb8.png",
+    "title": "Project C: Japanese Woodcut & Contours",
+    "description": "Intricate red woodcut marbled cuts with stars on cream paper, over dark organic topographic contour background."
+  },
+  {
+    "id": "08",
+    "slug": "ipad-mockup-outro-contact",
+    "name": "08-ipad-mockup-outro-contact.png",
+    "url": "https://mir-s3-cdn-cf.behance.net/project_modules/source/f43262200395959.6661934f5394b.png",
+    "title": "Tablet Mockup Outro & Contact",
+    "description": "Tablet device lying in natural light displaying the red duotone portrait with bold typography and contact metadata."
+  }
+]

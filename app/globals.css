@@ -1,26 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@700;800&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-retro-red: #e53826;
+  --color-retro-red-dark: #cc2f1f;
+  --color-retro-cream: #f4efea;
+  --color-retro-card: #fbf8f3;
+  --color-retro-black: #111111;
+  --color-retro-dark: #191817;
+  --color-retro-gray: #e6dfd5;
+  --color-retro-muted: #78716c;
+  --color-retro-border: #23201d;
+
+  --background: var(--color-retro-cream);
+  --foreground: var(--color-retro-black);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-retro-red: var(--color-retro-red);
+  --color-retro-red-dark: var(--color-retro-red-dark);
+  --color-retro-cream: var(--color-retro-cream);
+  --color-retro-card: var(--color-retro-card);
+  --color-retro-black: var(--color-retro-black);
+  --color-retro-dark: var(--color-retro-dark);
+  --color-retro-gray: var(--color-retro-gray);
+  --color-retro-muted: var(--color-retro-muted);
+  --color-retro-border: var(--color-retro-border);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-bebas: var(--font-bebas), "Bebas Neue", "Impact", sans-serif;
+  --font-syne: var(--font-syne), "Syne", sans-serif;
+  --font-sans: var(--font-geist-sans), sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-retro-cream);
+  color: var(--color-retro-black);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom Typography Helpers */
+.font-display-condensed {
+  font-family: var(--font-bebas), "Impact", sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.font-display-wide {
+  font-family: var(--font-syne), sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+/* Retro Linocut Card Border */
+.retro-card {
+  background-color: var(--color-retro-card);
+  border: 2px solid var(--color-retro-black);
+  box-shadow: 4px 4px 0px 0px var(--color-retro-black);
+}
+
+.retro-card-red {
+  background-color: var(--color-retro-red);
+  border: 2px solid var(--color-retro-black);
+  box-shadow: 4px 4px 0px 0px var(--color-retro-black);
+}
+
+.retro-card-dark {
+  background-color: var(--color-retro-dark);
+  border: 2px solid var(--color-retro-black);
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.8);
+}
+
+/* Vertical Spine Tab */
+.vertical-spine-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+}
+
+/* Subtle print noise effect */
+.halftone-dots {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+.halftone-dots-white {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.15) 1px,
+    transparent 1px
+  );
+  background-size: 8px 8px;
+}
+
+/* Smooth Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-retro-cream);
+  border-left: 1px solid var(--color-retro-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-retro-red);
+  border: 1px solid var(--color-retro-black);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-retro-red-dark);
 }

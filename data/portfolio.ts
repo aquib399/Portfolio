@@ -31,14 +31,28 @@ export const PERSONAL_INFO = {
     "[PERFORMANCE ARCHITECT]",
     "[TYPE-SAFE ECOSYSTEMS]",
     "[TACTILE USER EXPERIENCE]"
-  ]
+  ],
+  images: {
+    landscape_1: {
+      src: "/me/1.png",
+      alt: "Creative Portfolio Cover — Psychedelic Linocut Meditating Figure"
+    },
+    landscape_2: {
+      src: "/me/2.png",
+      alt: "Spotted Mushroom Cap and Cosmic Motifs"
+    },
+    portrait_1: {
+      src: "/me/3.png",
+      alt: "Portrait of Aquib Alam wearing sunglasses in vintage red risograph finish"
+    }
+  }
 };
 
 export const PERSONAL_MEDIA: PersonalMedia[] = [
   {
     id: "media-portrait-main",
     orientation: "portrait",
-    url: "/site/08-ipad-mockup-outro-contact.png",
+    url: "/me/1.png",
     title: "Editorial Portrait (Duotone)",
     caption: "Aquib Alam — Visual & Systems Engineering",
     alt: "Portrait of Aquib Alam wearing sunglasses in vintage red risograph finish"
@@ -46,7 +60,8 @@ export const PERSONAL_MEDIA: PersonalMedia[] = [
   {
     id: "media-landscape-workstation",
     orientation: "landscape",
-    url: "/site/05-laptop-mockup-hero.png",
+    url: "/me/2.png",
+
     title: "Digital Workspace",
     caption: "Next-gen interfaces built on modern web standards",
     alt: "MacBook Pro displaying creative portfolio interface"

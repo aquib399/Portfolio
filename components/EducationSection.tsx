@@ -28,7 +28,7 @@ export function EducationSection() {
                   <span className="font-mono text-xs font-bold tracking-widest text-[#E53826] uppercase">
                     SECTION 03 // ACADEMIC FOUNDATION & SCIENTIFIC RIGOR
                   </span>
-                  <h2 className="font-display-wide mt-1 text-3xl leading-none tracking-tight text-white sm:text-5xl">
+                  <h2 className="mt-1 text-3xl leading-none tracking-tight text-white sm:text-5xl">
                     EDUCATIONAL TIMELINE
                   </h2>
                 </div>
@@ -77,7 +77,7 @@ export function EducationSection() {
                         </div>
 
                         {/* Degree & Institution */}
-                        <h3 className="font-display-wide mb-1 text-2xl text-white sm:text-3xl">
+                        <h3 className="mb-1 text-2xl text-white sm:text-3xl">
                           {edu.institution}
                         </h3>
                         <p className="mb-4 font-mono text-sm font-bold tracking-wider text-[#E53826] uppercase">

@@ -26,7 +26,7 @@ export function OverviewSection() {
                   <span className="font-mono text-xs tracking-widest text-[#F4EFEA]/80 uppercase">
                     TABLE OF CONTENTS // SITEMAP
                   </span>
-                  <h2 className="font-display-wide mt-1 text-4xl leading-none tracking-tight text-white sm:text-6xl">
+                  <h2 className="mt-1 text-4xl leading-none tracking-tight text-white sm:text-6xl">
                     INDEX DIRECTORY
                   </h2>
                 </div>
@@ -69,7 +69,7 @@ export function OverviewSection() {
                           {sec.number}
                         </span>
                         <div>
-                          <span className="font-display-wide text-lg leading-none text-[#111111] transition-colors group-hover:text-[#E53826] sm:text-xl">
+                          <span className="text-lg leading-none text-[#111111] transition-colors group-hover:text-[#E53826] sm:text-xl">
                             {sec.title}
                           </span>
                           <p className="mt-0.5 font-mono text-[11px] tracking-wider text-[#78716c] uppercase">

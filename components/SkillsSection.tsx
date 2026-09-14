@@ -43,7 +43,7 @@ export function SkillsSection() {
                   <span className="font-mono text-xs font-bold tracking-widest text-[#E53826] uppercase">
                     SECTION 02 // TECHNICAL ARSENAL & CAPABILITIES
                   </span>
-                  <h2 className="font-display-wide mt-1 text-3xl leading-none tracking-tight text-white sm:text-5xl">
+                  <h2 className="mt-1 text-3xl leading-none tracking-tight text-white sm:text-5xl">
                     ENGINEERING DOMAINS
                   </h2>
                 </div>

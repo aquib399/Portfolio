@@ -41,7 +41,7 @@ export function PortfolioSection() {
         <div className="border-3 border-[#111111] bg-[#F4EFEA] shadow-[8px_8px_0px_0px_#111111]">
           {/* Top Banner: PORTFOLIO Wide Title */}
           <div className="border-b-3 border-[#111111] bg-[#E53826] p-4 text-center sm:p-6">
-            <h2 className="font-display-wide text-4xl leading-none tracking-tighter text-white sm:text-6xl md:text-8xl">
+            <h2 className="text-4xl leading-none tracking-tighter text-white sm:text-6xl md:text-8xl">
               PORTFOLIO
             </h2>
             <p className="mt-1 font-mono text-xs tracking-widest text-[#F4EFEA]/80 uppercase">
@@ -106,7 +106,7 @@ export function PortfolioSection() {
                         <span className="font-mono text-[10px] font-bold tracking-widest text-[#E53826] uppercase">
                           {proj.category}
                         </span>
-                        <h3 className="font-display-wide text-lg text-white drop-shadow-md sm:text-2xl md:text-3xl">
+                        <h3 className="text-lg text-white drop-shadow-md sm:text-2xl md:text-3xl">
                           {proj.title}
                         </h3>
                       </div>
@@ -142,7 +142,7 @@ export function PortfolioSection() {
                     <span>•</span>
                     <span>{activeProject.year}</span>
                   </div>
-                  <h3 className="font-display-wide text-3xl leading-none tracking-tight text-[#111111] sm:text-5xl md:text-6xl">
+                  <h3 className="text-3xl leading-none tracking-tight text-[#111111] sm:text-5xl md:text-6xl">
                     {activeProject.title}
                   </h3>
                   {activeProject.subtitle && (

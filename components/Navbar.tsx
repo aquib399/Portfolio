@@ -17,7 +17,7 @@ export function Navbar() {
               href="/"
               className="group text-decoration-none flex items-center gap-2"
             >
-              <span className="font-display-wide text-lg tracking-tight text-[#111111] transition-colors group-hover:text-[#E53826] md:text-xl">
+              <span className="text-lg tracking-tight text-[#111111] transition-colors group-hover:text-[#E53826] md:text-xl">
                 {PERSONAL_INFO.name}
               </span>
             </Link>

@@ -98,7 +98,7 @@ export function ContactSection() {
                 <span className="font-mono text-xs font-bold tracking-widest text-[#F4EFEA]/80 uppercase">
                   SECTION 06 // DIRECT DISPATCH & SOCIAL ARCHIVE
                 </span>
-                <h2 className="font-display-wide mt-2 text-4xl leading-none tracking-tight text-white sm:text-6xl md:text-7xl">
+                <h2 className="mt-2 text-4xl leading-none tracking-tight text-white sm:text-6xl md:text-7xl">
                   INITIATE DIALOGUE
                 </h2>
                 <p className="mt-2 max-w-2xl font-mono text-xs font-semibold tracking-wider text-[#F4EFEA]/90 uppercase sm:text-sm">
@@ -189,7 +189,7 @@ export function ContactSection() {
 
                     {submitted ? (
                       <div className="my-6 space-y-3 border-2 border-emerald-600 bg-emerald-50 p-6 text-emerald-950">
-                        <div className="font-display-wide flex items-center gap-2 text-xl text-emerald-800">
+                        <div className="flex items-center gap-2 text-xl text-emerald-800">
                           <IconCheck size={24} className="text-emerald-700" />
                           <span>TRANSMISSION RECEIVED</span>
                         </div>

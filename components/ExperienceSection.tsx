@@ -26,7 +26,7 @@ export function ExperienceSection() {
                   <span className="font-mono text-xs font-bold tracking-widest text-[#E53826] uppercase">
                     SECTION 04 // PROFESSIONAL TRAJECTORY & IMPACT
                   </span>
-                  <h2 className="font-display-wide mt-1 text-3xl leading-none tracking-tight text-[#111111] sm:text-5xl">
+                  <h2 className="mt-1 text-3xl leading-none tracking-tight text-[#111111] sm:text-5xl">
                     CAREER CHRONICLES
                   </h2>
                 </div>
@@ -90,7 +90,7 @@ export function ExperienceSection() {
                       </div>
 
                       {/* Role & Company */}
-                      <h3 className="font-display-wide mb-1 text-2xl text-[#111111] sm:text-3xl">
+                      <h3 className="mb-1 text-2xl text-[#111111] sm:text-3xl">
                         {exp.role}
                       </h3>
                       <p className="mb-3 font-mono text-xs font-bold tracking-wider text-[#E53826] uppercase sm:text-sm">

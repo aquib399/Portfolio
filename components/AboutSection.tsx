@@ -28,7 +28,7 @@ export function AboutSection() {
                 <span className="font-mono text-xs font-bold tracking-widest text-[#E53826] uppercase">
                   SECTION 01 // PROFILE & ARCHITECTURAL PHILOSOPHY
                 </span>
-                <h2 className="font-display-wide mt-1 text-3xl tracking-tight text-[#111111] sm:text-5xl">
+                <h2 className="mt-1 text-3xl tracking-tight text-[#111111] sm:text-5xl">
                   THE ENGINEER BEHIND THE CRAFT
                 </h2>
               </div>

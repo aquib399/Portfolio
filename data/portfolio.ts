@@ -30,22 +30,25 @@ export const portfolio: Portfolio = {
       portrait: [
         {
           id: "media-portrait-main",
+          type: "image",
+          orientation: "portrait",
           url: "/me/1.png",
-          title: "Editorial Portrait (Duotone)",
           caption: "Aquib Alam — Visual & Systems Engineering",
           alt: "Portrait of Aquib Alam wearing sunglasses in vintage red risograph finish"
         },
         {
           id: "media-portrait-alt",
+          type: "image",
+          orientation: "portrait",
           url: "/me/3.png",
-          title: "Vintage Red Risograph Portrait",
           caption: "Portrait of Aquib Alam wearing sunglasses",
           alt: "Portrait of Aquib Alam wearing sunglasses in vintage red risograph finish"
         },
         {
           id: "media-portrait-b-w",
+          type: "image",
+          orientation: "portrait",
           url: "/site/02-overview-booklet-mockup.png",
-          title: "Tactile Editorial Zine",
           caption: "Printmaking sensibilities translated to the DOM",
           alt: "Printed booklet mockup with overview table of contents and portrait"
         }
@@ -54,29 +57,33 @@ export const portfolio: Portfolio = {
       landscape: [
         {
           id: "media-landscape-cover",
+          type: "image",
+          orientation: "landscape",
           url: "/me/1.png",
-          title: "Creative Portfolio Cover",
           caption: "Psychedelic Linocut Meditating Figure",
           alt: "Creative Portfolio Cover — Psychedelic Linocut Meditating Figure"
         },
         {
           id: "media-landscape-motifs",
+          type: "image",
+          orientation: "landscape",
           url: "/me/2.png",
-          title: "Cosmic Motifs",
           caption: "Spotted Mushroom Cap and Cosmic Motifs",
           alt: "Spotted Mushroom Cap and Cosmic Motifs"
         },
         {
           id: "media-landscape-workstation",
+          type: "image",
+          orientation: "landscape",
           url: "/me/2.png",
-          title: "Digital Workspace",
           caption: "Next-gen interfaces built on modern web standards",
           alt: "MacBook Pro displaying creative portfolio interface"
         },
         {
           id: "media-landscape-moodboard",
+          type: "image",
+          orientation: "landscape",
           url: "/site/01-overview-moodboard.jpg",
-          title: "Systems & Aesthetics Moodboard",
           caption:
             "The intersection of Brutalism, Linocut Art, and Modern TypeScript",
           alt: "Comprehensive portfolio design board featuring all layout modules"
@@ -84,6 +91,7 @@ export const portfolio: Portfolio = {
       ]
     }
   },
+
   social: [
     {
       id: "social-github",
@@ -121,7 +129,8 @@ export const portfolio: Portfolio = {
       handle: "DOWNLOAD CV"
     }
   ],
-  skill: [
+
+  skillCategory: [
     {
       id: "frontend",
       title: "FRONTEND & INTERACTION",
@@ -242,6 +251,7 @@ export const portfolio: Portfolio = {
       ]
     }
   ],
+
   experience: [
     {
       id: "exp-fullstack-lead",
@@ -316,6 +326,7 @@ export const portfolio: Portfolio = {
       ]
     }
   ],
+
   education: [
     {
       id: "edu-btech",
@@ -345,6 +356,7 @@ export const portfolio: Portfolio = {
       ]
     }
   ],
+
   project: [
     {
       id: "project-a",
@@ -405,6 +417,7 @@ export const portfolio: Portfolio = {
         }
       ]
     },
+
     {
       id: "project-b",
       slug: "lumina-commerce",
@@ -464,6 +477,7 @@ export const portfolio: Portfolio = {
         }
       ]
     },
+
     {
       id: "project-c",
       slug: "zenith-workspace",

@@ -1,14 +1,14 @@
 import { Experience } from "./experience";
 import { PersonalInfo } from "./personal";
 import { Education } from "./education";
+import { SkillCategory } from "./skill";
 import { SocialLink } from "./social";
 import { Project } from "./project";
-import { Skill } from "./skill";
 
 export interface Portfolio {
   personal: PersonalInfo;
   social: SocialLink[];
-  skill: Skill[];
+  skillCategory: SkillCategory[];
   experience: Experience[];
   education: Education[];
   project: Project[];

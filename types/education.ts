@@ -1,3 +1,5 @@
+import { Media } from "./media";
+
 export interface Education {
   id: string;
   institution: string;
@@ -7,4 +9,5 @@ export interface Education {
   location: string;
   achievements?: string[];
   badge?: string;
+  media?: Media;
 }

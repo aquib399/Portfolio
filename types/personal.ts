@@ -1,14 +1,4 @@
-import { MediaOrientation } from "./media";
-
-export type Media = Record<MediaOrientation, PersonalMedia[]>;
-
-export interface PersonalMedia {
-  id: string;
-  url: string;
-  caption?: string;
-  alt: string;
-  title?: string;
-}
+import { MediaByOrientation } from "./media";
 
 export interface PersonalInfo {
   name: string;
@@ -24,5 +14,5 @@ export interface PersonalInfo {
   detailedBio: string[];
   quote: string;
   metadataTags: string[];
-  media: Media;
+  media: MediaByOrientation;
 }

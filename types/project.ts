@@ -1,15 +1,4 @@
-import { MediaOrientation, MediaType } from "./media";
-
-export interface ProjectMedia {
-  id: string;
-  type: MediaType;
-  orientation: MediaOrientation;
-  url: string;
-  thumbnailUrl?: string;
-  alt: string;
-  caption?: string;
-  aspectRatio?: string; // e.g. "16/9", "4/5", "1/1", "9/16"
-}
+import { Media } from "./media";
 
 export interface Project {
   id: string;
@@ -25,6 +14,6 @@ export interface Project {
   techStack: string[];
   liveUrl?: string;
   githubUrl?: string;
-  media: ProjectMedia[];
+  media: Media[];
   featured?: boolean;
 }

@@ -126,7 +126,11 @@ export function ContactSection() {
     >
       <div className="mx-auto max-w-7xl">
         <div className="border-border bg-card text-card-foreground flex border-3 shadow-[8px_8px_0px_0px_var(--border)] transition-colors">
-          <SpineTab label="CONTACT // INQUIRIES" theme="cream" side="left" />
+          <SpineTab
+            label="CONTACT // INQUIRIES"
+            theme="background"
+            side="left"
+          />
 
           <div className="bg-primary text-primary-foreground relative flex-1 overflow-hidden p-6 sm:p-10 md:p-14">
             <div className="halftone-dots text-primary-foreground pointer-events-none absolute inset-0 opacity-20" />
@@ -143,8 +147,8 @@ export function ContactSection() {
                 </h2>
 
                 <p className="text-primary-foreground/90 mt-2 max-w-2xl font-mono text-xs font-semibold tracking-wider uppercase sm:text-sm">
-                  HAVE A COMPLEX ARCHITECTURE TO BUILD, A PRODUCT TO LAUNCH, OR
-                  A COLLABORATION TO PROPOSE? SEND A DIRECT DISPATCH.
+                  {data.contactPitch ??
+                    "HAVE A COMPLEX ARCHITECTURE TO BUILD, A PRODUCT TO LAUNCH, OR A COLLABORATION TO PROPOSE? SEND A DIRECT DISPATCH."}
                 </p>
               </div>
 
@@ -387,8 +391,13 @@ export function ContactSection() {
                   </div>
 
                   <div className="border-border/20 text-muted-foreground mt-6 flex justify-between border-t pt-6 font-mono text-[11px]">
-                    <span>SECURITY: SSL ENCRYPTED</span>
-                    <span>RESPONSE TIME: &lt; 24 HOURS</span>
+                    <span>
+                      {data.contactMeta?.security ?? "SECURITY: SSL ENCRYPTED"}
+                    </span>
+                    <span>
+                      {data.contactMeta?.responseTime ??
+                        "RESPONSE TIME: < 24 HOURS"}
+                    </span>
                   </div>
                 </div>
               </div>

@@ -41,7 +41,7 @@ export function HeroSection() {
               </div>
 
               <div className="border-border/40 bg-background/90 text-foreground absolute bottom-4 left-4 border px-3 py-1.5 font-mono text-xs tracking-widest uppercase backdrop-blur-sm">
-                OP-ART STIPPLE • LINOCUT SERIGRAPHY
+                {data.heroBadge ?? heroImage.caption}
               </div>
             </div>
 

@@ -10,7 +10,7 @@ import { Navbar } from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#F4EFEA] font-sans text-[#111111] selection:bg-[#E53826] selection:text-white">
+    <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground flex min-h-screen flex-col font-sans">
       {/* Sticky Editorial Header */}
       <Navbar />
 

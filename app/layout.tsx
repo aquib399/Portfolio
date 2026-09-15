@@ -1,39 +1,31 @@
-import { Bebas_Neue, Geist, Geist_Mono, Syne } from "next/font/google";
+import { Bebas_Neue, Syne } from "next/font/google";
 import ThemeProvider from "@/providers/theme";
 import type { Metadata } from "next";
+import { portfolio } from "@/data/portfolio";
 import "./globals.css";
 
-const geistSans = Geist({
+const sans = Bebas_Neue({
+  weight: "400",
   variable: "--font-sans",
   subsets: ["latin"]
 });
 
-const geistMono = Geist_Mono({
+const mono = Syne({
+  weight: ["700", "800"],
   variable: "--font-mono",
   subsets: ["latin"]
 });
 
-const bebasNeue = Bebas_Neue({
-  weight: "400",
-  variable: "--font-bebas",
-  subsets: ["latin"]
-});
-
-const syne = Syne({
-  weight: ["700", "800"],
-  variable: "--font-syne",
-  subsets: ["latin"]
-});
+const personal = portfolio.personal;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://aquibalam.tech"),
-  title: "AQUIB ALAM — Full Stack Developer & Creative Engineer",
-  description:
-    "Portfolio of Aquib Alam: Kolkata-based Full Stack Developer specializing in clean architectures, high-throughput systems, and tactile digital experiences.",
+  title: `${personal.name.toUpperCase()} — ${personal.role} & ${personal.subRole}`,
+  description: personal.shortBio,
   keywords: [
-    "Aquib Alam",
-    "Full Stack Developer",
-    "Kolkata",
+    personal.name,
+    personal.role,
+    personal.locationCode,
     "Next.js",
     "React",
     "TypeScript",
@@ -41,19 +33,18 @@ export const metadata: Metadata = {
     "PostgreSQL",
     "Portfolio"
   ],
-  authors: [{ name: "Aquib Alam" }],
+  authors: [{ name: personal.name }],
   openGraph: {
-    title: "AQUIB ALAM — Full Stack Developer & Creative Engineer",
-    description:
-      "Kolkata-based Full Stack Developer obsessed with clean code, resilient architectures, and tactile user experiences.",
+    title: `${personal.name.toUpperCase()} — ${personal.role} & ${personal.subRole}`,
+    description: personal.shortBio,
     url: "https://aquibalam.tech",
-    siteName: "Aquib Alam Portfolio",
+    siteName: `${personal.name} Portfolio`,
     images: [
       {
         url: "/site/01-overview-moodboard.jpg",
         width: 1400,
         height: 875,
-        alt: "Aquib Alam — Creative Portfolio Overview"
+        alt: `${personal.name} — Creative Portfolio Overview`
       }
     ],
     locale: "en_US",
@@ -61,9 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AQUIB ALAM — Full Stack Developer",
-    description:
-      "Kolkata-based Full Stack Developer. Clean code, resilient architectures, and tactile digital craftsmanship.",
+    title: `${personal.name.toUpperCase()} — ${personal.role}`,
+    description: personal.shortBio,
     images: ["/site/01-overview-moodboard.jpg"]
   }
 };
@@ -77,13 +67,11 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} ${syne.variable} h-full scroll-smooth font-sans antialiased`}
+      className={`${sans.variable} ${mono.variable} h-full scroll-smooth antialiased`}
     >
-      <ThemeProvider>
-        <body className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground flex min-h-full flex-col">
-          {children}
-        </body>
-      </ThemeProvider>
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

@@ -7,6 +7,7 @@ export interface SkillCategory {
   stackedTitle: string[];
   skills: Skill[];
   media?: Media;
+  statusBadge?: string;
 }
 
 export interface Skill {

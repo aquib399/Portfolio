@@ -162,7 +162,7 @@ export function PortfolioSection() {
           <div className="bg-card text-card-foreground flex">
             <SpineTab
               label={`PROJECT ${activeProject.letterBadge}`}
-              theme="red"
+              theme="primary"
               side="left"
             />
 

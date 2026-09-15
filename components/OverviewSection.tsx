@@ -15,7 +15,7 @@ export function OverviewSection() {
       <div className="mx-auto max-w-7xl">
         <div className="border-border bg-card text-card-foreground flex border-3 shadow-[8px_8px_0px_0px_var(--border)] transition-colors">
           {/* Vertical Spine Tab */}
-          <SpineTab label="OVERVIEW" theme="cream" side="left" />
+          <SpineTab label="OVERVIEW" theme="background" side="left" />
 
           {/* Main Overview Body */}
           <div className="bg-primary text-primary-foreground relative flex-1 overflow-hidden p-6 sm:p-10 md:p-14">
@@ -34,7 +34,7 @@ export function OverviewSection() {
                   </h2>
                 </div>
                 <div className="text-primary-foreground/90 text-right font-mono text-xs uppercase">
-                  VOLUME 01 • EDITION 2025
+                  {data.overviewEdition ?? "VOLUME 01 • EDITION 2025"}
                   <br />
                   CURATED BY {data.firstName}
                 </div>

@@ -14,7 +14,7 @@ export function ExperienceSection() {
       <div className="mx-auto max-w-7xl">
         <div className="border-border bg-card flex border-3 shadow-[8px_8px_0px_0px_var(--border)] transition-colors">
           {/* Vertical Spine Tab */}
-          <SpineTab label="WORK EXPERIENCE" theme="cream" side="left" />
+          <SpineTab label="WORK EXPERIENCE" theme="background" side="left" />
 
           {/* Main Experience Body */}
           <div className="bg-card text-card-foreground relative flex-1 overflow-hidden p-6 sm:p-10 md:p-14">
@@ -54,17 +54,19 @@ export function ExperienceSection() {
                     </div>
                   </div>
 
-                  <div className="border-border/30 bg-muted/40 mt-4 border p-3">
-                    <div className="text-primary mb-1 flex items-center gap-2 font-mono text-xs font-bold uppercase">
-                      <IconBriefcase size={16} />
-                      <span>THE PHILOSOPHY</span>
+                  {portfolio.personal.experiencePhilosophy && (
+                    <div className="border-border/30 bg-muted/40 mt-4 border p-3">
+                      <div className="text-primary mb-1 flex items-center gap-2 font-mono text-xs font-bold uppercase">
+                        <IconBriefcase size={16} />
+                        <span>
+                          {portfolio.personal.experiencePhilosophy.title}
+                        </span>
+                      </div>
+                      <p className="text-muted-foreground font-mono text-[11px] leading-relaxed">
+                        "{portfolio.personal.experiencePhilosophy.quote}"
+                      </p>
                     </div>
-                    <p className="text-muted-foreground font-mono text-[11px] leading-relaxed">
-                      "I balance delivery speed with clear structure and
-                      sustainable practices so the codebase remains easy to
-                      understand, test, and evolve."
-                    </p>
-                  </div>
+                  )}
                 </div>
 
                 {/* Right Experience Chronology Cards */}

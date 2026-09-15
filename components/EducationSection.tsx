@@ -13,12 +13,16 @@ export function EducationSection() {
       <div className="mx-auto max-w-7xl">
         <div className="border-border bg-card flex border-3 shadow-[8px_8px_0px_0px_var(--primary)] transition-colors">
           {/* Vertical Spine Tab */}
-          <SpineTab label="EDUCATIONAL BACKGROUND" theme="cream" side="left" />
+          <SpineTab
+            label="EDUCATIONAL BACKGROUND"
+            theme="background"
+            side="left"
+          />
 
           {/* Main Education Body */}
-          <div className="bg-retro-dark text-foreground relative flex-1 overflow-hidden p-6 sm:p-10 md:p-14">
+          <div className="bg-card text-card-foreground relative flex-1 overflow-hidden p-6 sm:p-10 md:p-14">
             {/* Celestial Starry Night Background Pattern */}
-            <div className="halftone-dots text-foreground pointer-events-none absolute inset-0 opacity-20" />
+            <div className="halftone-dots text-card-foreground pointer-events-none absolute inset-0 opacity-20" />
 
             {/* Ambient Cosmic Glow */}
             <div className="bg-primary/15 pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full blur-3xl" />
@@ -30,7 +34,7 @@ export function EducationSection() {
                   <span className="text-primary font-mono text-xs font-bold tracking-widest uppercase">
                     SECTION 03 // ACADEMIC FOUNDATION & SCIENTIFIC RIGOR
                   </span>
-                  <h2 className="text-foreground font-display-wide mt-1 text-3xl leading-none tracking-tight sm:text-5xl">
+                  <h2 className="text-card-foreground font-display-wide mt-1 text-3xl leading-none tracking-tight sm:text-5xl">
                     EDUCATIONAL TIMELINE
                   </h2>
                 </div>

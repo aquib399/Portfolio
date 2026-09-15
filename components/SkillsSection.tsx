@@ -8,14 +8,14 @@ export function SkillsSection() {
   return (
     <section
       id="skills"
-      className="border-border bg-retro-dark w-full border-b-2 px-4 py-16 transition-colors sm:px-6 lg:px-8"
+      className="border-border bg-background w-full border-b-2 px-4 py-16 transition-colors sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
         <div className="border-border bg-card flex border-3 shadow-[8px_8px_0px_0px_var(--primary)] transition-colors">
-          <SpineTab label="TECHNICAL SKILLS" theme="cream" side="left" />
+          <SpineTab label="TECHNICAL SKILLS" theme="background" side="left" />
 
-          <div className="bg-retro-dark text-foreground relative flex-1 overflow-hidden p-6 sm:p-10 md:p-14">
-            <div className="halftone-dots text-foreground pointer-events-none absolute inset-0 opacity-10" />
+          <div className="bg-card text-card-foreground relative flex-1 overflow-hidden p-6 sm:p-10 md:p-14">
+            <div className="halftone-dots text-card-foreground pointer-events-none absolute inset-0 opacity-10" />
 
             <div className="relative z-10">
               {/* Header */}
@@ -25,7 +25,7 @@ export function SkillsSection() {
                     SECTION 02 // TECHNICAL ARSENAL & CAPABILITIES
                   </span>
 
-                  <h2 className="text-foreground font-display-wide mt-1 text-3xl leading-none tracking-tight sm:text-5xl">
+                  <h2 className="text-card-foreground font-display-wide mt-1 text-3xl leading-none tracking-tight sm:text-5xl">
                     ENGINEERING DOMAINS
                   </h2>
                 </div>
@@ -46,7 +46,7 @@ export function SkillsSection() {
                       {/* Category Title */}
                       <div className="border-border/30 mb-4 border-b pb-4">
                         <div className="flex items-start justify-between">
-                          <div className="font-display-condensed text-foreground text-4xl leading-none tracking-wider sm:text-5xl">
+                          <div className="font-display-condensed text-card-foreground text-4xl leading-none tracking-wider sm:text-5xl">
                             {category.stackedTitle.map((part) => (
                               <div
                                 key={part}
@@ -120,7 +120,7 @@ export function SkillsSection() {
                       <span>PILLAR {String(index + 1).padStart(2, "0")}</span>
 
                       <span className="text-primary font-bold">
-                        PRODUCTION READY
+                        {category.statusBadge ?? "PRODUCTION READY"}
                       </span>
                     </div>
                   </div>

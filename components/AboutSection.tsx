@@ -24,7 +24,7 @@ export function AboutSection() {
       <div className="mx-auto max-w-7xl">
         <div className="border-border bg-card text-card-foreground flex border-3 shadow-[8px_8px_0px_0px_var(--border)] transition-colors">
           {/* Vertical Spine Tab */}
-          <SpineTab label="ABOUT ME" theme="red" side="left" />
+          <SpineTab label="ABOUT ME" theme="primary" side="left" />
 
           {/* Main About Card Body */}
           <div className="relative flex-1 overflow-hidden p-6 sm:p-10 md:p-14">
@@ -32,11 +32,12 @@ export function AboutSection() {
             <div className="border-border mb-8 flex flex-col justify-between gap-3 border-b-2 pb-6 sm:flex-row sm:items-center">
               <div>
                 <span className="text-primary font-mono text-xs font-bold tracking-widest uppercase">
-                  SECTION 01 // PROFILE & ARCHITECTURAL PHILOSOPHY
+                  {data.aboutSectionTag ??
+                    "SECTION 01 // PROFILE & ARCHITECTURAL PHILOSOPHY"}
                 </span>
 
                 <h2 className="text-card-foreground font-display-wide mt-1 text-3xl tracking-tight sm:text-5xl">
-                  THE ENGINEER BEHIND THE CRAFT
+                  {data.aboutHeading ?? "THE ENGINEER BEHIND THE CRAFT"}
                 </h2>
               </div>
 
@@ -135,31 +136,29 @@ export function AboutSection() {
                 </div>
 
                 {/* Core Pillars */}
-                <div className="border-border grid grid-cols-1 gap-4 border-t-2 pt-4 sm:grid-cols-2">
-                  <div className="border-border bg-card border p-3">
-                    <div className="text-primary mb-1 flex items-center gap-2 font-mono text-xs font-bold uppercase">
-                      <IconCode size={16} />
-                      <span>THE CRAFT</span>
-                    </div>
+                {data.pillars && data.pillars.length > 0 && (
+                  <div className="border-border grid grid-cols-1 gap-4 border-t-2 pt-4 sm:grid-cols-2">
+                    {data.pillars.map((pillar) => (
+                      <div
+                        key={pillar.title}
+                        className="border-border bg-card border p-3"
+                      >
+                        <div className="text-primary mb-1 flex items-center gap-2 font-mono text-xs font-bold uppercase">
+                          {pillar.icon === "code" ? (
+                            <IconCode size={16} />
+                          ) : (
+                            <IconSparkles size={16} />
+                          )}
+                          <span>{pillar.title}</span>
+                        </div>
 
-                    <p className="text-muted-foreground font-mono text-[11px]">
-                      Modular TypeScript components, zero unnecessary
-                      re-renders, and predictable state transitions.
-                    </p>
+                        <p className="text-muted-foreground font-mono text-[11px]">
+                          {pillar.description}
+                        </p>
+                      </div>
+                    ))}
                   </div>
-
-                  <div className="border-border bg-card border p-3">
-                    <div className="text-primary mb-1 flex items-center gap-2 font-mono text-xs font-bold uppercase">
-                      <IconSparkles size={16} />
-                      <span>USER-FIRST</span>
-                    </div>
-
-                    <p className="text-muted-foreground font-mono text-[11px]">
-                      Accessible layouts, sub-second latency, and visceral
-                      visual tactility inspired by print design.
-                    </p>
-                  </div>
-                </div>
+                )}
               </div>
             </div>
 

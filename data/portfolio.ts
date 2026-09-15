@@ -26,6 +26,35 @@ export const portfolio: Portfolio = {
       "[TYPE-SAFE ECOSYSTEMS]",
       "[TACTILE USER EXPERIENCE]"
     ],
+    aboutHeading: "THE ENGINEER BEHIND THE CRAFT",
+    aboutSectionTag: "SECTION 01 // PROFILE & ARCHITECTURAL PHILOSOPHY",
+    pillars: [
+      {
+        title: "THE CRAFT",
+        description:
+          "Modular TypeScript components, zero unnecessary re-renders, and predictable state transitions.",
+        icon: "code"
+      },
+      {
+        title: "USER-FIRST",
+        description:
+          "Accessible layouts, sub-second latency, and visceral visual tactility inspired by print design.",
+        icon: "sparkles"
+      }
+    ],
+    heroBadge: "OP-ART STIPPLE • LINOCUT SERIGRAPHY",
+    overviewEdition: "VOLUME 01 • EDITION 2025",
+    experiencePhilosophy: {
+      title: "THE PHILOSOPHY",
+      quote:
+        "I balance delivery speed with clear structure and sustainable practices so the codebase remains easy to understand, test, and evolve."
+    },
+    contactPitch:
+      "HAVE A COMPLEX ARCHITECTURE TO BUILD, A PRODUCT TO LAUNCH, OR A COLLABORATION TO PROPOSE? SEND A DIRECT DISPATCH.",
+    contactMeta: {
+      security: "SECURITY: SSL ENCRYPTED",
+      responseTime: "RESPONSE TIME: < 24 HOURS"
+    },
     media: {
       portrait: [
         {
@@ -136,6 +165,7 @@ export const portfolio: Portfolio = {
       title: "FRONTEND & INTERACTION",
       subtitle: "HIGH-PERFORMANCE USER INTERFACES",
       stackedTitle: ["PHOTO", "GRA", "PHY"],
+      statusBadge: "PRODUCTION READY",
       media: {
         id: "skill-frontend-media",
         type: "image",
@@ -189,6 +219,7 @@ export const portfolio: Portfolio = {
       title: "BACKEND & DATA SYSTEMS",
       subtitle: "ROBUST, RESILIENT ARCHITECTURES",
       stackedTitle: ["ILLUSTRA", "TION"],
+      statusBadge: "PRODUCTION READY",
       media: {
         id: "skill-backend-media",
         type: "image",
@@ -237,6 +268,7 @@ export const portfolio: Portfolio = {
       title: "DEVOPS, SYSTEMS & TOOLS",
       subtitle: "AUTOMATION & SCALE",
       stackedTitle: ["GRAPHIC", "DESIGN"],
+      statusBadge: "PRODUCTION READY",
       media: {
         id: "skill-devops-media",
         type: "image",

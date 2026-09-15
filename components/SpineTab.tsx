@@ -2,24 +2,37 @@ import { cn } from "@/lib/utils";
 
 interface SpineTabProps {
   label: string;
-  theme?: "red" | "cream" | "dark" | "card" | "white";
+  theme?:
+    | "primary"
+    | "secondary"
+    | "card"
+    | "background"
+    | "red"
+    | "cream"
+    | "dark"
+    | "white";
   side?: "left" | "right";
   className?: string;
 }
 
 export function SpineTab({
   label,
-  theme = "cream",
+  theme = "background",
   side = "left",
   className = ""
 }: SpineTabProps) {
-  const themeClasses = {
+  const themeClasses: Record<string, string> = {
+    primary: "bg-primary text-primary-foreground border-border",
+    secondary: "bg-secondary text-secondary-foreground border-border",
+    background: "bg-background text-primary border-border",
+    card: "bg-card text-card-foreground border-border",
     cream: "bg-background text-primary border-border",
     red: "bg-primary text-primary-foreground border-border",
-    dark: "bg-retro-dark text-foreground border-border",
-    card: "bg-card text-foreground border-border",
-    white: "bg-card text-foreground border-border"
-  }[theme];
+    dark: "bg-card text-card-foreground border-border",
+    white: "bg-card text-card-foreground border-border"
+  };
+
+  const selectedThemeClass = themeClasses[theme] ?? themeClasses.background;
 
   const sideClasses = side === "left" ? "border-r-2" : "border-l-2";
 
@@ -28,7 +41,7 @@ export function SpineTab({
       className={cn(
         "hidden items-center justify-center px-3 py-6 select-none md:flex",
         sideClasses,
-        themeClasses,
+        selectedThemeClass,
         className
       )}
       aria-hidden="true"

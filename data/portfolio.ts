@@ -136,6 +136,15 @@ export const portfolio: Portfolio = {
       title: "FRONTEND & INTERACTION",
       subtitle: "HIGH-PERFORMANCE USER INTERFACES",
       stackedTitle: ["PHOTO", "GRA", "PHY"],
+      media: {
+        id: "skill-frontend-media",
+        type: "image",
+        orientation: "landscape",
+        url: "/site/08-ipad-mockup-outro-contact.png",
+        alt: "Visual interfaces and frontend engineering",
+        caption: "VISUAL INTERFACES & DOM CRAFT",
+        aspectRatio: "16/9"
+      },
       skills: [
         {
           name: "TypeScript",
@@ -174,11 +183,21 @@ export const portfolio: Portfolio = {
         }
       ]
     },
+
     {
       id: "backend",
       title: "BACKEND & DATA SYSTEMS",
       subtitle: "ROBUST, RESILIENT ARCHITECTURES",
       stackedTitle: ["ILLUSTRA", "TION"],
+      media: {
+        id: "skill-backend-media",
+        type: "image",
+        orientation: "landscape",
+        url: "/site/06-project-b-surreal-eye.png",
+        alt: "Backend data pipelines and API systems",
+        caption: "DATA PIPELINES & SERVICES",
+        aspectRatio: "16/9"
+      },
       skills: [
         {
           name: "Node.js & Express.js",
@@ -212,11 +231,21 @@ export const portfolio: Portfolio = {
         }
       ]
     },
+
     {
       id: "devops",
       title: "DEVOPS, SYSTEMS & TOOLS",
       subtitle: "AUTOMATION & SCALE",
       stackedTitle: ["GRAPHIC", "DESIGN"],
+      media: {
+        id: "skill-devops-media",
+        type: "image",
+        orientation: "landscape",
+        url: "/site/07-project-c-woodcut-textures.png",
+        alt: "DevOps cloud infrastructure and tooling",
+        caption: "CONTAINERS, CLOUD & SCALE",
+        aspectRatio: "16/9"
+      },
       skills: [
         {
           name: "Docker & Containers",

@@ -1,9 +1,15 @@
-import { PERSONAL_INFO } from "../data/portfolio";
+import { portfolio } from "../data/portfolio";
 import { IconArrowRight } from "./Icons";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
+
+const data = portfolio.personal;
 
 export function HeroSection() {
+  const landscapeMedia = data.media.landscape;
+
+  const heroImage = landscapeMedia[0];
+  const secondaryImage = landscapeMedia[1];
+
   return (
     <section className="border-border bg-primary relative w-full overflow-hidden border-b-2 p-3 transition-colors sm:p-6 md:p-10">
       {/* Background print texture */}
@@ -15,18 +21,18 @@ export function HeroSection() {
           {/* Top Title Banner */}
           <div className="border-border mb-6 border-b-2 pb-4 text-center md:mb-8">
             <h2 className="text-primary font-display-wide text-3xl leading-none font-extrabold tracking-widest uppercase sm:text-4xl md:text-6xl lg:text-7xl">
-              {PERSONAL_INFO.role}
+              {data.role}
             </h2>
           </div>
 
-          {/* Central Grid System (Inspired by Behance Cover Spread) */}
+          {/* Central Grid System */}
           <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-12">
-            {/* Left Main Panel: Psychedelic Op-Art Artwork (8 Columns on desktop) */}
+            {/* Main Image */}
             <div className="group border-border bg-muted relative flex min-h-95 flex-col justify-center overflow-hidden border-2 sm:min-h-115 md:min-h-135 lg:col-span-8">
               <div className="relative h-full min-h-95 w-full sm:min-h-115 md:min-h-135">
                 <Image
-                  src={PERSONAL_INFO.images.landscape_1.src}
-                  alt={PERSONAL_INFO.images.landscape_1.alt}
+                  src={heroImage.url}
+                  alt={heroImage.alt}
                   fill
                   priority
                   className="scale-105 object-cover object-left transition-transform duration-700 group-hover:scale-110 md:object-center"
@@ -34,43 +40,44 @@ export function HeroSection() {
                 />
               </div>
 
-              {/* Overlay Badge */}
               <div className="border-border/40 bg-background/90 text-foreground absolute bottom-4 left-4 border px-3 py-1.5 font-mono text-xs tracking-widest uppercase backdrop-blur-sm">
                 OP-ART STIPPLE • LINOCUT SERIGRAPHY
               </div>
             </div>
 
-            {/* Right Sub-Grid: 4 Columns on desktop */}
+            {/* Right Sub-Grid */}
             <div className="flex flex-col justify-between gap-6 lg:col-span-4">
-              {/* Top Sub-Panel */}
+              {/* Secondary Image */}
               <div className="group border-border bg-muted relative h-48 overflow-hidden border-2 sm:h-56">
                 <Image
-                  src={PERSONAL_INFO.images.landscape_2.src}
-                  alt={PERSONAL_INFO.images.landscape_2.alt}
+                  src={secondaryImage.url}
+                  alt={secondaryImage.alt}
                   fill
                   className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 1024px) 100vw, 33vw"
                 />
+
                 <div className="border-border bg-primary text-primary-foreground absolute top-2 right-2 border px-2 py-0.5 font-mono text-[10px] font-bold">
                   SEC. 00
                 </div>
               </div>
 
-              {/* Bottom Sub-Panel: Dancing Figures & Giant Typography */}
+              {/* Info Panel */}
               <div className="border-border bg-card flex flex-1 flex-col justify-between border-2 p-4">
                 <div>
                   <div className="text-primary mb-1 font-mono text-[11px] font-bold tracking-wider uppercase">
-                    {PERSONAL_INFO.subRole}
+                    {data.subRole}
                   </div>
+
                   <h1 className="font-display-condensed text-foreground text-3xl leading-none font-extrabold tracking-widest sm:text-4xl lg:text-5xl">
-                    {PERSONAL_INFO.name}
+                    {data.name}
                   </h1>
                 </div>
 
                 <div className="border-border/30 my-4 space-y-1.5 border-t pt-3 font-mono text-xs">
-                  {PERSONAL_INFO.metadataTags.map((tag, idx) => (
+                  {data.metadataTags.map((tag) => (
                     <div
-                      key={idx}
+                      key={tag}
                       className="text-primary text-[11px] font-bold tracking-wider"
                     >
                       {tag}
@@ -95,14 +102,13 @@ export function HeroSection() {
           <div className="border-border mt-8 grid grid-cols-1 items-center gap-4 border-t-2 pt-6 md:grid-cols-12">
             <div className="md:col-span-5">
               <h3 className="text-primary font-display-wide text-3xl leading-tight sm:text-5xl">
-                Hi, I'm {PERSONAL_INFO.name}
+                Hi, I'm {data.name}
               </h3>
             </div>
+
             <div className="md:col-span-7">
               <p className="text-foreground font-mono text-xs leading-relaxed font-semibold tracking-wider uppercase sm:text-sm">
-                FULL STACK SOFTWARE ENGINEER. WITNESS THE FUSION OF SCALABLE
-                ARCHITECTURE AND DIGITAL CRAFTSMANSHIP IN A JOURNEY CRAFTED WITH
-                PASSION AND PRECISION.
+                {data.shortBio}
               </p>
             </div>
           </div>

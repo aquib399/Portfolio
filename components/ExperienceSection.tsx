@@ -1,8 +1,9 @@
-import { EXPERIENCE_HISTORY } from "../data/portfolio";
+import { portfolio } from "../data/portfolio";
 import { IconBriefcase } from "./Icons";
 import { SpineTab } from "./SpineTab";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
+
+const data = portfolio.experience;
 
 export function ExperienceSection() {
   return (
@@ -68,7 +69,7 @@ export function ExperienceSection() {
 
                 {/* Right Experience Chronology Cards */}
                 <div className="space-y-6 lg:col-span-8">
-                  {EXPERIENCE_HISTORY.map((exp, idx) => (
+                  {data.map((exp, idx) => (
                     <div
                       key={exp.id}
                       className="group border-border bg-background relative border-2 p-6 transition-all hover:shadow-[4px_4px_0px_0px_var(--primary)] sm:p-8"

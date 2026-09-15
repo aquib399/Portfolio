@@ -1,8 +1,10 @@
-import { NAVIGATION_SECTIONS } from "../data/portfolio";
+import { portfolio } from "@/data/portfolio";
+import { navigation } from "../data/navigation";
 import { IconArrowUpRight } from "./Icons";
 import { SpineTab } from "./SpineTab";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
+
+const data = portfolio.personal;
 
 export function OverviewSection() {
   return (
@@ -34,7 +36,7 @@ export function OverviewSection() {
                 <div className="text-primary-foreground/90 text-right font-mono text-xs uppercase">
                   VOLUME 01 • EDITION 2025
                   <br />
-                  CURATED BY AQUIB ALAM
+                  CURATED BY {data.firstName}
                 </div>
               </div>
 
@@ -59,7 +61,7 @@ export function OverviewSection() {
 
                 {/* Right: Numbered Navigation Grid */}
                 <div className="space-y-3 lg:col-span-7">
-                  {NAVIGATION_SECTIONS.map((sec) => (
+                  {navigation.map((sec) => (
                     <a
                       key={sec.id}
                       href={`#${sec.id}`}

@@ -1,9 +1,12 @@
+import { Media } from "./media";
+
 export interface SkillCategory {
   id: string;
   title: string;
   subtitle: string;
-  stackedTitle: string[]; // e.g. ["FRONT", "END"] for retro vertical stacking
-  skills: Array<Skill>;
+  stackedTitle: string[];
+  skills: Skill[];
+  media?: Media;
 }
 
 export interface Skill {

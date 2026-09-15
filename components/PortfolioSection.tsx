@@ -1,36 +1,47 @@
 "use client";
 
 import { IconExternalLink, IconGitHub, IconPlay } from "./Icons";
-import { PROJECTS } from "../data/portfolio";
+import { portfolio } from "../data/portfolio";
 import { SpineTab } from "./SpineTab";
 import { useState } from "react";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+
+const data = portfolio.project;
 
 export function PortfolioSection() {
   const [activeProjectId, setActiveProjectId] = useState<string>(
-    PROJECTS[0].id
+    data[0]?.id ?? ""
   );
+
   const activeProject =
-    PROJECTS.find((p) => p.id === activeProjectId) || PROJECTS[0];
+    data.find((project) => project.id === activeProjectId) ?? data[0];
 
-  // Active media within current project
   const [activeMediaId, setActiveMediaId] = useState<string>(
-    activeProject.media[0]?.id || ""
+    activeProject?.media[0]?.id ?? ""
   );
 
-  // When project changes, set first media as active
+  if (!activeProject) {
+    return null;
+  }
+
   const handleSelectProject = (projectId: string) => {
     setActiveProjectId(projectId);
-    const target = PROJECTS.find((p) => p.id === projectId);
-    if (target && target.media.length > 0) {
+
+    const target = data.find((project) => project.id === projectId);
+
+    if (target?.media.length) {
       setActiveMediaId(target.media[0].id);
     }
   };
 
   const activeMedia =
-    activeProject.media.find((m) => m.id === activeMediaId) ||
+    activeProject.media.find((media) => media.id === activeMediaId) ??
     activeProject.media[0];
+
+  if (!activeMedia) {
+    return null;
+  }
 
   return (
     <section
@@ -38,36 +49,38 @@ export function PortfolioSection() {
       className="border-border bg-primary w-full border-b-2 px-4 py-16 transition-colors sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
-        {/* Master Portfolio Box */}
         <div className="border-border bg-card text-card-foreground border-3 shadow-[8px_8px_0px_0px_var(--border)] transition-colors">
-          {/* Top Banner: PORTFOLIO Wide Title */}
+          {/* Header */}
           <div className="border-border bg-primary text-primary-foreground border-b-3 p-4 text-center sm:p-6">
             <h2 className="font-display-wide text-4xl leading-none tracking-tighter sm:text-6xl md:text-8xl">
               PORTFOLIO
             </h2>
+
             <p className="mt-1 font-mono text-xs font-bold tracking-widest uppercase opacity-90">
               CURATED PRODUCTION SYSTEMS & VISUAL CASE STUDIES
             </p>
           </div>
 
-          {/* Master Horizontal Project Strips (Replicating Behance Project A, B, C Banner Layout) */}
+          {/* Project Selector */}
           <div className="divide-border border-border bg-card divide-y-2 border-b-3">
-            {PROJECTS.map((proj) => {
-              const isActive = proj.id === activeProjectId;
-              const bannerImages: Record<string, string> = {
-                "project-a":
-                  "/site/04-showcase-grid-about-skills-portfolio-project-a.png",
-                "project-b": "/site/06-project-b-surreal-eye.png",
-                "project-c": "/site/07-project-c-woodcut-textures.png"
-              };
-              const bannerImg =
-                bannerImages[proj.id] || "/site/01-overview-moodboard.jpg";
+            {data.map((project) => {
+              const isActive = project.id === activeProjectId;
+
+              // Use the first landscape media as the project banner.
+              const bannerMedia =
+                project.media.find(
+                  (media) => media.orientation === "landscape"
+                ) ?? project.media[0];
+
+              if (!bannerMedia) {
+                return null;
+              }
 
               return (
                 <button
-                  key={proj.id}
+                  key={project.id}
                   type="button"
-                  onClick={() => handleSelectProject(proj.id)}
+                  onClick={() => handleSelectProject(project.id)}
                   className={cn(
                     "group relative flex w-full cursor-pointer flex-col items-stretch overflow-hidden text-left transition-all md:flex-row",
                     isActive
@@ -75,7 +88,7 @@ export function PortfolioSection() {
                       : "opacity-85 hover:opacity-100"
                   )}
                 >
-                  {/* Left Spine Tag on Banner */}
+                  {/* Project Label */}
                   <div
                     className={cn(
                       "border-border flex items-center justify-center border-b-2 px-4 py-2 transition-colors select-none md:flex-col md:border-r-2 md:border-b-0 md:py-4",
@@ -85,38 +98,57 @@ export function PortfolioSection() {
                     )}
                   >
                     <span className="font-display-condensed text-xl font-bold tracking-widest whitespace-nowrap md:text-2xl">
-                      PROJECT {proj.letterBadge}
+                      PROJECT {project.letterBadge}
                     </span>
                   </div>
 
-                  {/* Banner Image Preview Strip */}
+                  {/* Banner */}
                   <div className="relative h-24 flex-1 overflow-hidden bg-black sm:h-28 md:h-32">
-                    <Image
-                      src={bannerImg}
-                      alt={proj.title}
-                      fill
-                      className={cn(
-                        "object-cover transition-transform duration-700",
-                        isActive
-                          ? "scale-105 brightness-105 filter"
-                          : "brightness-75 filter group-hover:scale-105 group-hover:brightness-95"
-                      )}
-                      sizes="(max-width: 768px) 100vw, 80vw"
-                    />
+                    {bannerMedia.type === "video" ? (
+                      <video
+                        src={bannerMedia.url}
+                        poster={bannerMedia.thumbnailUrl}
+                        muted
+                        playsInline
+                        autoPlay
+                        loop
+                        className={cn(
+                          "h-full w-full object-cover transition-transform duration-700",
+                          isActive
+                            ? "scale-105 brightness-105"
+                            : "brightness-75 group-hover:scale-105 group-hover:brightness-95"
+                        )}
+                      />
+                    ) : (
+                      <Image
+                        src={bannerMedia.url}
+                        alt={bannerMedia.alt}
+                        fill
+                        className={cn(
+                          "object-cover transition-transform duration-700",
+                          isActive
+                            ? "scale-105 brightness-105"
+                            : "brightness-75 group-hover:scale-105 group-hover:brightness-95"
+                        )}
+                        sizes="(max-width: 768px) 100vw, 80vw"
+                      />
+                    )}
 
-                    {/* Gradient & Typographic Overlay */}
-                    <div className="absolute inset-0 flex items-center justify-between bg-gradient-to-r from-black/85 via-black/40 to-transparent px-6">
+                    {/* Overlay */}
+                    <div className="absolute inset-0 flex items-center justify-between bg-linear-to-r from-black/85 via-black/40 to-transparent px-6">
                       <div>
                         <span className="text-primary font-mono text-[10px] font-bold tracking-widest uppercase">
-                          {proj.category}
+                          {project.category}
                         </span>
+
                         <h3 className="font-display-wide text-lg text-white drop-shadow-md sm:text-2xl md:text-3xl">
-                          {proj.title}
+                          {project.title}
                         </h3>
                       </div>
 
                       <div className="hidden items-center gap-2 border border-white/30 bg-black/80 px-3 py-1 font-mono text-xs text-white sm:flex">
                         <span>{isActive ? "SELECTED" : "VIEW PROJECT"}</span>
+
                         <span className="text-primary font-bold">→</span>
                       </div>
                     </div>
@@ -126,7 +158,7 @@ export function PortfolioSection() {
             })}
           </div>
 
-          {/* Deep-Dive Project Showcase Container */}
+          {/* Project Details */}
           <div className="bg-card text-card-foreground flex">
             <SpineTab
               label={`PROJECT ${activeProject.letterBadge}`}
@@ -134,21 +166,28 @@ export function PortfolioSection() {
               side="left"
             />
 
-            {/* Project Details Body */}
             <div className="relative flex-1 overflow-hidden p-6 sm:p-10 md:p-14">
-              {/* Project Headline & Actions */}
+              {/* Project Header */}
               <div className="border-border mb-8 flex flex-col justify-between gap-4 border-b-2 pb-6 lg:flex-row lg:items-end">
                 <div>
                   <div className="text-primary mb-1 flex items-center gap-2 font-mono text-xs font-bold tracking-widest uppercase">
-                    <span>CASE STUDY 0{activeProject.letterBadge}</span>
+                    <span>
+                      CASE STUDY {activeProject.letterBadge.padStart(2, "0")}
+                    </span>
+
                     <span>•</span>
+
                     <span>{activeProject.category}</span>
+
                     <span>•</span>
+
                     <span>{activeProject.year}</span>
                   </div>
+
                   <h3 className="text-card-foreground font-display-wide text-3xl leading-none tracking-tight sm:text-5xl md:text-6xl">
                     {activeProject.title}
                   </h3>
+
                   {activeProject.subtitle && (
                     <p className="text-muted-foreground mt-1.5 font-mono text-xs font-bold tracking-wider uppercase sm:text-sm">
                       {activeProject.subtitle}
@@ -156,7 +195,7 @@ export function PortfolioSection() {
                   )}
                 </div>
 
-                {/* External Action Buttons */}
+                {/* Actions */}
                 <div className="flex flex-wrap items-center gap-3 self-start lg:self-auto">
                   {activeProject.liveUrl && (
                     <a
@@ -184,13 +223,11 @@ export function PortfolioSection() {
                 </div>
               </div>
 
-              {/* Grid: Media Frame (Supports Image & Video, Portrait & Landscape) + Narrative */}
+              {/* Main Content */}
               <div className="mb-8 grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
-                {/* Media Showcase (7 Columns) */}
+                {/* Media */}
                 <div className="flex flex-col space-y-4 lg:col-span-7">
-                  {/* Media Viewport Container */}
                   <div className="border-border relative border-3 bg-black p-2 shadow-[6px_6px_0px_0px_var(--border)]">
-                    {/* Media Display Component */}
                     <div
                       className={cn(
                         "relative flex w-full items-center justify-center overflow-hidden bg-black transition-all duration-300",
@@ -217,9 +254,10 @@ export function PortfolioSection() {
                         />
                       )}
 
-                      {/* Orientation & Type Badge */}
+                      {/* Media Badge */}
                       <div className="bg-primary text-primary-foreground absolute top-2 left-2 z-10 flex items-center gap-1 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider uppercase">
                         {activeMedia.type === "video" && <IconPlay size={12} />}
+
                         <span>
                           {activeMedia.type.toUpperCase()} •{" "}
                           {activeMedia.orientation.toUpperCase()}
@@ -227,11 +265,12 @@ export function PortfolioSection() {
                       </div>
                     </div>
 
-                    {/* Media Caption */}
+                    {/* Caption */}
                     <div className="flex flex-col justify-between gap-1 px-1 pt-2 font-mono text-[11px] sm:flex-row sm:items-center">
                       <span className="font-semibold text-white/90">
-                        {activeMedia.caption}
+                        {activeMedia.caption ?? activeMedia.alt}
                       </span>
+
                       <span className="text-primary font-bold tracking-wider uppercase">
                         MEDIA SPEC: {activeMedia.orientation} [
                         {activeMedia.aspectRatio || "AUTO"}]
@@ -239,14 +278,16 @@ export function PortfolioSection() {
                     </div>
                   </div>
 
-                  {/* Media Switcher Buttons (Portrait, Landscape, Video) */}
+                  {/* Media Reel */}
                   <div className="pt-2">
                     <span className="text-muted-foreground mb-2 block font-mono text-[10px] font-bold tracking-wider uppercase">
                       PROJECT MEDIA REEL ({activeProject.media.length} ASSETS):
                     </span>
+
                     <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
-                      {activeProject.media.map((mediaItem, mIdx) => {
+                      {activeProject.media.map((mediaItem, index) => {
                         const isSelected = mediaItem.id === activeMedia.id;
+
                         return (
                           <button
                             key={mediaItem.id}
@@ -261,12 +302,14 @@ export function PortfolioSection() {
                           >
                             <div className="truncate">
                               <span className="block font-bold">
-                                #{mIdx + 1} {mediaItem.type.toUpperCase()}
+                                #{index + 1} {mediaItem.type.toUpperCase()}
                               </span>
+
                               <span className="text-[10px] uppercase opacity-80">
                                 {mediaItem.orientation}
                               </span>
                             </div>
+
                             {mediaItem.type === "video" && (
                               <IconPlay size={14} />
                             )}
@@ -277,28 +320,30 @@ export function PortfolioSection() {
                   </div>
                 </div>
 
-                {/* Narrative & Technical Deep Dive (5 Columns) */}
+                {/* Narrative */}
                 <div className="flex flex-col justify-between space-y-6 lg:col-span-5">
-                  {/* Summary Callout */}
+                  {/* Summary */}
                   <div className="border-border bg-muted/30 border-2 p-4 shadow-[3px_3px_0px_0px_var(--border)] sm:p-5">
                     <span className="text-primary mb-1 block font-mono text-[10px] font-bold tracking-wider uppercase">
                       EXECUTIVE SUMMARY
                     </span>
+
                     <p className="text-card-foreground font-mono text-xs leading-relaxed font-medium sm:text-sm">
                       {activeProject.summary}
                     </p>
                   </div>
 
-                  {/* Detailed Description */}
+                  {/* Description */}
                   <div className="text-card-foreground space-y-3 font-mono text-xs leading-relaxed sm:text-sm">
                     <p className="text-justify">{activeProject.description}</p>
                   </div>
 
-                  {/* Architecture & Tech Stack */}
+                  {/* Tech Stack */}
                   <div className="border-border border-t-2 pt-4">
                     <span className="text-primary mb-2 block font-mono text-[11px] font-bold tracking-wider uppercase">
                       CORE TECHNOLOGY STACK
                     </span>
+
                     <div className="flex flex-wrap gap-1.5">
                       {activeProject.techStack.map((tech) => (
                         <span
@@ -322,9 +367,10 @@ export function PortfolioSection() {
                 </div>
               </div>
 
-              {/* Bottom Decorative Bar */}
+              {/* Footer */}
               <div className="border-border text-muted-foreground flex flex-col items-center justify-between gap-2 border-t-2 pt-6 font-mono text-xs uppercase sm:flex-row">
                 <span>PROJECT INTERFACE: STRICT TYPESCRIPT SPEC</span>
+
                 <span>
                   ASPECT PRESERVATION: PORTRAIT & LANDSCAPE DUAL PIPELINE
                 </span>

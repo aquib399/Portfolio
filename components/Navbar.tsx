@@ -1,10 +1,12 @@
 "use client";
 
-import { PERSONAL_INFO, NAVIGATION_SECTIONS } from "../data/portfolio";
+import { navigation } from "../data/navigation";
+import { ToggleTheme } from "./theme-toggle";
 import { useState } from "react";
 import Link from "next/link";
-import { ToggleTheme } from "./theme-toggle";
-import { cn } from "@/lib/utils";
+import { portfolio } from "@/data/portfolio";
+
+const data = portfolio.personal;
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -21,18 +23,18 @@ export function Navbar() {
             >
               <span className="bg-primary h-2.5 w-2.5 animate-pulse rounded-full" />
               <span className="text-foreground group-hover:text-primary font-display-wide text-lg tracking-tight transition-colors md:text-xl">
-                {PERSONAL_INFO.name}
+                {data.name}
               </span>
             </Link>
 
             <span className="border-border/40 text-muted-foreground hidden border-l pl-2 font-mono text-xs tracking-wider uppercase lg:inline-block">
-              {PERSONAL_INFO.locationCode} • {PERSONAL_INFO.role}
+              {data.locationCode} • {data.role}
             </span>
           </div>
 
           {/* Desktop Nav Links */}
           <nav className="hidden items-center gap-1 md:flex lg:gap-3">
-            {NAVIGATION_SECTIONS.map((item) => (
+            {navigation.map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
@@ -102,7 +104,7 @@ export function Navbar() {
           <div className="border-border/20 text-muted-foreground border-b pb-2 font-mono text-[11px]">
             INDEX NAVIGATION
           </div>
-          {NAVIGATION_SECTIONS.map((item) => (
+          {navigation.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}

@@ -1,7 +1,8 @@
 import { IconGraduationCap, IconSparkles } from "./Icons";
-import { EDUCATION_HISTORY } from "../data/portfolio";
+import { portfolio } from "../data/portfolio";
 import { SpineTab } from "./SpineTab";
-import { cn } from "@/lib/utils";
+
+const data = portfolio.education;
 
 export function EducationSection() {
   return (
@@ -42,10 +43,10 @@ export function EducationSection() {
               {/* Constellation Orbit Graphic Timeline */}
               <div className="relative">
                 {/* SVG Orbit Lines Connecting Nodes */}
-                <div className="from-primary via-border/50 to-primary/20 absolute top-0 bottom-0 left-6 hidden w-1 bg-gradient-to-b sm:block md:left-12" />
+                <div className="from-primary via-border/50 to-primary/20 absolute top-0 bottom-0 left-6 hidden w-1 bg-linear-to-b sm:block md:left-12" />
 
                 <div className="space-y-12">
-                  {EDUCATION_HISTORY.map((edu, idx) => (
+                  {data.map((edu, idx) => (
                     <div
                       key={edu.id}
                       className="group relative sm:pl-24 md:pl-28"

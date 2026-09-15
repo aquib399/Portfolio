@@ -1,6 +1,6 @@
 "use server";
 
-import { ContactFormData } from "@/types/portfolio";
+import { ContactFormData } from "@/types/query";
 
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const phoneRegex =
@@ -18,15 +18,18 @@ function validateData(formData: ContactFormData): validationResult {
 
   if (!email || email.trim() === "") {
     errors.push({ path: "email", message: "Email is required" });
+  } else if (!emailRegex.test(email)) {
+    errors.push({ path: "email", message: "Invalid email address" });
   }
 
-  if (!emailRegex.test(email)) {
-    errors.push({ path: "email", message: "Invalid email address" });
+  if (phone && !phoneRegex.test(phone)) {
+    errors.push({ path: "phone", message: "Invalid phone number" });
   }
 
   if (!name || name.trim() === "") {
     errors.push({ path: "name", message: "Name is required" });
   }
+
   if (name.length < 2 || name.length > 50) {
     errors.push({
       path: "name",
@@ -42,9 +45,7 @@ function validateData(formData: ContactFormData): validationResult {
       message: "Query must be between 5 and 500 characters"
     });
   }
-  if (phone && !phoneRegex.test(phone)) {
-    errors.push({ path: "phone", message: "Invalid phone number" });
-  }
+
   return errors;
 }
 

@@ -61,9 +61,21 @@ export const portfolio: Portfolio = {
           id: "media-portrait-main",
           type: "image",
           orientation: "portrait",
-          url: "/me/3.png",
-          caption: "Aquib Alam — Visual & Systems Engineering",
-          alt: "Portrait of Aquib Alam wearing sunglasses in vintage red risograph finish"
+          url: "/me/portrait-archway.png",
+          thumbnailUrl: "/me/portrait-archway.png",
+          aspectRatio: "9/16",
+          caption: "Aquib Alam — Full Stack Engineer",
+          alt: "Portrait of Aquib Alam standing under architectural archway in vintage red risograph finish"
+        },
+        {
+          id: "media-portrait-b-w",
+          type: "image",
+          orientation: "portrait",
+          url: "/me/portrait-archway.png",
+          thumbnailUrl: "/me/portrait-archway.png",
+          aspectRatio: "9/16",
+          caption: "Aquib Alam — Dispatch Terminal",
+          alt: "Portrait of Aquib Alam in vintage red risograph finish"
         }
       ],
 
@@ -72,17 +84,31 @@ export const portfolio: Portfolio = {
           id: "media-landscape-cover",
           type: "image",
           orientation: "landscape",
-          url: "/me/1.png",
-          caption: "Psychedelic Linocut Meditating Figure",
-          alt: "Creative Portfolio Cover — Psychedelic Linocut Meditating Figure"
+          url: "/me/landscape-architectural.png",
+          thumbnailUrl: "/me/landscape-architectural.png",
+          aspectRatio: "3/2",
+          caption: "Architectural setting with crimson sun",
+          alt: "Aquib Alam sitting in front of modernist architecture with crimson sun"
         },
         {
           id: "media-landscape-motifs",
           type: "image",
           orientation: "landscape",
-          url: "/me/2.png",
-          caption: "Spotted Mushroom Cap and Cosmic Motifs",
-          alt: "Spotted Mushroom Cap and Cosmic Motifs"
+          url: "/me/landscape-mountains.png",
+          thumbnailUrl: "/me/landscape-mountains.png",
+          aspectRatio: "3/2",
+          caption: "Mountain summit in duotone red sky",
+          alt: "Aquib Alam in front of mountain range with dramatic crimson sky"
+        },
+        {
+          id: "media-landscape-overview",
+          type: "image",
+          orientation: "landscape",
+          url: "/overview/archive-booklet.png",
+          thumbnailUrl: "/overview/archive-booklet.png",
+          aspectRatio: "16/9",
+          caption: "Engineering Index Directory & Sitemap Architecture",
+          alt: "Engineering index directory and sitemap catalog in linocut print"
         }
       ]
     }
@@ -137,8 +163,9 @@ export const portfolio: Portfolio = {
         id: "skill-frontend-media",
         type: "image",
         orientation: "landscape",
-        url: "/site/08-ipad-mockup-outro-contact.png",
-        alt: "Visual interfaces and frontend engineering",
+        url: "/skills/frontend.png",
+        thumbnailUrl: "/skills/frontend.png",
+        alt: "Frontend Web Engineering, DOM Tree, and Interactive Components",
         caption: "Visual interfaces & dom craft",
         aspectRatio: "16/9"
       },
@@ -191,8 +218,9 @@ export const portfolio: Portfolio = {
         id: "skill-backend-media",
         type: "image",
         orientation: "landscape",
-        url: "/site/06-project-b-surreal-eye.png",
-        alt: "Backend data pipelines and API systems",
+        url: "/skills/backend.png",
+        thumbnailUrl: "/skills/backend.png",
+        alt: "Backend Architecture, Microservices, and Database Pipelines",
         caption: "Data pipelines & services",
         aspectRatio: "16/9"
       },
@@ -240,8 +268,9 @@ export const portfolio: Portfolio = {
         id: "skill-devops-media",
         type: "image",
         orientation: "landscape",
-        url: "/site/07-project-c-woodcut-textures.png",
-        alt: "DevOps cloud infrastructure and tooling",
+        url: "/skills/devops.png",
+        thumbnailUrl: "/skills/devops.png",
+        alt: "DevOps Cloud Orchestration, Containers, and CI/CD Pipelines",
         caption: "Containers, cloud & scale",
         aspectRatio: "16/9"
       },
@@ -364,7 +393,16 @@ export const portfolio: Portfolio = {
       period: "2020 — 2024",
       location: "Kolkata, india",
       badge: "B.tech cse",
-
+      media: {
+        id: "edu-btech-media",
+        type: "image",
+        orientation: "landscape",
+        url: "/education/btech-wbut.png",
+        thumbnailUrl: "/education/btech-wbut.png",
+        alt: "Computer Science & Engineering Academic Foundations",
+        caption: "CS & SE Academic Rigor // Algorithms & Distributed Systems",
+        aspectRatio: "16/9"
+      },
       achievements: [
         "Comprehensive study of Data Structures, Algorithms, Distributed Systems, and Database Management",
         "Engineered open-source full stack web systems and led collegiate developer initiatives",
@@ -379,6 +417,17 @@ export const portfolio: Portfolio = {
       period: "2018 — 2020",
       location: "Kolkata, india",
       badge: "Science & math",
+      media: {
+        id: "edu-hs-media",
+        type: "image",
+        orientation: "landscape",
+        url: "/education/hs-science.png",
+        thumbnailUrl: "/education/hs-science.png",
+        alt: "Pure Sciences, Physics and Mathematics Foundations",
+        caption:
+          "Pure Sciences & Mathematical Logic // Physics, Math & Algorithms",
+        aspectRatio: "16/9"
+      },
       achievements: [
         "Advanced Mathematics, Physics, and Computer Science specializations",
         "Algorithmic problem-solving competitions and Olympiad preparation"
@@ -417,28 +466,30 @@ export const portfolio: Portfolio = {
           id: "pa-media-1",
           type: "image",
           orientation: "landscape",
-          url: "/site/04-showcase-grid-about-skills-portfolio-project-a.png",
-          alt: "HyperFlow Engine Master Grid View",
+          url: "/projects/hyperflow-engine/showcase-grid.png",
+          thumbnailUrl: "/projects/hyperflow-engine/showcase-grid.png",
+          alt: "HyperFlow Engine Real-Time Distributed Architecture & Telemetry Grid",
           caption:
-            "Landscape Architecture Overview: 4-Quadrant system view and real-time dashboard layout",
+            "Landscape Architecture: Real-time event streaming and dashboard telemetry layout",
           aspectRatio: "16/9"
         },
         {
           id: "pa-media-2",
           type: "image",
           orientation: "portrait",
-          url: "/site/03-creative-portfolio-hero.png",
-          alt: "HyperFlow Mobile Stream Visualizer",
+          url: "/projects/hyperflow-engine/mobile-stream.png",
+          thumbnailUrl: "/projects/hyperflow-engine/mobile-stream.png",
+          alt: "HyperFlow Mobile Stream Node Telemetry Visualizer",
           caption:
             "Portrait Interface: Deep-dive node inspect pane with tactile visual telemetry",
-          aspectRatio: "4/5"
+          aspectRatio: "3/4"
         },
         {
           id: "pa-media-3",
           type: "video",
           orientation: "landscape",
           url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-          thumbnailUrl: "/site/05-laptop-mockup-hero.png",
+          thumbnailUrl: "/projects/hyperflow-engine/preview-thumbnail.png",
           alt: "HyperFlow Interactive Walkthrough Video",
           caption:
             "Interactive Walkthrough: Multi-tenant event processing demonstration",
@@ -477,28 +528,30 @@ export const portfolio: Portfolio = {
           id: "pb-media-1",
           type: "image",
           orientation: "landscape",
-          url: "/site/06-project-b-surreal-eye.png",
-          alt: "Lumina Commerce Visual Identity and Surreal Eye Graphic",
+          url: "/projects/lumina-commerce/storefront-cover.png",
+          thumbnailUrl: "/projects/lumina-commerce/storefront-cover.png",
+          alt: "Lumina Commerce Headless Architecture & Digital Store Showcase",
           caption:
-            "Landscape Display: Project B core visual poster with linocut eye motif",
+            "Landscape Display: Headless commerce architecture and digital catalog",
           aspectRatio: "16/9"
         },
         {
           id: "pb-media-2",
           type: "image",
           orientation: "portrait",
-          url: "/site/08-ipad-mockup-outro-contact.png",
-          alt: "Lumina Mobile Checkout Flow",
+          url: "/projects/lumina-commerce/mobile-checkout.png",
+          thumbnailUrl: "/projects/lumina-commerce/mobile-checkout.png",
+          alt: "Lumina Zero-Latency Biometric Checkout Sheet",
           caption:
-            "Portrait Display: Streamlined mobile payment sheet with one-click verification",
-          aspectRatio: "4/5"
+            "Portrait Display: Streamlined mobile payment sheet with biometric verification",
+          aspectRatio: "3/4"
         },
         {
           id: "pb-media-3",
           type: "video",
           orientation: "landscape",
           url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-          thumbnailUrl: "/site/06-project-b-surreal-eye.png",
+          thumbnailUrl: "/projects/lumina-commerce/preview-thumbnail.png",
           alt: "Lumina Commerce Workflow Video",
           caption:
             "Live Checkout Session: Instant payment confirmation and inventory decrement",
@@ -536,28 +589,30 @@ export const portfolio: Portfolio = {
           id: "pc-media-1",
           type: "image",
           orientation: "landscape",
-          url: "/site/07-project-c-woodcut-textures.png",
-          alt: "Zenith Workspace Linocut Textures and Organic Contours",
+          url: "/projects/zenith-workspace/workspace-canvas.png",
+          thumbnailUrl: "/projects/zenith-workspace/workspace-canvas.png",
+          alt: "Zenith Workspace Minimalist Split-Pane Markdown Canvas",
           caption:
-            "Landscape View: Japanese woodblock & cellular topographic textures motif",
+            "Landscape View: Minimalist code & markdown studio with peer-to-peer sync nodes",
           aspectRatio: "16/9"
         },
         {
           id: "pc-media-2",
           type: "image",
           orientation: "portrait",
-          url: "/site/02-overview-booklet-mockup.png",
-          alt: "Zenith Studio Mobile Note Reader",
+          url: "/projects/zenith-workspace/mobile-studio.png",
+          thumbnailUrl: "/projects/zenith-workspace/mobile-studio.png",
+          alt: "Zenith Tactile Note Reader and Offline Editor",
           caption:
             "Portrait View: Compact typography view optimized for handheld reading",
-          aspectRatio: "4/5"
+          aspectRatio: "3/4"
         },
         {
           id: "pc-media-3",
           type: "video",
           orientation: "landscape",
           url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-          thumbnailUrl: "/site/07-project-c-woodcut-textures.png",
+          thumbnailUrl: "/projects/zenith-workspace/preview-thumbnail.png",
           alt: "Zenith Workspace Video Preview",
           caption:
             "Interactive Demo: Real-time peer-to-peer sync and split-pane markdown parsing",

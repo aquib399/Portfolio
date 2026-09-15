@@ -1,7 +1,8 @@
 import { Bebas_Neue, Syne } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import ThemeProvider from "@/providers/theme";
-import type { Metadata } from "next";
 import { portfolio } from "@/data/portfolio";
+import type { Metadata } from "next";
 import "./globals.css";
 
 const sans = Bebas_Neue({
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
     siteName: `${personal.name} Portfolio`,
     images: [
       {
-        url: "/site/01-overview-moodboard.jpg",
+        url: "/overview/og-cover.png",
         width: 1400,
         height: 875,
         alt: `${personal.name} — Creative Portfolio Overview`
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${personal.name.toUpperCase()} — ${personal.role}`,
     description: personal.shortBio,
-    images: ["/site/01-overview-moodboard.jpg"]
+    images: ["/overview/og-cover.png"]
   }
 };
 
@@ -69,6 +70,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${sans.variable} ${mono.variable} h-full scroll-smooth antialiased`}
     >
+      <Analytics />
       <body>
         <ThemeProvider>{children}</ThemeProvider>
       </body>

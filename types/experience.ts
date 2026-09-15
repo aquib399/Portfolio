@@ -8,5 +8,5 @@ export interface Experience {
   description: string;
   highlights: string[];
   skillsUsed: string[];
-  badge?: string;
+  badge: string;
 }

@@ -6,7 +6,7 @@ export const portfolio: Portfolio = {
     firstName: "Aquib",
     lastName: "Alam",
     role: "Software Engineer",
-    subRole: "CREATIVE ENGINEER & ARCHITECT",
+    subRole: "Creative Engineer & Architect",
     location: "Kolkata, India",
     locationCode: "Kolkata",
     status: "Available for new roles & collaborations",
@@ -19,41 +19,41 @@ export const portfolio: Portfolio = {
       "Today, I engineer codebases with deliberate intent: modular components, immutable data flows, high-performance rendering, and comprehensive type safety that scales effortlessly from day one."
     ],
     quote:
-      "BALANCING RAPID DELIVERY SPEED WITH SUSTAINABLE ARCHITECTURE. CLEAN CODE, FASTER ITERATIONS, TACTILE CRAFTSMANSHIP.",
+      "Balancing rapid delivery speed with sustainable architecture. clean code, faster iterations, tactile craftsmanship.",
     metadataTags: [
-      "[FULL STACK CRAFTSMANSHIP]",
-      "[PERFORMANCE ARCHITECT]",
-      "[TYPE-SAFE ECOSYSTEMS]",
-      "[TACTILE USER EXPERIENCE]"
+      "[full stack craftsmanship]",
+      "[performance architect]",
+      "[type-safe ecosystems]",
+      "[tactile user experience]"
     ],
-    aboutHeading: "THE ENGINEER BEHIND THE CRAFT",
-    aboutSectionTag: "SECTION 01 // PROFILE & ARCHITECTURAL PHILOSOPHY",
+    aboutHeading: "The engineer behind the craft",
+    aboutSectionTag: "Section 01 // profile & architectural philosophy",
     pillars: [
       {
-        title: "THE CRAFT",
+        title: "The craft",
         description:
           "Modular TypeScript components, zero unnecessary re-renders, and predictable state transitions.",
         icon: "code"
       },
       {
-        title: "USER-FIRST",
+        title: "User-first",
         description:
           "Accessible layouts, sub-second latency, and visceral visual tactility inspired by print design.",
         icon: "sparkles"
       }
     ],
-    heroBadge: "OP-ART STIPPLE • LINOCUT SERIGRAPHY",
-    overviewEdition: "VOLUME 01 • EDITION 2025",
+    heroBadge: "Op-art stipple • linocut serigraphy",
+    overviewEdition: "Volume 01 • edition 2025",
     experiencePhilosophy: {
-      title: "THE PHILOSOPHY",
+      title: "The philosophy",
       quote:
         "I balance delivery speed with clear structure and sustainable practices so the codebase remains easy to understand, test, and evolve."
     },
     contactPitch:
-      "HAVE A COMPLEX ARCHITECTURE TO BUILD, A PRODUCT TO LAUNCH, OR A COLLABORATION TO PROPOSE? SEND A DIRECT DISPATCH.",
+      "Have a complex architecture to build, a product to launch, or a collaboration to propose? send a direct dispatch.",
     contactMeta: {
-      security: "SECURITY: SSL ENCRYPTED",
-      responseTime: "RESPONSE TIME: < 24 HOURS"
+      security: "Security: ssl encrypted",
+      responseTime: "Response time: < 24 hours"
     },
     media: {
       portrait: [
@@ -61,25 +61,9 @@ export const portfolio: Portfolio = {
           id: "media-portrait-main",
           type: "image",
           orientation: "portrait",
-          url: "/me/1.png",
+          url: "/me/3.png",
           caption: "Aquib Alam — Visual & Systems Engineering",
           alt: "Portrait of Aquib Alam wearing sunglasses in vintage red risograph finish"
-        },
-        {
-          id: "media-portrait-alt",
-          type: "image",
-          orientation: "portrait",
-          url: "/me/3.png",
-          caption: "Portrait of Aquib Alam wearing sunglasses",
-          alt: "Portrait of Aquib Alam wearing sunglasses in vintage red risograph finish"
-        },
-        {
-          id: "media-portrait-b-w",
-          type: "image",
-          orientation: "portrait",
-          url: "/site/02-overview-booklet-mockup.png",
-          caption: "Printmaking sensibilities translated to the DOM",
-          alt: "Printed booklet mockup with overview table of contents and portrait"
         }
       ],
 
@@ -99,23 +83,6 @@ export const portfolio: Portfolio = {
           url: "/me/2.png",
           caption: "Spotted Mushroom Cap and Cosmic Motifs",
           alt: "Spotted Mushroom Cap and Cosmic Motifs"
-        },
-        {
-          id: "media-landscape-workstation",
-          type: "image",
-          orientation: "landscape",
-          url: "/me/2.png",
-          caption: "Next-gen interfaces built on modern web standards",
-          alt: "MacBook Pro displaying creative portfolio interface"
-        },
-        {
-          id: "media-landscape-moodboard",
-          type: "image",
-          orientation: "landscape",
-          url: "/site/01-overview-moodboard.jpg",
-          caption:
-            "The intersection of Brutalism, Linocut Art, and Modern TypeScript",
-          alt: "Comprehensive portfolio design board featuring all layout modules"
         }
       ]
     }
@@ -125,28 +92,28 @@ export const portfolio: Portfolio = {
     {
       id: "social-github",
       platform: "github",
-      label: "GITHUB",
+      label: "Github",
       url: "https://github.com/aquib399",
       handle: "@aquib399"
     },
     {
       id: "social-linkedin",
       platform: "linkedin",
-      label: "LINKEDIN",
+      label: "Linkedin",
       url: "https://linkedin.com/in/aquib-alam",
       handle: "in/aquib399"
     },
     {
       id: "social-email",
       platform: "email",
-      label: "EMAIL",
+      label: "Email",
       url: "mailto:aquibalam399@gmail.com",
       handle: "aquibalam399@gmail.com"
     },
     {
       id: "social-twitter",
       platform: "twitter",
-      label: "X / TWITTER",
+      label: "X / twitter",
       url: "https://twitter.com/aquib399",
       handle: "@aquib399"
     },
@@ -155,24 +122,24 @@ export const portfolio: Portfolio = {
       platform: "resume",
       label: "Résumé",
       url: "#contact",
-      handle: "DOWNLOAD CV"
+      handle: "Download cv"
     }
   ],
 
   skillCategory: [
     {
       id: "frontend",
-      title: "FRONTEND & INTERACTION",
-      subtitle: "HIGH-PERFORMANCE USER INTERFACES",
-      stackedTitle: ["PHOTO", "GRA", "PHY"],
-      statusBadge: "PRODUCTION READY",
+      title: "Frontend & interaction",
+      subtitle: "High-performance user interfaces",
+      stackedTitle: ["Photo", "Gra", "Phy"],
+      statusBadge: "Production ready",
       media: {
         id: "skill-frontend-media",
         type: "image",
         orientation: "landscape",
         url: "/site/08-ipad-mockup-outro-contact.png",
         alt: "Visual interfaces and frontend engineering",
-        caption: "VISUAL INTERFACES & DOM CRAFT",
+        caption: "Visual interfaces & dom craft",
         aspectRatio: "16/9"
       },
       skills: [
@@ -216,17 +183,17 @@ export const portfolio: Portfolio = {
 
     {
       id: "backend",
-      title: "BACKEND & DATA SYSTEMS",
-      subtitle: "ROBUST, RESILIENT ARCHITECTURES",
-      stackedTitle: ["ILLUSTRA", "TION"],
-      statusBadge: "PRODUCTION READY",
+      title: "Backend & data systems",
+      subtitle: "Robust, resilient architectures",
+      stackedTitle: ["Illustra", "Tion"],
+      statusBadge: "Production ready",
       media: {
         id: "skill-backend-media",
         type: "image",
         orientation: "landscape",
         url: "/site/06-project-b-surreal-eye.png",
         alt: "Backend data pipelines and API systems",
-        caption: "DATA PIPELINES & SERVICES",
+        caption: "Data pipelines & services",
         aspectRatio: "16/9"
       },
       skills: [
@@ -265,17 +232,17 @@ export const portfolio: Portfolio = {
 
     {
       id: "devops",
-      title: "DEVOPS, SYSTEMS & TOOLS",
-      subtitle: "AUTOMATION & SCALE",
-      stackedTitle: ["GRAPHIC", "DESIGN"],
-      statusBadge: "PRODUCTION READY",
+      title: "Devops, systems & tools",
+      subtitle: "Automation & scale",
+      stackedTitle: ["Graphic", "Design"],
+      statusBadge: "Production ready",
       media: {
         id: "skill-devops-media",
         type: "image",
         orientation: "landscape",
         url: "/site/07-project-c-woodcut-textures.png",
         alt: "DevOps cloud infrastructure and tooling",
-        caption: "CONTAINERS, CLOUD & SCALE",
+        caption: "Containers, cloud & scale",
         aspectRatio: "16/9"
       },
       skills: [
@@ -316,12 +283,12 @@ export const portfolio: Portfolio = {
   experience: [
     {
       id: "exp-fullstack-lead",
-      company: "CREATIVE TECH LABS",
-      role: "FULL STACK ENGINEER",
-      period: "2024 — PRESENT",
-      location: "REMOTE / HYBRID",
+      company: "Creative tech labs",
+      role: "Full stack engineer",
+      period: "2024 — present",
+      location: "Remote / hybrid",
       type: "Full-time",
-      badge: "CURRENT ROLE",
+      badge: "Current role",
       description:
         "Spearheading front-end and back-end web architecture for client-facing digital products, real-time analytics platforms, and design-system integrations.",
       highlights: [
@@ -341,12 +308,12 @@ export const portfolio: Portfolio = {
     },
     {
       id: "exp-frontend-dev",
-      company: "INNOVATION DIGITAL STUDIO",
-      role: "FRONTEND DEVELOPER",
+      company: "Innovation digital studio",
+      role: "Frontend developer",
       period: "2023 — 2024",
-      location: "KOLKATA, INDIA",
+      location: "Kolkata, india",
       type: "Full-time",
-      badge: "FRONTEND SPECIALIST",
+      badge: "Frontend specialist",
       description:
         "Collaborated closely with UI/UX designers to translate Figma design systems into interactive, responsive, and accessible web experiences.",
       highlights: [
@@ -365,12 +332,12 @@ export const portfolio: Portfolio = {
     },
     {
       id: "exp-freelance",
-      company: "INDEPENDENT CLIENT CONSULTING",
-      role: "FULL STACK DEVELOPER & ARCHITECT",
+      company: "Independent client consulting",
+      role: "Full stack developer & architect",
       period: "2022 — 2023",
-      location: "KOLKATA, INDIA",
+      location: "Kolkata, india",
       type: "Freelance",
-      badge: "CONSULTANT",
+      badge: "Consultant",
       description:
         "Delivered end-to-end bespoke software solutions for early-stage startups and creative founders worldwide.",
       highlights: [
@@ -391,12 +358,13 @@ export const portfolio: Portfolio = {
   education: [
     {
       id: "edu-btech",
-      institution: "WEST BENGAL UNIVERSITY OF TECHNOLOGY",
-      degree: "BACHELOR OF TECHNOLOGY",
-      field: "COMPUTER SCIENCE & ENGINEERING",
+      institution: "West bengal university of technology",
+      degree: "Bachelor of technology",
+      field: "Computer science & engineering",
       period: "2020 — 2024",
-      location: "KOLKATA, INDIA",
-      badge: "B.TECH CSE",
+      location: "Kolkata, india",
+      badge: "B.tech cse",
+
       achievements: [
         "Comprehensive study of Data Structures, Algorithms, Distributed Systems, and Database Management",
         "Engineered open-source full stack web systems and led collegiate developer initiatives",
@@ -405,12 +373,12 @@ export const portfolio: Portfolio = {
     },
     {
       id: "edu-hs",
-      institution: "KOLKATA SENIOR SECONDARY ACADEMY",
-      degree: "HIGHER SECONDARY (CLASS XII)",
-      field: "PURE SCIENCES (PHYSICS, CHEMISTRY, MATHEMATICS)",
+      institution: "Kolkata senior secondary academy",
+      degree: "Higher secondary (class xii)",
+      field: "Pure sciences (physics, chemistry, mathematics)",
       period: "2018 — 2020",
-      location: "KOLKATA, INDIA",
-      badge: "SCIENCE & MATH",
+      location: "Kolkata, india",
+      badge: "Science & math",
       achievements: [
         "Advanced Mathematics, Physics, and Computer Science specializations",
         "Algorithmic problem-solving competitions and Olympiad preparation"
@@ -423,9 +391,9 @@ export const portfolio: Portfolio = {
       id: "project-a",
       slug: "hyperflow-engine",
       letterBadge: "A",
-      title: "HYPERFLOW ENGINE",
-      subtitle: "DISTRIBUTED REAL-TIME ANALYTICS & CANVAS",
-      category: "FULL STACK / DISTRIBUTED SYSTEMS",
+      title: "Hyperflow engine",
+      subtitle: "Distributed real-time analytics & canvas",
+      category: "Full stack / distributed systems",
       year: "2025",
       summary:
         "High-throughput real-time event aggregation engine with interactive collaborative canvas, sub-millisecond pipeline processing, and instant visualization.",
@@ -483,9 +451,9 @@ export const portfolio: Portfolio = {
       id: "project-b",
       slug: "lumina-commerce",
       letterBadge: "B",
-      title: "LUMINA OS COMMERCE",
-      subtitle: "HEADLESS ARCHITECTURE WITH ZERO-LATENCY CHECKOUT",
-      category: "FULL STACK / E-COMMERCE",
+      title: "Lumina os commerce",
+      subtitle: "Headless architecture with zero-latency checkout",
+      category: "Full stack / e-commerce",
       year: "2024",
       summary:
         "Next-generation headless commerce platform with dynamic inventory synchronization, biometric checkout flows, and Stripe webhook orchestration.",
@@ -499,7 +467,7 @@ export const portfolio: Portfolio = {
         "PostgreSQL",
         "Stripe API",
         "Tailwind CSS",
-        "AWS S3"
+        "Aws s3"
       ],
       liveUrl: "https://lumina-demo.example.com",
       githubUrl: "https://github.com/aquib399",
@@ -543,9 +511,9 @@ export const portfolio: Portfolio = {
       id: "project-c",
       slug: "zenith-workspace",
       letterBadge: "C",
-      title: "ZENITH WORKSPACE",
-      subtitle: "COLLABORATIVE DEVELOPER WORKSPACE & CANVAS",
-      category: "FULL STACK / DEV TOOLS",
+      title: "Zenith workspace",
+      subtitle: "Collaborative developer workspace & canvas",
+      category: "Full stack / dev tools",
       year: "2024",
       summary:
         "Minimalist, distraction-free markdown studio with local-first sync, cryptographic revision history, and contextual AI agent integrations.",

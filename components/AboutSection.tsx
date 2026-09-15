@@ -9,7 +9,7 @@ import Image from "next/image";
 
 const data = portfolio.personal;
 
-const PERSONAL_MEDIA = [...data.media.portrait, ...data.media.landscape];
+const PERSONAL_MEDIA = [...data.media.landscape, ...data.media.portrait];
 
 export function AboutSection() {
   const [activeMediaIndex, setActiveMediaIndex] = useState(0);
@@ -27,7 +27,7 @@ export function AboutSection() {
           <SpineTab label="ABOUT ME" theme="primary" side="left" />
 
           {/* Main About Card Body */}
-          <div className="relative flex-1 overflow-hidden p-6 sm:p-10 md:p-14">
+          <div className="relative flex-1 overflow-hidden p-6 sm:p-10 md:px-14">
             {/* Top Sub-Header */}
             <div className="border-border mb-8 flex flex-col justify-between gap-3 border-b-2 pb-6 sm:flex-row sm:items-center">
               <div>
@@ -165,7 +165,7 @@ export function AboutSection() {
             {/* Signature Typography */}
             <div className="border-border overflow-hidden border-t-3 pt-6 select-none">
               <div className="text-center">
-                <span className="font-display-condensed text-primary hover:text-foreground block text-6xl leading-none tracking-tighter transition-colors sm:text-8xl md:text-9xl lg:text-[13rem]">
+                <span className="font-display-condensed text-primary animate-cover block text-8xl leading-none tracking-tighter sm:text-9xl md:text-[10rem] lg:text-[12rem] xl:text-[14rem]">
                   {data.name}
                 </span>
               </div>

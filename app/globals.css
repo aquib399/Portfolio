@@ -150,3 +150,22 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--scrollbar-thumb-hover);
 }
+@keyframes cover {
+  0%,
+  35.71% {
+    color: var(--primary);
+  }
+
+  50%,
+  85.71% {
+    color: var(--foreground);
+  }
+
+  100% {
+    color: var(--primary);
+  }
+}
+
+.animate-cover {
+  animation: cover 5s linear infinite;
+}

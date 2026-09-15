@@ -8,7 +8,7 @@ export function SkillsSection() {
   return (
     <section
       id="skills"
-      className="border-border bg-background w-full border-b-2 px-4 py-16 transition-colors sm:px-6 lg:px-8"
+      className="border-border bg-primary w-full border-b-2 px-4 py-16 transition-colors sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
         <div className="border-border bg-card flex border-3 shadow-[8px_8px_0px_0px_var(--primary)] transition-colors">

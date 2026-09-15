@@ -41,12 +41,16 @@ export function SpineTab({
       className={cn(
         "hidden items-center justify-center px-3 py-6 select-none md:flex",
         sideClasses,
-        selectedThemeClass,
-        className
+        selectedThemeClass
       )}
       aria-hidden="true"
     >
-      <span className="font-display-condensed vertical-spine-text text-2xl font-bold tracking-widest whitespace-nowrap">
+      <span
+        className={cn(
+          "font-display-condensed vertical-spine-text text-5xl font-bold tracking-widest whitespace-nowrap",
+          className
+        )}
+      >
         {label}
       </span>
     </div>

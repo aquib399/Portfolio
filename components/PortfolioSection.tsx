@@ -46,12 +46,12 @@ export function PortfolioSection() {
   return (
     <section
       id="portfolio"
-      className="border-border bg-primary w-full border-b-2 px-4 py-16 transition-colors sm:px-6 lg:px-8"
+      className="border-border bg-secondary w-full border-b-2 px-4 py-16 transition-colors sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="border-border bg-card text-card-foreground border-3 shadow-[8px_8px_0px_0px_var(--border)] transition-colors">
+        <div className="border-border bg-background text-card-foreground border-3 shadow-[8px_8px_0px_0px_var(--border)] transition-colors">
           {/* Header */}
-          <div className="border-border bg-primary text-primary-foreground border-b-3 p-4 text-center sm:p-6">
+          <div className="border-border bg-secondary text-foreground border-b-3 p-4 text-center sm:p-6">
             <h2 className="font-display-wide text-4xl leading-none tracking-tighter sm:text-6xl md:text-8xl">
               PORTFOLIO
             </h2>

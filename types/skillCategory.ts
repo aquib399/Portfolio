@@ -12,6 +12,6 @@ export interface SkillCategory {
 
 export interface Skill {
   name: string;
-  level?: string;
-  description?: string;
+  level: string;
+  description: string;
 }

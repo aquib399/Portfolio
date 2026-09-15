@@ -23,16 +23,16 @@ export interface PersonalInfo {
   media: MediaByOrientation;
   aboutHeading?: string;
   aboutSectionTag?: string;
-  pillars?: Pillar[];
-  heroBadge?: string;
+  pillars: Pillar[];
+  heroBadge: string;
   overviewEdition?: string;
-  experiencePhilosophy?: {
+  experiencePhilosophy: {
     title: string;
     quote: string;
   };
-  contactPitch?: string;
+  contactPitch: string;
   contactMeta?: {
-    security?: string;
-    responseTime?: string;
+    security: string;
+    responseTime: string;
   };
 }

@@ -5,7 +5,7 @@ export interface Media {
   url: string;
   thumbnailUrl?: string;
   alt: string;
-  caption?: string;
+  caption: string;
   aspectRatio?: string; // e.g. "16/9", "4/5", "1/1", "9/16"
 }
 

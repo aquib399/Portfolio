@@ -1,5 +1,5 @@
-import { portfolio } from "@/data/portfolio";
 import { navigation } from "../data/navigation";
+import { portfolio } from "@/data/portfolio";
 import { IconArrowUpRight } from "./Icons";
 import { SpineTab } from "./SpineTab";
 import Image from "next/image";
@@ -12,28 +12,30 @@ export function OverviewSection() {
       id="overview"
       className="border-border bg-primary w-full border-b-2 px-4 py-12 transition-colors sm:px-6 lg:px-8"
     >
+      <div className="halftone-dots text-primary-foreground pointer-events-none absolute inset-0 opacity-25" />
+
       <div className="mx-auto max-w-7xl">
         <div className="border-border bg-card text-card-foreground flex border-3 shadow-[8px_8px_0px_0px_var(--border)] transition-colors">
           {/* Vertical Spine Tab */}
           <SpineTab label="OVERVIEW" theme="background" side="left" />
 
           {/* Main Overview Body */}
-          <div className="bg-primary text-primary-foreground relative flex-1 overflow-hidden p-6 sm:p-10 md:p-14">
+          <div className="bg-secondary text-primary-foreground relative flex-1 overflow-hidden p-6 sm:p-10 md:p-14">
             {/* Background Graphic Accents */}
             <div className="halftone-dots text-primary-foreground pointer-events-none absolute inset-0 opacity-20" />
 
             <div className="relative z-10">
               {/* Header */}
-              <div className="border-primary-foreground/80 mb-8 flex flex-col justify-between gap-4 border-b-2 pb-6 sm:flex-row sm:items-end">
+              <div className="border-border mb-8 flex flex-col justify-between gap-4 border-b-2 pb-6 sm:flex-row sm:items-end">
                 <div>
-                  <span className="text-primary-foreground/80 font-mono text-xs font-bold tracking-widest uppercase">
+                  <span className="text-primary font-mono text-xs font-bold tracking-widest uppercase">
                     TABLE OF CONTENTS // SITEMAP
                   </span>
-                  <h2 className="text-primary-foreground font-display-wide mt-1 text-4xl leading-none tracking-tight sm:text-6xl">
+                  <h2 className="text-primary font-display-wide mt-1 text-4xl leading-none tracking-tight sm:text-6xl">
                     INDEX DIRECTORY
                   </h2>
                 </div>
-                <div className="text-primary-foreground/90 text-right font-mono text-xs uppercase">
+                <div className="text-primary text-right font-mono text-xs uppercase">
                   {data.overviewEdition ?? "VOLUME 01 • EDITION 2025"}
                   <br />
                   CURATED BY {data.firstName}
@@ -43,19 +45,15 @@ export function OverviewSection() {
               {/* Grid: Left is Collage Art, Right is Numbered Index */}
               <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
                 {/* Left: Vintage Collage & Woodcut Elements */}
-                <div className="border-primary-foreground/60 relative border-2 bg-black/40 p-4 backdrop-blur-xs lg:col-span-5">
-                  <div className="border-primary-foreground/40 relative h-72 w-full overflow-hidden border sm:h-80">
+                <div className="border-primary-foreground/60 relative h-full border-2 bg-black/40 p-4 backdrop-blur-xs lg:col-span-5">
+                  <div className="border-primary-foreground/40 relative h-full w-full overflow-hidden border">
                     <Image
-                      src="/site/02-overview-booklet-mockup.png"
+                      src={data.media.portrait[0].url}
                       alt="Overview Collage with Vintage Engravings and Skull"
                       fill
                       className="object-cover object-left"
                       sizes="(max-width: 1024px) 100vw, 40vw"
                     />
-                  </div>
-                  <div className="text-primary-foreground/80 mt-3 flex items-center justify-between font-mono text-[11px] uppercase">
-                    <span>ARCHIVE CATALOG</span>
-                    <span>FIG. 01 — COLLAGE</span>
                   </div>
                 </div>
 

@@ -11,7 +11,7 @@ export function HeroSection() {
   const secondaryImage = landscapeMedia[1];
 
   return (
-    <section className="border-border bg-primary relative w-full overflow-hidden border-b-2 p-3 transition-colors sm:p-6 md:p-10">
+    <section className="border-border relative w-full overflow-hidden border-b-2 bg-scroll p-3 transition-colors sm:p-6 md:p-10">
       {/* Background print texture */}
       <div className="halftone-dots text-primary-foreground pointer-events-none absolute inset-0 opacity-25" />
 
@@ -53,7 +53,7 @@ export function HeroSection() {
                   src={secondaryImage.url}
                   alt={secondaryImage.alt}
                   fill
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  className="scale-105 object-cover object-top transition-transform duration-500 group-hover:scale-110"
                   sizes="(max-width: 1024px) 100vw, 33vw"
                 />
 
@@ -65,11 +65,11 @@ export function HeroSection() {
               {/* Info Panel */}
               <div className="border-border bg-card flex flex-1 flex-col justify-between border-2 p-4">
                 <div>
-                  <div className="text-primary mb-1 font-mono text-[11px] font-bold tracking-wider uppercase">
+                  <div className="text-primary mb-1 font-mono text-[12px] font-bold tracking-wider uppercase sm:text-lg md:text-xl lg:text-sm">
                     {data.subRole}
                   </div>
 
-                  <h1 className="font-display-condensed text-foreground text-3xl leading-none font-extrabold tracking-widest sm:text-4xl lg:text-5xl">
+                  <h1 className="font-display-condensed text-foreground text-6xl leading-none font-extrabold tracking-widest sm:text-7xl md:text-8xl lg:text-5xl xl:text-6xl">
                     {data.name}
                   </h1>
                 </div>
@@ -78,7 +78,7 @@ export function HeroSection() {
                   {data.metadataTags.map((tag) => (
                     <div
                       key={tag}
-                      className="text-primary text-[11px] font-bold tracking-wider"
+                      className="text-primary text-sm font-bold tracking-wider uppercase sm:text-base md:text-sm lg:text-sm"
                     >
                       {tag}
                     </div>
@@ -99,9 +99,9 @@ export function HeroSection() {
           </div>
 
           {/* Footer Editorial Split */}
-          <div className="border-border mt-8 grid grid-cols-1 items-center gap-4 border-t-2 pt-6 md:grid-cols-12">
+          <div className="border-border mt-8 grid grid-cols-1 items-center gap-4 border-t-2 pt-6 lg:grid-cols-12">
             <div className="md:col-span-5">
-              <h3 className="text-primary font-display-wide text-3xl leading-tight sm:text-5xl">
+              <h3 className="text-primary font-display-wide text-5xl sm:text-8xl lg:text-6xl xl:text-7xl">
                 Hi, I'm {data.name}
               </h3>
             </div>

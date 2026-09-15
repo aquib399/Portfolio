@@ -3,12 +3,14 @@
 import { PERSONAL_INFO, NAVIGATION_SECTIONS } from "../data/portfolio";
 import { useState } from "react";
 import Link from "next/link";
+import { ToggleTheme } from "./theme-toggle";
+import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b-2 border-[#111111] bg-[#F4EFEA]/95 backdrop-blur-sm transition-all">
+    <header className="border-border bg-background/95 sticky top-0 z-50 border-b-2 backdrop-blur-sm transition-colors">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-14 items-center justify-between md:h-16">
           {/* Logo & Live Status */}
@@ -17,12 +19,13 @@ export function Navbar() {
               href="/"
               className="group text-decoration-none flex items-center gap-2"
             >
-              <span className="text-lg tracking-tight text-[#111111] transition-colors group-hover:text-[#E53826] md:text-xl">
+              <span className="bg-primary h-2.5 w-2.5 animate-pulse rounded-full" />
+              <span className="text-foreground group-hover:text-primary font-display-wide text-lg tracking-tight transition-colors md:text-xl">
                 {PERSONAL_INFO.name}
               </span>
             </Link>
 
-            <span className="hidden border-l border-[#111111]/30 pl-2 font-mono text-xs tracking-wider text-[#78716c] uppercase lg:inline-block">
+            <span className="border-border/40 text-muted-foreground hidden border-l pl-2 font-mono text-xs tracking-wider uppercase lg:inline-block">
               {PERSONAL_INFO.locationCode} • {PERSONAL_INFO.role}
             </span>
           </div>
@@ -33,16 +36,19 @@ export function Navbar() {
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className="flex items-center gap-1 rounded px-2.5 py-1 font-mono text-xs tracking-wider text-[#111111] uppercase transition-all hover:bg-[#111111]/5 hover:text-[#E53826]"
+                className="text-foreground hover:bg-foreground/5 hover:text-primary flex items-center gap-1 rounded px-2.5 py-1 font-mono text-xs tracking-wider uppercase transition-all"
               >
-                <span className="font-bold text-[#E53826]">{item.number}</span>
+                <span className="text-primary font-bold">{item.number}</span>
                 <span>{item.title}</span>
               </a>
             ))}
 
+            {/* Dark Mode Theme Toggle */}
+            <ToggleTheme className="ml-1" />
+
             <a
               href="#contact"
-              className="font-display-condensed ml-2 border border-[#111111] bg-[#E53826] px-3 py-1.5 text-xs tracking-wider text-white shadow-[2px_2px_0px_0px_#111111] transition-colors hover:bg-[#111111]"
+              className="font-display-condensed border-border bg-primary text-primary-foreground hover:bg-foreground hover:text-background ml-2 border-2 px-3 py-1.5 text-xs tracking-wider shadow-[2px_2px_0px_0px_var(--border)] transition-all active:translate-x-0.5 active:translate-y-0.5"
             >
               LET'S TALK
             </a>
@@ -50,16 +56,17 @@ export function Navbar() {
 
           {/* Mobile menu button */}
           <div className="flex items-center gap-2 md:hidden">
+            <ToggleTheme />
             <a
               href="#contact"
-              className="font-display-condensed border border-[#111111] bg-[#E53826] px-2.5 py-1 text-[11px] tracking-wider text-white"
+              className="font-display-condensed border-border bg-primary text-primary-foreground border-2 px-2.5 py-1 text-[11px] tracking-wider"
             >
               HIRE ME
             </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               type="button"
-              className="p-2 text-[#111111] hover:text-[#E53826] focus:outline-none"
+              className="text-foreground hover:text-primary cursor-pointer p-2 focus:outline-none"
               aria-label="Toggle Navigation"
             >
               <svg
@@ -91,8 +98,8 @@ export function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="space-y-2 border-t-2 border-[#111111] bg-[#F4EFEA] px-4 py-4 shadow-lg md:hidden">
-          <div className="border-b border-[#111111]/20 pb-2 font-mono text-[11px] text-[#78716c]">
+        <div className="border-border bg-background space-y-2 border-t-2 px-4 py-4 shadow-lg md:hidden">
+          <div className="border-border/20 text-muted-foreground border-b pb-2 font-mono text-[11px]">
             INDEX NAVIGATION
           </div>
           {NAVIGATION_SECTIONS.map((item) => (
@@ -100,17 +107,19 @@ export function Navbar() {
               key={item.id}
               href={`#${item.id}`}
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-between border-b border-[#111111]/10 py-2 font-mono text-sm text-[#111111] hover:text-[#E53826]"
+              className="border-border/15 text-foreground hover:text-primary flex items-center justify-between border-b py-2 font-mono text-sm transition-colors"
             >
               <span className="font-bold">{item.title}</span>
-              <span className="text-xs text-[#E53826]">[{item.number}]</span>
+              <span className="text-primary text-xs font-bold">
+                [{item.number}]
+              </span>
             </a>
           ))}
           <div className="pt-2">
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="font-display-condensed block w-full border border-[#111111] bg-[#E53826] py-2.5 text-center text-lg tracking-widest text-white"
+              className="border-border bg-primary font-display-condensed text-primary-foreground block w-full border-2 py-2.5 text-center text-lg tracking-widest shadow-[2px_2px_0px_0px_var(--border)]"
             >
               START A PROJECT
             </a>

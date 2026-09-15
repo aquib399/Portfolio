@@ -1,6 +1,7 @@
 import { SKILL_CATEGORIES } from "../data/portfolio";
 import { SpineTab } from "./SpineTab";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 export function SkillsSection() {
   const visualMotifs = [
@@ -24,35 +25,35 @@ export function SkillsSection() {
   return (
     <section
       id="skills"
-      className="w-full border-b-2 border-[#111111] bg-[#191817] px-4 py-16 sm:px-6 lg:px-8"
+      className="border-border bg-retro-dark w-full border-b-2 px-4 py-16 transition-colors sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="flex border-3 border-[#111111] bg-[#111111] shadow-[8px_8px_0px_0px_#E53826]">
+        <div className="border-border bg-card flex border-3 shadow-[8px_8px_0px_0px_var(--primary)] transition-colors">
           {/* Vertical Spine Tab */}
           <SpineTab label="TECHNICAL SKILLS" theme="cream" side="left" />
 
           {/* Main Skills Body */}
-          <div className="relative flex-1 overflow-hidden bg-[#191817] p-6 text-[#F4EFEA] sm:p-10 md:p-14">
+          <div className="bg-retro-dark text-foreground relative flex-1 overflow-hidden p-6 sm:p-10 md:p-14">
             {/* Background Texture */}
-            <div className="halftone-dots-white pointer-events-none absolute inset-0 opacity-10" />
+            <div className="halftone-dots text-foreground pointer-events-none absolute inset-0 opacity-10" />
 
             <div className="relative z-10">
               {/* Header */}
-              <div className="mb-10 flex flex-col justify-between gap-3 border-b-2 border-[#F4EFEA]/30 pb-6 sm:flex-row sm:items-baseline">
+              <div className="border-border/40 mb-10 flex flex-col justify-between gap-3 border-b-2 pb-6 sm:flex-row sm:items-baseline">
                 <div>
-                  <span className="font-mono text-xs font-bold tracking-widest text-[#E53826] uppercase">
+                  <span className="text-primary font-mono text-xs font-bold tracking-widest uppercase">
                     SECTION 02 // TECHNICAL ARSENAL & CAPABILITIES
                   </span>
-                  <h2 className="mt-1 text-3xl leading-none tracking-tight text-white sm:text-5xl">
+                  <h2 className="text-foreground font-display-wide mt-1 text-3xl leading-none tracking-tight sm:text-5xl">
                     ENGINEERING DOMAINS
                   </h2>
                 </div>
-                <div className="font-mono text-xs tracking-widest text-[#F4EFEA]/70 uppercase">
+                <div className="text-muted-foreground font-mono text-xs tracking-widest uppercase">
                   RIGOROUS SPECIFICATIONS • MODERN STANDARDS
                 </div>
               </div>
 
-              {/* 3 Pillars Grid (Matching Behance layout: Photo / Gra / Phy, Illustra / Tion, Graphic / Design) */}
+              {/* 3 Pillars Grid */}
               <div className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-3">
                 {SKILL_CATEGORIES.map((category, index) => {
                   const motif = visualMotifs[index] || visualMotifs[0];
@@ -60,33 +61,33 @@ export function SkillsSection() {
                   return (
                     <div
                       key={category.id}
-                      className="group flex flex-col justify-between border-2 border-[#F4EFEA]/40 bg-[#111111]/80 p-5 transition-colors hover:border-[#E53826]"
+                      className="group border-border/40 bg-card/60 hover:border-primary flex flex-col justify-between border-2 p-5 shadow-[2px_2px_0px_0px_var(--border)] transition-colors"
                     >
                       <div>
                         {/* Stacked Ultra-Condensed Title */}
-                        <div className="mb-4 border-b border-[#F4EFEA]/20 pb-4">
+                        <div className="border-border/30 mb-4 border-b pb-4">
                           <div className="flex items-start justify-between">
-                            <div className="font-display-condensed text-4xl leading-none tracking-wider text-white sm:text-5xl">
+                            <div className="font-display-condensed text-foreground text-4xl leading-none tracking-wider sm:text-5xl">
                               {motif.columnTitle.map((part, i) => (
                                 <div
                                   key={i}
-                                  className="transition-colors group-hover:text-[#E53826]"
+                                  className="group-hover:text-primary transition-colors"
                                 >
                                   {part}
                                 </div>
                               ))}
                             </div>
-                            <span className="font-mono text-xs font-bold text-[#E53826]">
+                            <span className="text-primary font-mono text-xs font-bold">
                               [0{index + 1}]
                             </span>
                           </div>
-                          <p className="mt-2 font-mono text-[11px] tracking-wider text-[#F4EFEA]/70 uppercase">
+                          <p className="text-muted-foreground mt-2 font-mono text-[11px] tracking-wider uppercase">
                             {category.subtitle}
                           </p>
                         </div>
 
                         {/* Inset Framed Artwork Motif */}
-                        <div className="relative mb-4 h-36 w-full overflow-hidden border border-[#F4EFEA]/30 bg-black">
+                        <div className="border-border/30 relative mb-4 h-36 w-full overflow-hidden border bg-black">
                           <Image
                             src={motif.image}
                             alt={motif.caption}
@@ -104,20 +105,20 @@ export function SkillsSection() {
                           {category.skills.map((skill) => (
                             <div
                               key={skill.name}
-                              className="border border-[#F4EFEA]/15 bg-[#191817] p-2 transition-colors hover:border-[#E53826]/70"
+                              className="border-border/20 bg-card hover:border-primary/70 border p-2 transition-colors"
                             >
                               <div className="flex items-center justify-between">
-                                <span className="font-mono text-xs font-bold tracking-wide text-white">
+                                <span className="text-card-foreground font-mono text-xs font-bold tracking-wide">
                                   {skill.name}
                                 </span>
                                 {skill.level && (
-                                  <span className="border border-[#E53826]/40 bg-[#E53826]/10 px-1.5 py-0.5 font-mono text-[10px] text-[#E53826] uppercase">
+                                  <span className="border-primary/40 bg-primary/10 text-primary border px-1.5 py-0.5 font-mono text-[10px] font-bold uppercase">
                                     {skill.level}
                                   </span>
                                 )}
                               </div>
                               {skill.description && (
-                                <p className="mt-1 font-mono text-[10px] leading-normal text-[#F4EFEA]/60">
+                                <p className="text-muted-foreground mt-1 font-mono text-[10px] leading-normal">
                                   {skill.description}
                                 </p>
                               )}
@@ -126,9 +127,11 @@ export function SkillsSection() {
                         </div>
                       </div>
 
-                      <div className="mt-6 flex items-center justify-between border-t border-[#F4EFEA]/20 pt-4 font-mono text-[10px] text-[#F4EFEA]/50 uppercase">
+                      <div className="border-border/30 text-muted-foreground mt-6 flex items-center justify-between border-t pt-4 font-mono text-[10px] uppercase">
                         <span>PILLAR 0{index + 1}</span>
-                        <span>PRODUCTION READY</span>
+                        <span className="text-primary font-bold">
+                          PRODUCTION READY
+                        </span>
                       </div>
                     </div>
                   );

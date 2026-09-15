@@ -1,6 +1,8 @@
+import { cn } from "@/lib/utils";
+
 interface SpineTabProps {
   label: string;
-  theme?: "red" | "cream" | "dark" | "white";
+  theme?: "red" | "cream" | "dark" | "card" | "white";
   side?: "left" | "right";
   className?: string;
 }
@@ -12,17 +14,23 @@ export function SpineTab({
   className = ""
 }: SpineTabProps) {
   const themeClasses = {
-    cream: "bg-[#F4EFEA] text-[#E53826] border-[#111111]",
-    red: "bg-[#E53826] text-[#F4EFEA] border-[#111111]",
-    dark: "bg-[#191817] text-[#F4EFEA] border-[#111111]",
-    white: "bg-white text-[#111111] border-[#111111]"
+    cream: "bg-background text-primary border-border",
+    red: "bg-primary text-primary-foreground border-border",
+    dark: "bg-retro-dark text-foreground border-border",
+    card: "bg-card text-foreground border-border",
+    white: "bg-card text-foreground border-border"
   }[theme];
 
   const sideClasses = side === "left" ? "border-r-2" : "border-l-2";
 
   return (
     <div
-      className={`hidden items-center justify-center px-3 py-6 select-none md:flex ${sideClasses} ${themeClasses} ${className}`}
+      className={cn(
+        "hidden items-center justify-center px-3 py-6 select-none md:flex",
+        sideClasses,
+        themeClasses,
+        className
+      )}
       aria-hidden="true"
     >
       <span className="font-display-condensed vertical-spine-text text-2xl font-bold tracking-widest whitespace-nowrap">

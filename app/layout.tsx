@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bebas_Neue, Geist, Geist_Mono, Syne } from "next/font/google";
 import ThemeProvider from "@/providers/theme";
 import type { Metadata } from "next";
 import "./globals.css";
@@ -10,6 +10,18 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-mono",
+  subsets: ["latin"]
+});
+
+const bebasNeue = Bebas_Neue({
+  weight: "400",
+  variable: "--font-bebas",
+  subsets: ["latin"]
+});
+
+const syne = Syne({
+  weight: ["700", "800"],
+  variable: "--font-syne",
   subsets: ["latin"]
 });
 
@@ -64,10 +76,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth font-sans antialiased`}
+      suppressHydrationWarning
+      className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} ${syne.variable} h-full scroll-smooth font-sans antialiased`}
     >
       <ThemeProvider>
-        <body className="flex min-h-full flex-col bg-[#F4EFEA] text-[#111111] selection:bg-[#E53826] selection:text-white">
+        <body className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground flex min-h-full flex-col">
           {children}
         </body>
       </ThemeProvider>

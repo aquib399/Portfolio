@@ -4,7 +4,6 @@ import { IconMapPin, IconCode, IconSparkles } from "./Icons";
 import { portfolio } from "../data/portfolio";
 import { SpineTab } from "./SpineTab";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
 import Image from "next/image";
 
 const data = portfolio.personal;

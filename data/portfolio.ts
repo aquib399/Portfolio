@@ -455,25 +455,17 @@ export const portfolio: Portfolio = {
 
   project: [
     {
-      id: "project-patchmycode",
+      id: "patchmycode",
       slug: "patchmycode",
       letterBadge: "A",
       title: "PatchMyCode",
-      subtitle: "AI-Powered GitHub PR Review & Remediation Engine",
-      category: "Developer Tools & Static Analysis",
-      year: "2025",
-      summary:
-        "AST-based code analysis and automated PR remediation engine using tree-sitter across 12+ languages and targeted LLM context.",
+      subtitle: "GitHub pull request review and fixes",
+      category: "Developer Tooling",
+      year: "2026",
+      summary: "A GitHub app that reviews pull requests and can apply fixes.",
       description:
-        "Built to cut down noisy and hallucinated AI code reviews. PatchMyCode parses pull requests into ASTs using tree-sitter, traverses recursive call graphs to map transitive dependency blast radius, and gives LLMs accurate architectural context. Features an asynchronous event-driven GitHub App pipeline, inline PR reviews categorized by severity, and a 1-click remediation engine that commits fixes directly while preventing bot-triggered CI loops.",
-      tags: [
-        "TypeScript",
-        "tree-sitter",
-        "AST Analysis",
-        "GitHub App",
-        "LLMs",
-        "Developer Tools"
-      ],
+        "Built an AST-based code analysis engine with tree-sitter for 12+ languages. The GitHub app processes pull request webhooks, reviews code changes, posts inline findings, and can generate and commit fixes. Also built a Next.js console for repositories, review settings, and PRs.",
+      tags: ["GitHub App", "Code Analysis", "Pull Requests"],
       techStack: [
         "TypeScript",
         "Next.js",
@@ -481,179 +473,82 @@ export const portfolio: Portfolio = {
         "Express",
         "MongoDB",
         "tree-sitter",
-        "GitHub REST API"
+        "AST",
+        "GitHub App API",
+        "LLMs"
       ],
-      liveUrl: "https://github.com/aquib399",
-      githubUrl: "https://github.com/aquib399",
-      featured: true,
+      liveUrl: "https://patchmycode-frontend.vercel.app/",
+      githubUrl: "https://github.com/aquib399/patchmycode",
       media: [
         {
-          id: "pa-media-1",
+          id: "patchmycode-1",
           type: "image",
           orientation: "landscape",
-          url: "/projects/zenith-workspace/workspace-canvas.png",
-          thumbnailUrl: "/projects/zenith-workspace/workspace-canvas.png",
-          alt: "PatchMyCode PR review management console and telemetry",
-          caption:
-            "Management console: repository onboarding, review policies, and PR backlog telemetry",
+          url: "https://picsum.photos/seed/patchmycode-1/1600/900",
+          thumbnailUrl: "https://picsum.photos/seed/patchmycode-1/800/450",
+          alt: "PatchMyCode project preview",
+          caption: "Pull request review",
           aspectRatio: "16/9"
         },
         {
-          id: "pa-media-2",
+          id: "patchmycode-2",
           type: "image",
-          orientation: "portrait",
-          url: "/projects/zenith-workspace/mobile-studio.png",
-          thumbnailUrl: "/projects/zenith-workspace/mobile-studio.png",
-          alt: "PatchMyCode AST call-graph inspect pane",
-          caption:
-            "Inspector pane: recursive call-graph blast radius and remediation preview",
-          aspectRatio: "3/4"
-        },
-        {
-          id: "pa-media-3",
-          type: "video",
           orientation: "landscape",
-          url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-          thumbnailUrl: "/projects/zenith-workspace/preview-thumbnail.png",
-          alt: "PatchMyCode interactive workflow demo",
-          caption:
-            "End-to-end webhook processing, LLM review synthesis, and 1-click commit demo",
+          url: "https://picsum.photos/seed/patchmycode-2/1600/900",
+          thumbnailUrl: "https://picsum.photos/seed/patchmycode-2/800/450",
+          alt: "PatchMyCode management console",
+          caption: "Project dashboard",
           aspectRatio: "16/9"
         }
-      ]
+      ],
+      featured: true
     },
 
     {
-      id: "project-dxdeals",
-      slug: "dxdeals",
-      letterBadge: "B",
-      title: "DxDeals Storefront",
-      subtitle: "Multi-Country E-Commerce Platform & Checkout Engine",
-      category: "Full Stack / E-Commerce",
-      year: "2024",
-      summary:
-        "Full-stack regional e-commerce platform built with Next.js, Node.js, and MongoDB with multi-gateway payments and instant search.",
-      description:
-        "Designed and built an international e-commerce platform serving customers in the UAE and Middle East. Integrated Algolia for instant product search, Stripe and Paymob for localized card and wallet checkout, and AWS S3 for media assets. Implemented technical SEO and Google Merchant feed optimizations that achieved #1 product rankings in Google Merchant results.",
-      tags: ["E-Commerce", "Next.js", "MongoDB", "Stripe", "Paymob", "AWS EC2"],
-      techStack: [
-        "Next.js",
-        "Tailwind CSS",
-        "shadcn/ui",
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "AWS EC2",
-        "Stripe",
-        "Algolia"
-      ],
-      liveUrl: "https://github.com/aquib399",
-      githubUrl: "https://github.com/aquib399",
-      featured: true,
-      media: [
-        {
-          id: "pb-media-1",
-          type: "image",
-          orientation: "landscape",
-          url: "/projects/lumina-commerce/storefront-cover.png",
-          thumbnailUrl: "/projects/lumina-commerce/storefront-cover.png",
-          alt: "DxDeals Storefront catalog and product discovery",
-          caption: "Storefront catalog and Algolia instant search interface",
-          aspectRatio: "16/9"
-        },
-        {
-          id: "pb-media-2",
-          type: "image",
-          orientation: "portrait",
-          url: "/projects/lumina-commerce/mobile-checkout.png",
-          thumbnailUrl: "/projects/lumina-commerce/mobile-checkout.png",
-          alt: "DxDeals mobile checkout sheet with payment options",
-          caption:
-            "Mobile checkout flow supporting Stripe and regional payment gateways",
-          aspectRatio: "3/4"
-        },
-        {
-          id: "pb-media-3",
-          type: "video",
-          orientation: "landscape",
-          url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-          thumbnailUrl: "/projects/lumina-commerce/preview-thumbnail.png",
-          alt: "DxDeals checkout workflow video",
-          caption:
-            "Walkthrough of cart, instant checkout, and payment confirmation",
-          aspectRatio: "16/9"
-        }
-      ]
-    },
-
-    {
-      id: "project-drift",
+      id: "drift",
       slug: "drift",
-      letterBadge: "C",
+      letterBadge: "B",
       title: "Drift",
-      subtitle: "Full-Stack Social Platform with Real-Time Messaging",
-      category: "Full Stack / Social & Real-Time",
-      year: "2024",
-      summary:
-        "Modern social media web application using Next.js Server Actions, optimistic UI updates, Lucia authentication, and Stream Chat.",
+      subtitle: "Social media application",
+      category: "Web Application",
+      year: "2026",
+      summary: "A social media application with messaging and media uploads.",
       description:
-        "A full-stack social media application built with a focus on responsiveness and low perceived latency. Utilizes Next.js Server Actions and server-side caching paired with optimistic UI updates for instant feedback on posts, likes, and replies. Features session-based authentication with Lucia, media uploads with UploadThing, real-time messaging via Stream Chat, and scheduled jobs with Vercel Cron.",
-      tags: [
-        "Next.js",
-        "PostgreSQL",
-        "Prisma",
-        "Stream Chat",
-        "Lucia Auth",
-        "Tailwind CSS"
-      ],
+        "Built a full-stack social media application with Next.js, Server Actions, caching, and optimistic UI updates. Added session-based authentication, media uploads, Stream Chat messaging, and CI/CD with GitHub Actions and Vercel Cron.",
+      tags: ["Social Media", "Messaging", "Next.js"],
       techStack: [
         "Next.js",
-        "TypeScript",
         "Tailwind CSS",
         "shadcn/ui",
         "Prisma",
         "PostgreSQL",
-        "Stream Chat",
-        "Lucia"
+        "Stream Chat"
       ],
-      liveUrl: "https://github.com/aquib399",
-      githubUrl: "https://github.com/aquib399",
-      featured: true,
+      liveUrl: "https://drift-xyz.vercel.app/",
+      githubUrl: "https://github.com/aquib399/social-media",
       media: [
         {
-          id: "pc-media-1",
+          id: "drift-1",
           type: "image",
           orientation: "landscape",
-          url: "/projects/hyperflow-engine/showcase-grid.png",
-          thumbnailUrl: "/projects/hyperflow-engine/showcase-grid.png",
-          alt: "Drift social feed and timeline",
-          caption:
-            "Feed view with optimistic post updates, reactions, and media embeds",
+          url: "https://picsum.photos/seed/drift-1/1600/900",
+          thumbnailUrl: "https://picsum.photos/seed/drift-1/800/450",
+          alt: "Drift social media project preview",
+          caption: "Social media application",
           aspectRatio: "16/9"
         },
         {
-          id: "pc-media-2",
+          id: "drift-2",
           type: "image",
-          orientation: "portrait",
-          url: "/projects/hyperflow-engine/mobile-stream.png",
-          thumbnailUrl: "/projects/hyperflow-engine/mobile-stream.png",
-          alt: "Drift mobile direct messaging chat",
-          caption:
-            "Real-time direct messaging interface powered by Stream Chat",
-          aspectRatio: "3/4"
-        },
-        {
-          id: "pc-media-3",
-          type: "video",
           orientation: "landscape",
-          url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-          thumbnailUrl: "/projects/hyperflow-engine/preview-thumbnail.png",
-          alt: "Drift interactive walkthrough",
-          caption:
-            "Live demonstration of authentication, media uploads, and real-time chat",
+          url: "https://picsum.photos/seed/drift-2/1600/900",
+          thumbnailUrl: "https://picsum.photos/seed/drift-2/800/450",
+          alt: "Drift messaging interface",
+          caption: "Messaging and media",
           aspectRatio: "16/9"
         }
-      ]
+      ],
+      featured: false
     }
   ]
 };

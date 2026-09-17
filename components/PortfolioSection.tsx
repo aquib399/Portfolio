@@ -90,7 +90,7 @@ export function PortfolioSection() {
               </div>
 
               {/* Two-pane shell: rail + detail */}
-              <div className="flex flex-col lg:h-[calc(100dvh-18rem)] lg:flex-row">
+              <div className="flex flex-col lg:min-h-156 lg:flex-row">
                 {/* ── RAIL ───────────────────────────────── */}
                 <div className="border-border bg-card flex shrink-0 gap-0 overflow-x-auto border-b-3 lg:w-60 lg:flex-col lg:overflow-x-visible lg:overflow-y-auto lg:border-r-3 lg:border-b-0">
                   {data.map((project) => {

@@ -1,5 +1,5 @@
-import { IconGraduationCap, IconSparkles } from "./Icons";
 import { portfolio } from "../data/portfolio";
+import { IconGraduationCap } from "./Icons";
 import { SpineTab } from "./SpineTab";
 import Image from "next/image";
 

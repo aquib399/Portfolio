@@ -123,29 +123,25 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="bg-primary border-border w-full border-b-2 px-4 py-16 transition-colors sm:px-6 lg:px-8"
+      className="border-border bg-primary w-full border-b-2 px-4 py-16 transition-colors sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="border-border bg-card text-card-foreground flex border-3 shadow-[8px_8px_0px_0px_var(--border)] transition-colors">
+        <div className="border-border bg-secondary text-primary-foreground flex border-3 shadow-[8px_8px_0px_0px_var(--border)] transition-colors">
           <SpineTab
             label="CONTACT // INQUIRIES"
             theme="background"
             side="left"
           />
-
-          <div className="bg-primary text-primary-foreground relative flex-1 overflow-hidden p-6 sm:p-10 md:p-14">
-            <div className="halftone-dots text-primary-foreground pointer-events-none absolute inset-0 opacity-20" />
-
+          {/* Main Education Body */}
+          <div className="bg-card text-card-foreground relative flex-1 overflow-hidden p-6 sm:p-10 md:p-14">
+            {/* Celestial Starry Night Background Pattern */}
+            <div className="halftone-dots text-card-foreground pointer-events-none absolute inset-0 opacity-20" />
             <div className="relative z-10">
               {/* Header */}
               <div className="border-primary-foreground/80 mb-10 border-b-2 pb-6">
-                <h2 className="text-primary-foreground font-display-wide mt-2 text-4xl leading-none tracking-tight sm:text-6xl md:text-7xl">
+                <h2 className="text-foreground font-display-wide mt-2 text-4xl leading-none tracking-tight sm:text-6xl md:text-7xl">
                   Contact
                 </h2>
-
-                <p className="text-primary-foreground/90 mt-2 max-w-2xl font-mono text-xs font-semibold tracking-wider uppercase sm:text-sm">
-                  {data.contactPitch}
-                </p>
               </div>
 
               <div className="grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12">
@@ -223,15 +219,11 @@ export function ContactSection() {
                 </div>
 
                 {/* Contact Form */}
-                <div className="border-primary-foreground/60 bg-card text-card-foreground flex flex-col justify-between border-2 p-6 shadow-[6px_6px_0px_0px_var(--border)] sm:p-8 md:p-10 lg:col-span-7">
+                <div className="border-primary bg-card text-card-foreground flex flex-col justify-between border-2 p-6 shadow-[6px_6px_0px_0px_var(--border)] sm:p-8 md:p-10 lg:col-span-7">
                   <div>
                     <div className="border-border mb-6 flex items-baseline justify-between border-b-2 pb-3">
                       <span className="font-display-condensed text-card-foreground text-2xl tracking-wide sm:text-3xl">
                         TRANSMIT INQUIRY
-                      </span>
-
-                      <span className="text-primary font-mono text-xs font-bold">
-                        [FORM SPEC: 04 INPUTS]
                       </span>
                     </div>
 
@@ -396,11 +388,11 @@ export function ContactSection() {
 
               {/* Footer */}
               <div className="border-primary-foreground/60 mt-14 border-t-2 pt-8 text-center">
-                <div className="font-display-condensed text-primary-foreground mb-2 text-5xl leading-none tracking-tight sm:text-7xl md:text-8xl">
+                <div className="font-display-condensed text-foreground mb-2 text-5xl leading-none tracking-tight sm:text-7xl md:text-8xl">
                   THANK YOU
                 </div>
 
-                <p className="text-primary-foreground/80 font-mono text-xs tracking-widest uppercase">
+                <p className="text-foreground/80 font-mono text-xs tracking-widest uppercase">
                   PORTFOLIO DESIGN & CODE BY {data.name} • ALL RIGHTS RESERVED ©{" "}
                   {new Date().getFullYear()}
                 </p>

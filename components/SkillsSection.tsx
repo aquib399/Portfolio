@@ -46,10 +46,6 @@ export function SkillsSection() {
                               </div>
                             ))}
                           </div>
-
-                          <span className="text-primary font-mono text-xs font-bold">
-                            [{String(index + 1).padStart(2, "0")}]
-                          </span>
                         </div>
 
                         <p className="text-muted-foreground mt-2 font-mono text-[10px] tracking-wider uppercase">

@@ -155,7 +155,7 @@ export const portfolio: Portfolio = {
     {
       id: "frontend",
       title: "Frontend Engineering",
-      subtitle: "Interactive, accessible user interfaces",
+      subtitle: "Web interfaces, mobile apps, and application state",
       stackedTitle: ["Frontend"],
       media: {
         id: "skill-frontend-media",
@@ -164,50 +164,47 @@ export const portfolio: Portfolio = {
         url: "/skills/frontend.png",
         thumbnailUrl: "/skills/frontend.png",
         alt: "Frontend development with React, Next.js, and TypeScript",
-        caption: "Component trees & UI architecture",
+        caption: "Interfaces, components & application state",
         aspectRatio: "16/9"
       },
       skills: [
         {
-          name: "TypeScript",
+          name: "TypeScript & JavaScript",
           level: "Advanced",
-          description: "Strict typing, generics, and type-safe API contracts"
+          description: "Writing application code"
         },
         {
           name: "React.js & Next.js",
           level: "Advanced",
-          description: "App Router, Server Components, SSR, and Server Actions"
-        },
-        {
-          name: "Tailwind CSS & shadcn/ui",
-          level: "Advanced",
-          description:
-            "Responsive layouts, accessible primitives, and consistent styling"
-        },
-        {
-          name: "TanStack Query & Redux",
-          level: "Advanced",
-          description:
-            "Server-state caching, optimistic updates, and client state"
+          description: "Building web applications"
         },
         {
           name: "React Native",
           level: "Intermediate",
-          description: "Cross-platform mobile interfaces and API integration"
+          description: "Building mobile applications"
         },
         {
-          name: "HTML5, CSS3 & Web APIs",
+          name: "Tailwind CSS & shadcn/ui",
           level: "Advanced",
-          description:
-            "Semantic layouts, responsive design, and Core Web Vitals tuning"
+          description: "Styling and building UI"
+        },
+        {
+          name: "Redux & React Query",
+          level: "Advanced",
+          description: "Managing application state"
+        },
+        {
+          name: "HTML & CSS",
+          level: "Advanced",
+          description: "Building web layouts"
         }
       ]
     },
 
     {
       id: "backend",
-      title: "Backend & Distributed Systems",
-      subtitle: "APIs, microservices, and databases",
+      title: "Backend & Systems",
+      subtitle: "Services, databases, APIs, and application logic",
       stackedTitle: ["Backend"],
       media: {
         id: "skill-backend-media",
@@ -215,95 +212,89 @@ export const portfolio: Portfolio = {
         orientation: "landscape",
         url: "/skills/backend.png",
         thumbnailUrl: "/skills/backend.png",
-        alt: "Backend services, APIs, and data modeling",
-        caption: "Services, databases & background jobs",
+        alt: "Backend services, APIs, databases, and application systems",
+        caption: "Services, APIs, databases & workflows",
         aspectRatio: "16/9"
       },
       skills: [
         {
           name: "Node.js & Express",
           level: "Advanced",
-          description:
-            "RESTful APIs, middleware architecture, and async workflows"
+          description: "Building APIs and backend services"
         },
         {
           name: "Go & Django",
           level: "Intermediate",
-          description:
-            "Rule engines, gRPC communication, and core backend services"
+          description: "Building backend services"
         },
         {
           name: "PostgreSQL & MongoDB",
           level: "Advanced",
-          description:
-            "Relational data modeling, indexing, and document aggregation"
+          description: "Working with application data"
         },
         {
-          name: "Redis",
+          name: "Redis & Prisma",
           level: "Intermediate",
-          description:
-            "In-memory caching, rate-limiting, and pub/sub message queues"
+          description: "Caching and database access"
         },
         {
           name: "gRPC, WebSockets & SSE",
           level: "Intermediate",
-          description:
-            "Protobuf-based RPCs, bi-directional events, and live feeds"
+          description: "Connecting services and clients"
         },
         {
-          name: "Prisma ORM",
-          level: "Advanced",
-          description:
-            "Type-safe database queries, relation modeling, and migrations"
+          name: "Python, C++ & Java",
+          level: "Intermediate",
+          description: "General programming"
         }
       ]
     },
 
     {
-      id: "devops",
-      title: "DevOps & Developer Tooling",
-      subtitle: "Infrastructure, CI/CD, and workflows",
-      stackedTitle: ["DevOps"],
+      id: "infrastructure",
+      title: "Infrastructure & Tooling",
+      subtitle: "Cloud, deployment, automation, and developer tools",
+      stackedTitle: ["Infrastructure"],
       media: {
-        id: "skill-devops-media",
+        id: "skill-infrastructure-media",
         type: "image",
         orientation: "landscape",
         url: "/skills/devops.png",
         thumbnailUrl: "/skills/devops.png",
-        alt: "DevOps pipelines, Docker containers, and cloud deployment",
-        caption: "Containers, CI/CD & cloud services",
+        alt: "Cloud infrastructure, deployment, and developer tooling",
+        caption: "Cloud, deployment & developer tooling",
         aspectRatio: "16/9"
       },
       skills: [
         {
-          name: "AWS (EC2, S3, Lambda)",
+          name: "AWS",
           level: "Intermediate",
-          description:
-            "Application hosting, cloud object storage, and serverless tasks"
+          description: "EC2, S3, Lambda"
         },
         {
-          name: "Docker & Containers",
+          name: "Docker",
           level: "Intermediate",
-          description:
-            "Containerized environments, multi-stage builds, and Compose setups"
+          description: "Running applications in containers"
         },
         {
-          name: "Git & GitHub Actions",
+          name: "Git & GitHub",
           level: "Advanced",
-          description:
-            "Automated test suites, CI/CD pipelines, and pull request hygiene"
+          description: "Managing code and repositories"
+        },
+        {
+          name: "GitHub Actions",
+          level: "Advanced",
+          description: "Running CI/CD workflows"
         },
         {
           name: "tree-sitter & ASTs",
           level: "Intermediate",
-          description:
-            "Abstract Syntax Tree parsing and recursive call-graph analysis"
+          description: "Parsing and analyzing code"
         },
         {
-          name: "Languages (Python, C++, Java)",
+          name: "GitHub App API",
           level: "Intermediate",
-          description:
-            "System fundamentals, algorithmic problem solving, and scripts"
+          description: "Working with GitHub repositories"
         }
       ]
     }

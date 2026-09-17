@@ -9,12 +9,8 @@ import Image from "next/image";
 
 const data = portfolio.personal;
 
-const PERSONAL_MEDIA = [...data.media.landscape, ...data.media.portrait];
-
 export function AboutSection() {
-  const [activeMediaIndex, setActiveMediaIndex] = useState(0);
-
-  const currentMedia = PERSONAL_MEDIA[activeMediaIndex] ?? PERSONAL_MEDIA[0];
+  const currentMedia = data.media.landscape[1];
 
   return (
     <section
@@ -30,16 +26,9 @@ export function AboutSection() {
           <div className="relative flex-1 overflow-hidden p-6 sm:p-10 md:px-14">
             {/* Top Sub-Header */}
             <div className="border-border mb-8 flex flex-col justify-between gap-3 border-b-2 pb-6 sm:flex-row sm:items-center">
-              <div>
-                <span className="text-primary font-mono text-xs font-bold tracking-widest uppercase">
-                  {data.aboutSectionTag ??
-                    "SECTION 01 // PROFILE & ARCHITECTURAL PHILOSOPHY"}
-                </span>
-
-                <h2 className="text-card-foreground font-display-wide mt-1 text-3xl tracking-tight sm:text-5xl">
-                  {data.aboutHeading ?? "THE ENGINEER BEHIND THE CRAFT"}
-                </h2>
-              </div>
+              <h2 className="text-card-foreground font-display-wide mt-1 text-3xl tracking-tight sm:text-5xl">
+                {data.aboutHeading}
+              </h2>
 
               <div className="bg-foreground text-background border-border inline-flex items-center gap-2 self-start border px-3 py-1.5 font-mono text-xs tracking-wider uppercase sm:self-auto">
                 <IconMapPin size={14} className="text-primary" />
@@ -56,8 +45,8 @@ export function AboutSection() {
                     className={cn(
                       "border-border relative w-full overflow-hidden border bg-black transition-all duration-300",
                       currentMedia.orientation === "portrait"
-                        ? "h-110 sm:h-120"
-                        : "h-75 sm:h-85"
+                        ? "h-110 sm:h-136"
+                        : "h-80 sm:h-92"
                     )}
                   >
                     <Image
@@ -67,10 +56,6 @@ export function AboutSection() {
                       className="object-cover object-center contrast-105 filter"
                       sizes="(max-width: 1024px) 100vw, 40vw"
                     />
-
-                    <div className="bg-primary text-primary-foreground absolute top-2 left-2 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider uppercase">
-                      {currentMedia.orientation} CAPTURE
-                    </div>
                   </div>
 
                   {/* Caption */}
@@ -78,49 +63,16 @@ export function AboutSection() {
                     <span className="truncate font-bold uppercase">
                       {currentMedia.caption ?? currentMedia.alt}
                     </span>
-
-                    <span className="text-muted-foreground uppercase">
-                      [{activeMediaIndex + 1}/{PERSONAL_MEDIA.length}]
-                    </span>
                   </div>
                 </div>
 
                 {/* Media Selector */}
-                <div className="border-border/30 mt-4 border-t pt-3">
-                  <span className="text-muted-foreground mb-2 block font-mono text-[10px] font-bold tracking-wider uppercase">
-                    SELECT VISUAL ORIENTATION:
-                  </span>
-
-                  <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-                    {PERSONAL_MEDIA.map((item, idx) => (
-                      <button
-                        key={item.id}
-                        type="button"
-                        onClick={() => setActiveMediaIndex(idx)}
-                        className={cn(
-                          "cursor-pointer border p-1.5 text-left font-mono text-[11px] transition-all",
-                          activeMediaIndex === idx
-                            ? "border-border bg-primary text-primary-foreground shadow-[2px_2px_0px_0px_var(--border)]"
-                            : "border-border/40 bg-card text-card-foreground hover:border-border"
-                        )}
-                      >
-                        <span className="block truncate font-bold">
-                          #{idx + 1}
-                        </span>
-
-                        <span className="block truncate text-[9px] uppercase opacity-80">
-                          {item.orientation}
-                        </span>
-                      </button>
-                    ))}
-                  </div>
-                </div>
               </div>
 
               {/* Narrative */}
-              <div className="flex flex-col justify-between space-y-6 lg:col-span-7">
+              <div className="flex flex-col justify-between lg:col-span-7">
                 {/* Intro Callout */}
-                <div className="border-primary bg-primary/10 border-l-4 p-4 sm:p-6">
+                <div className="border-primary bg-primary/10 p-3 sm:p-4">
                   <p className="text-primary font-mono text-xs leading-relaxed font-bold tracking-wider uppercase sm:text-sm">
                     "{data.quote}"
                   </p>

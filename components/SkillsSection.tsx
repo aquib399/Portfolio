@@ -20,19 +20,9 @@ export function SkillsSection() {
             <div className="relative z-10">
               {/* Header */}
               <div className="border-border/40 mb-10 flex flex-col justify-between gap-3 border-b-2 pb-6 sm:flex-row sm:items-baseline">
-                <div>
-                  <span className="text-primary font-mono text-xs font-bold tracking-widest uppercase">
-                    SECTION 02 // TECHNICAL ARSENAL & CAPABILITIES
-                  </span>
-
-                  <h2 className="text-card-foreground font-display-wide mt-1 text-3xl leading-none tracking-tight sm:text-5xl">
-                    ENGINEERING DOMAINS
-                  </h2>
-                </div>
-
-                <div className="text-muted-foreground font-mono text-xs tracking-widest uppercase">
-                  RIGOROUS SPECIFICATIONS • MODERN STANDARDS
-                </div>
+                <h2 className="text-card-foreground font-display-wide mt-1 text-3xl leading-none tracking-tight sm:text-5xl">
+                  ENGINEERING DOMAINS
+                </h2>
               </div>
 
               {/* Skill Categories */}
@@ -62,14 +52,14 @@ export function SkillsSection() {
                           </span>
                         </div>
 
-                        <p className="text-muted-foreground mt-2 font-mono text-[11px] tracking-wider uppercase">
+                        <p className="text-muted-foreground mt-2 font-mono text-[10px] tracking-wider uppercase">
                           {category.subtitle}
                         </p>
                       </div>
 
                       {/* Artwork */}
                       {category.media && (
-                        <div className="border-border/30 relative mb-4 h-36 w-full overflow-hidden border bg-black">
+                        <div className="border-border/30 relative mb-4 aspect-video w-full overflow-hidden border bg-black">
                           <Image
                             src={category.media.url}
                             alt={category.media.alt}
@@ -113,15 +103,6 @@ export function SkillsSection() {
                           </div>
                         ))}
                       </div>
-                    </div>
-
-                    {/* Footer */}
-                    <div className="border-border/30 text-muted-foreground mt-6 flex items-center justify-between border-t pt-4 font-mono text-[10px] uppercase">
-                      <span>PILLAR {String(index + 1).padStart(2, "0")}</span>
-
-                      <span className="text-primary font-bold">
-                        {category.statusBadge ?? "PRODUCTION READY"}
-                      </span>
                     </div>
                   </div>
                 ))}

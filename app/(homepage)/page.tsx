@@ -28,14 +28,14 @@ export default function Home() {
         {/* 02: Technical Skills (3 Pillars) */}
         <SkillsSection />
 
-        {/* 03: Education & Academic Orbit */}
-        <EducationSection />
-
-        {/* 04: Experience & Career Chronicles */}
+        {/* 03: Experience & Career Chronicles */}
         <ExperienceSection />
 
-        {/* 05: Featured Projects Showcase (Portrait & Landscape Media) */}
+        {/* 04: Featured Projects Showcase (Portrait & Landscape Media) */}
         <PortfolioSection />
+
+        {/* 05: Education & Academic Orbit */}
+        <EducationSection />
 
         {/* 06: Contact, Socials & Interactive Dispatch Form */}
         <ContactSection />

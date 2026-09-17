@@ -45,15 +45,11 @@ export function OverviewSection() {
               {/* Grid: Left is Collage Art, Right is Numbered Index */}
               <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
                 {/* Left: Vintage Collage & Woodcut Elements */}
-                <div className="border-primary-foreground/60 relative h-72 w-full border-2 bg-black/40 p-3 backdrop-blur-xs sm:h-96 lg:col-span-5">
+                <div className="border-primary-foreground/60 relative h-full w-full border-2 bg-black/40 p-3 backdrop-blur-xs lg:col-span-5">
                   <div className="border-primary-foreground/40 relative h-full w-full overflow-hidden border">
                     <Image
-                      src={
-                        data.media.landscape.find(
-                          (m) => m.id === "media-landscape-overview"
-                        )?.url ?? "/overview/archive-booklet.png"
-                      }
-                      alt="Engineering Index Directory and Sitemap Architecture"
+                      src={data.media.portrait[0].url}
+                      alt={data.media.portrait[0].alt}
                       fill
                       className="object-cover object-center"
                       sizes="(max-width: 1024px) 100vw, 40vw"

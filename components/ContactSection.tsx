@@ -6,6 +6,7 @@ import { portfolio } from "../data/portfolio";
 import React, { useState } from "react";
 import { SpineTab } from "./SpineTab";
 import Image from "next/image";
+import Link from "next/link";
 import {
   IconMail,
   IconPhone,
@@ -138,17 +139,12 @@ export function ContactSection() {
             <div className="relative z-10">
               {/* Header */}
               <div className="border-primary-foreground/80 mb-10 border-b-2 pb-6">
-                <span className="text-primary-foreground/80 font-mono text-xs font-bold tracking-widest uppercase">
-                  SECTION 06 // DIRECT DISPATCH & SOCIAL ARCHIVE
-                </span>
-
                 <h2 className="text-primary-foreground font-display-wide mt-2 text-4xl leading-none tracking-tight sm:text-6xl md:text-7xl">
-                  INITIATE DIALOGUE
+                  Contact
                 </h2>
 
                 <p className="text-primary-foreground/90 mt-2 max-w-2xl font-mono text-xs font-semibold tracking-wider uppercase sm:text-sm">
-                  {data.contactPitch ??
-                    "HAVE A COMPLEX ARCHITECTURE TO BUILD, A PRODUCT TO LAUNCH, OR A COLLABORATION TO PROPOSE? SEND A DIRECT DISPATCH."}
+                  {data.contactPitch}
                 </p>
               </div>
 
@@ -186,12 +182,8 @@ export function ContactSection() {
 
                   {/* Social Links */}
                   <div className="space-y-2.5">
-                    <span className="text-primary-foreground mb-2 block font-mono text-[11px] font-bold tracking-widest uppercase">
-                      DIRECT CHANNELS:
-                    </span>
-
                     {socialLinks.map((link) => (
-                      <a
+                      <Link
                         key={link.id}
                         href={link.url}
                         target={
@@ -209,7 +201,7 @@ export function ContactSection() {
                             {getSocialIcon(link.platform)}
                           </span>
 
-                          <div>
+                          <div className="leading-2">
                             <span className="font-display-condensed block text-lg leading-none">
                               {link.label}
                             </span>
@@ -223,9 +215,9 @@ export function ContactSection() {
                         </div>
 
                         <span className="text-primary font-mono text-xs font-bold">
-                          CONNECT →
+                          →
                         </span>
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -360,7 +352,7 @@ export function ContactSection() {
                           <textarea
                             id="query"
                             name="query"
-                            rows={4}
+                            rows={5}
                             required
                             placeholder="Tell me about your project, timeline, architecture needs, or collaboration idea..."
                             value={formData.query}

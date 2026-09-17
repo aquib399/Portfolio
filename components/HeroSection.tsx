@@ -102,7 +102,7 @@ export function HeroSection() {
           <div className="border-border mt-8 grid grid-cols-1 items-center gap-4 border-t-2 pt-6 lg:grid-cols-12">
             <div className="md:col-span-5">
               <h3 className="text-primary font-display-wide text-5xl sm:text-8xl lg:text-6xl xl:text-7xl">
-                Hi, I'm {data.name}
+                Hi, I&apos;m {data.name}
               </h3>
             </div>
 

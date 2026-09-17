@@ -169,3 +169,8 @@
 .animate-cover {
   animation: cover 5s linear infinite;
 }
+
+::selection {
+  color: wheat;
+  background-color: maroon;
+}

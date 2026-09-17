@@ -1,6 +1,7 @@
 import { IconGraduationCap, IconSparkles } from "./Icons";
 import { portfolio } from "../data/portfolio";
 import { SpineTab } from "./SpineTab";
+import Image from "next/image";
 
 const data = portfolio.education;
 
@@ -30,18 +31,9 @@ export function EducationSection() {
             <div className="relative z-10">
               {/* Header */}
               <div className="border-border/40 mb-12 flex flex-col justify-between gap-3 border-b-2 pb-6 sm:flex-row sm:items-baseline">
-                <div>
-                  <span className="text-primary font-mono text-xs font-bold tracking-widest uppercase">
-                    SECTION 03 // ACADEMIC FOUNDATION & SCIENTIFIC RIGOR
-                  </span>
-                  <h2 className="text-card-foreground font-display-wide mt-1 text-3xl leading-none tracking-tight sm:text-5xl">
-                    EDUCATIONAL TIMELINE
-                  </h2>
-                </div>
-                <div className="text-muted-foreground flex items-center gap-2 font-mono text-xs tracking-widest uppercase">
-                  <IconSparkles size={14} className="text-primary" />
-                  <span>CELESTIAL ORBIT ARCHITECTURE</span>
-                </div>
+                <h2 className="text-card-foreground font-display-wide mt-1 text-3xl leading-none tracking-tight sm:text-5xl">
+                  EDUCATIONAL TIMELINE
+                </h2>
               </div>
 
               {/* Constellation Orbit Graphic Timeline */}
@@ -55,9 +47,23 @@ export function EducationSection() {
                       key={edu.id}
                       className="group relative sm:pl-24 md:pl-28"
                     >
-                      {/* Planetary Node Orb */}
-                      <div className="border-border bg-card text-foreground group-hover:border-primary absolute top-0 left-0 z-10 hidden h-12 w-12 items-center justify-center rounded-full border-2 font-mono text-xs font-bold shadow-[0_0_15px_rgba(229,56,38,0.4)] transition-all group-hover:scale-110 sm:flex md:left-6">
-                        <IconGraduationCap size={20} className="text-primary" />
+                      {/* Planetary Node Orb with College Logo */}
+                      <div className="border-border bg-card text-foreground group-hover:border-primary absolute top-0 left-0 z-10 hidden h-14 w-14 items-center justify-center overflow-hidden rounded-full border-2 p-1.5 shadow-[0_0_15px_rgba(229,56,38,0.3)] transition-all group-hover:scale-110 sm:flex md:left-5">
+                        {edu.media?.url ? (
+                          <div className="relative h-full w-full overflow-hidden rounded-full bg-white">
+                            <Image
+                              src={edu.media.url}
+                              alt={edu.institution}
+                              fill
+                              className="object-contain p-0.5"
+                            />
+                          </div>
+                        ) : (
+                          <IconGraduationCap
+                            size={20}
+                            className="text-primary"
+                          />
+                        )}
                       </div>
 
                       {/* Content Card */}
@@ -79,13 +85,27 @@ export function EducationSection() {
                           </span>
                         </div>
 
-                        {/* Degree & Institution */}
-                        <h3 className="text-card-foreground font-display-wide mb-1 text-2xl sm:text-3xl">
-                          {edu.institution}
-                        </h3>
-                        <p className="text-primary mb-4 font-mono text-sm font-bold tracking-wider uppercase">
-                          {edu.degree} — {edu.field}
-                        </p>
+                        {/* Degree & Institution with Logo */}
+                        <div className="mb-4 flex items-center gap-3.5">
+                          {edu.media?.url && (
+                            <div className="border-border relative h-11 w-11 shrink-0 overflow-hidden rounded-full border-2 bg-white p-1 shadow-sm sm:h-12 sm:w-12">
+                              <Image
+                                src={edu.media.url}
+                                alt={edu.institution}
+                                fill
+                                className="object-contain"
+                              />
+                            </div>
+                          )}
+                          <div>
+                            <h3 className="text-card-foreground font-display-wide text-2xl leading-none sm:text-3xl">
+                              {edu.institution}
+                            </h3>
+                            <p className="text-primary mt-1 font-mono text-xs font-bold tracking-wider uppercase sm:text-sm">
+                              {edu.degree} — {edu.field}
+                            </p>
+                          </div>
+                        </div>
 
                         {/* Achievements */}
                         {edu.achievements && edu.achievements.length > 0 && (
@@ -103,21 +123,10 @@ export function EducationSection() {
                             ))}
                           </div>
                         )}
-
-                        {/* Index Corner Tag */}
-                        <div className="text-muted-foreground absolute top-2 right-2 font-mono text-[10px]">
-                          NODE 0{idx + 1}
-                        </div>
                       </div>
                     </div>
                   ))}
                 </div>
-              </div>
-
-              {/* Bottom Orbital Inscription */}
-              <div className="border-border/30 text-muted-foreground mt-12 flex flex-col items-center justify-between gap-2 border-t pt-6 font-mono text-xs tracking-widest uppercase sm:flex-row">
-                <span>SYSTEM NODE: ACADEMIC CREDENTIALS</span>
-                <span>DISCIPLINED PROBLEM SOLVING // FIRST PRINCIPLES</span>
               </div>
             </div>
           </div>

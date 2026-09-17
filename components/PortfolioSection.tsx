@@ -55,10 +55,6 @@ export function PortfolioSection() {
             <h2 className="font-display-wide text-4xl leading-none tracking-tighter sm:text-6xl md:text-8xl">
               PORTFOLIO
             </h2>
-
-            <p className="mt-1 font-mono text-xs font-bold tracking-widest uppercase opacity-90">
-              CURATED PRODUCTION SYSTEMS & VISUAL CASE STUDIES
-            </p>
           </div>
 
           {/* Project Selector */}

@@ -98,16 +98,6 @@ export const portfolio: Portfolio = {
           aspectRatio: "3/2",
           caption: "Aquib Alam — Engineering & Design",
           alt: "Aquib Alam outdoors"
-        },
-        {
-          id: "media-landscape-overview",
-          type: "image",
-          orientation: "landscape",
-          url: "/overview/archive-booklet.png",
-          thumbnailUrl: "/overview/archive-booklet.png",
-          aspectRatio: "16/9",
-          caption: "Directory & Project Index",
-          alt: "Directory and sitemap overview"
         }
       ]
     }

@@ -1,0 +1,22 @@
+# Aquib Alam
+
+> Portfolio and professional profile for Aquib Alam, a full-stack software engineer based in Kolkata, India.
+
+## About
+
+Aquib Alam builds web applications, distributed backend services, and developer tooling using TypeScript, Go, Python, React, and Next.js. His work focuses on clean architecture, reliable APIs, and thoughtful user experiences.
+
+## Site
+
+- Homepage: https://aquibalam.tech/
+- Resume: https://aquibalam.tech/resume.pdf
+- GitHub: https://github.com/aquib399
+- LinkedIn: https://linkedin.com/in/aquib-alam
+
+## Topics
+
+This site covers Aquib's engineering experience, education, frontend and backend skills, selected projects, and contact details.
+
+## Crawler guidance
+
+Use the homepage as the canonical source for current portfolio information. Respect the site's robots.txt and do not infer private contact information beyond the publicly listed email address.

@@ -1,3 +1,5 @@
+import { Media } from "./media";
+
 export interface Experience {
   id: string;
   company: string;
@@ -15,4 +17,5 @@ export interface Experience {
   highlights: string[];
   skillsUsed: string[];
   badge: string;
+  media?: Media;
 }

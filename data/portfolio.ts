@@ -299,6 +299,16 @@ export const portfolio: Portfolio = {
       location: "Kolkata (Hybrid)",
       type: "Part-time",
       badge: "Part-time",
+      media: {
+        id: "exp-digontom-media",
+        type: "image",
+        orientation: "landscape",
+        url: "/experience/digontom.png",
+        thumbnailUrl: "/experience/digontom.png",
+        alt: "Digontom",
+        caption: "Digontom — Full Stack Developer",
+        aspectRatio: "1/1"
+      },
       description:
         "Built full-stack AI agent and chatbot applications for client projects, translating business requirements into automated conversational workflows.",
       highlights: [
@@ -323,6 +333,16 @@ export const portfolio: Portfolio = {
       location: "Dubai (Remote)",
       type: "Internship",
       badge: "Internship",
+      media: {
+        id: "exp-controlshift-media",
+        type: "image",
+        orientation: "landscape",
+        url: "/experience/controlshift.png",
+        thumbnailUrl: "/experience/controlshift.png",
+        alt: "ControlShift",
+        caption: "ControlShift — Full Stack Intern",
+        aspectRatio: "1/1"
+      },
       description:
         "Worked with a 15-member cross-functional team delivering features and UI systems across client web and mobile applications.",
       highlights: [
@@ -347,6 +367,16 @@ export const portfolio: Portfolio = {
       location: "Delhi (On-site)",
       type: "Internship",
       badge: "Internship",
+      media: {
+        id: "exp-scrollify-media",
+        type: "image",
+        orientation: "landscape",
+        url: "/experience/scrollify.png",
+        thumbnailUrl: "/experience/scrollify.png",
+        alt: "Scrollify",
+        caption: "Scrollify — Software Engineer Intern",
+        aspectRatio: "1/1"
+      },
       description:
         "Contributed to core backend infrastructure, building a dynamic Rule Engine and orchestrating distributed workflow execution.",
       highlights: [
@@ -372,6 +402,16 @@ export const portfolio: Portfolio = {
       location: "Dubai (Remote)",
       type: "Freelance",
       badge: "Freelance",
+      media: {
+        id: "exp-dxdeals-media",
+        type: "image",
+        orientation: "landscape",
+        url: "/experience/dxdeals.png",
+        thumbnailUrl: "/experience/dxdeals.png",
+        alt: "DxDeals",
+        caption: "DxDeals — Freelance Full Stack Developer",
+        aspectRatio: "1/1"
+      },
       description:
         "Delivered an international e-commerce platform end-to-end, handling frontend, payment integrations, and cloud infrastructure.",
       highlights: [

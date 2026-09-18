@@ -9,29 +9,29 @@ export function EducationSection() {
   return (
     <section
       id="education"
-      className="border-border bg-background w-full border-b-2 px-4 py-16 transition-colors sm:px-6 lg:px-8"
+      className="border-border bg-background relative w-full overflow-hidden border-b-2 px-4 py-10 transition-colors sm:px-6 sm:py-16 lg:px-8"
     >
-      <div className="mx-auto max-w-7xl">
-        <div className="border-border bg-card flex border-3 shadow-[8px_8px_0px_0px_var(--primary)] transition-colors">
+      {/* Background print texture */}
+      <div className="halftone-dots text-foreground pointer-events-none absolute inset-0 opacity-20" />
+
+      <div className="relative z-10 mx-auto max-w-7xl">
+        <div className="border-border bg-card flex border-3 shadow-[4px_4px_0px_0px_var(--border)] transition-colors sm:shadow-[8px_8px_0px_0px_var(--border)]">
           {/* Vertical Spine Tab */}
           <SpineTab
             label="EDUCATIONAL BACKGROUND"
-            theme="background"
+            theme="primary"
             side="left"
           />
 
           {/* Main Education Body */}
-          <div className="bg-card text-card-foreground relative flex-1 overflow-hidden p-6 sm:p-10 md:p-14">
-            {/* Celestial Starry Night Background Pattern */}
-            <div className="halftone-dots text-card-foreground pointer-events-none absolute inset-0 opacity-20" />
-
+          <div className="bg-card text-card-foreground relative flex-1 overflow-hidden p-4 sm:p-8 md:p-14">
             {/* Ambient Cosmic Glow */}
             <div className="bg-primary/15 pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full blur-3xl" />
 
             <div className="relative z-10">
               {/* Header */}
-              <div className="border-border/40 mb-12 flex flex-col justify-between gap-3 border-b-2 pb-6 sm:flex-row sm:items-baseline">
-                <h2 className="text-card-foreground font-display-wide mt-1 text-3xl leading-none tracking-tight sm:text-5xl">
+              <div className="border-border/40 mb-8 flex flex-col justify-between gap-3 border-b-2 pb-6 sm:mb-12 sm:flex-row sm:items-baseline">
+                <h2 className="text-card-foreground font-display-wide mt-1 text-2xl leading-none tracking-tight sm:text-4xl md:text-5xl">
                   EDUCATIONAL TIMELINE
                 </h2>
               </div>
@@ -41,8 +41,8 @@ export function EducationSection() {
                 {/* SVG Orbit Lines Connecting Nodes */}
                 <div className="from-primary via-border/50 to-primary/20 absolute top-0 bottom-0 left-6 hidden w-1 bg-linear-to-b sm:block md:left-12" />
 
-                <div className="space-y-12">
-                  {data.map((edu, idx) => (
+                <div className="space-y-6 sm:space-y-12">
+                  {data.map((edu) => (
                     <div
                       key={edu.id}
                       className="group relative sm:pl-24 md:pl-28"
@@ -55,7 +55,8 @@ export function EducationSection() {
                               src={edu.media.url}
                               alt={edu.institution}
                               fill
-                              className="object-contain p-0.5"
+                              sizes="56px"
+                              className="object-cover"
                             />
                           </div>
                         ) : (
@@ -67,11 +68,11 @@ export function EducationSection() {
                       </div>
 
                       {/* Content Card */}
-                      <div className="border-border/40 bg-card/80 hover:border-primary relative border-2 p-6 shadow-[3px_3px_0px_0px_var(--border)] transition-colors sm:p-8">
+                      <div className="border-border/40 bg-card/80 hover:border-primary relative border-2 p-4 shadow-[2px_2px_0px_0px_var(--border)] transition-colors sm:p-8 sm:shadow-[3px_3px_0px_0px_var(--border)]">
                         {/* Period Badge & Label */}
                         <div className="border-border/30 mb-4 flex flex-wrap items-center justify-between gap-3 border-b pb-4">
                           <div className="flex items-center gap-2">
-                            <span className="font-display-condensed text-primary text-3xl font-bold tracking-wider sm:text-4xl">
+                            <span className="font-display-condensed text-primary text-2xl font-bold tracking-wider sm:text-4xl">
                               {edu.period}
                             </span>
                             {edu.badge && (
@@ -88,17 +89,18 @@ export function EducationSection() {
                         {/* Degree & Institution with Logo */}
                         <div className="mb-4 flex items-center gap-3.5">
                           {edu.media?.url && (
-                            <div className="border-border relative h-11 w-11 shrink-0 overflow-hidden rounded-full border-2 bg-white p-1 shadow-sm sm:h-12 sm:w-12">
+                            <div className="border-border relative h-11 w-11 shrink-0 overflow-hidden rounded-full border-2 bg-white shadow-sm sm:h-12 sm:w-12">
                               <Image
                                 src={edu.media.url}
                                 alt={edu.institution}
                                 fill
-                                className="object-contain"
+                                sizes="48px"
+                                className="object-cover"
                               />
                             </div>
                           )}
                           <div>
-                            <h3 className="text-card-foreground font-display-wide text-2xl leading-none sm:text-3xl">
+                            <h3 className="text-card-foreground font-display-wide text-xl leading-snug sm:text-3xl">
                               {edu.institution}
                             </h3>
                             <p className="text-primary mt-1 font-mono text-xs font-bold tracking-wider uppercase sm:text-sm">

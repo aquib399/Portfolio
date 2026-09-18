@@ -8,35 +8,35 @@ export function SkillsSection() {
   return (
     <section
       id="skills"
-      className="border-border bg-primary w-full border-b-2 px-4 py-16 transition-colors sm:px-6 lg:px-8"
+      className="border-border bg-primary w-full border-b-2 px-4 py-10 transition-colors sm:px-6 sm:py-16 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="border-border bg-card flex border-3 shadow-[8px_8px_0px_0px_var(--primary)] transition-colors">
+        <div className="border-border bg-card flex border-3 shadow-[4px_4px_0px_0px_var(--border)] transition-colors sm:shadow-[8px_8px_0px_0px_var(--border)]">
           <SpineTab label="TECHNICAL SKILLS" theme="background" side="left" />
 
-          <div className="bg-card text-card-foreground relative flex-1 overflow-hidden p-6 sm:p-10 md:p-14">
-            <div className="halftone-dots text-card-foreground pointer-events-none absolute inset-0 opacity-10" />
+          <div className="bg-card text-card-foreground relative flex-1 overflow-hidden p-4 sm:p-8 md:p-14">
+            <div className="halftone-dots text-card-foreground pointer-events-none absolute inset-0 opacity-15" />
 
             <div className="relative z-10">
               {/* Header */}
-              <div className="border-border/40 mb-10 flex flex-col justify-between gap-3 border-b-2 pb-6 sm:flex-row sm:items-baseline">
-                <h2 className="text-card-foreground font-display-wide mt-1 text-3xl leading-none tracking-tight sm:text-5xl">
+              <div className="border-border/40 mb-6 flex flex-col justify-between gap-3 border-b-2 pb-4 sm:mb-10 sm:flex-row sm:items-baseline sm:pb-6">
+                <h2 className="text-card-foreground font-display-wide mt-1 text-2xl leading-none tracking-tight sm:text-5xl">
                   ENGINEERING DOMAINS
                 </h2>
               </div>
 
               {/* Skill Categories */}
-              <div className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-3">
-                {data.map((category, index) => (
+              <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-3 lg:gap-8">
+                {data.map((category) => (
                   <div
                     key={category.id}
-                    className="group border-border/40 bg-card/60 hover:border-primary flex flex-col justify-between border-2 p-5 shadow-[2px_2px_0px_0px_var(--border)] transition-colors"
+                    className="group border-border/40 bg-card/60 hover:border-primary flex flex-col justify-between border-2 p-4 shadow-[2px_2px_0px_0px_var(--border)] transition-colors sm:p-5"
                   >
                     <div>
                       {/* Category Title */}
                       <div className="border-border/30 mb-4 border-b pb-4">
                         <div className="flex items-start justify-between">
-                          <div className="font-display-condensed text-card-foreground text-4xl leading-none tracking-wider sm:text-5xl">
+                          <div className="font-display-condensed text-card-foreground text-3xl leading-none tracking-wider sm:text-5xl">
                             {category.stackedTitle.map((part) => (
                               <div
                                 key={part}

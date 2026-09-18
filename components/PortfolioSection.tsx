@@ -59,33 +59,34 @@ export function PortfolioSection() {
   return (
     <section
       id="portfolio"
-      className="border-border bg-background w-full border-b-2 px-4 py-16 transition-colors sm:px-6 lg:px-8"
+      className="border-border bg-primary w-full border-b-2 px-4 py-10 transition-colors sm:px-6 sm:py-16 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="border-border bg-card text-card-foreground flex border-3 shadow-[8px_8px_0px_0px_var(--border)] transition-colors">
+        <div className="border-border bg-card text-card-foreground flex border-3 shadow-[4px_4px_0px_0px_var(--border)] transition-colors sm:shadow-[8px_8px_0px_0px_var(--border)]">
           {/* Vertical Spine Tab */}
-          <SpineTab label="PORTFOLIO" theme="primary" side="left" />
+          <SpineTab label="PORTFOLIO" theme="background" side="left" />
 
           {/* Main Portfolio Body */}
           <div className="bg-card text-card-foreground relative flex-1 overflow-hidden">
             {/* Background Graphic */}
-            <div className="halftone-dots text-card-foreground pointer-events-none absolute inset-0 opacity-10" />
+            <div className="halftone-dots text-card-foreground pointer-events-none absolute inset-0 opacity-15" />
 
             <div className="relative z-10">
               {/* Section Header */}
-              <div className="border-border mb-0 flex flex-col justify-between gap-3 border-b-2 px-6 py-6 sm:flex-row sm:items-baseline sm:px-10 md:px-14">
+              <div className="border-border mb-0 flex flex-col justify-between gap-3 border-b-2 px-4 py-4 sm:flex-row sm:items-baseline sm:px-10 sm:py-6 md:px-14">
                 <div>
                   <span className="text-primary font-mono text-xs font-bold tracking-widest uppercase">
                     SELECTED WORK // CASE STUDIES
                   </span>
 
-                  <h2 className="text-card-foreground font-display-wide mt-1 text-3xl leading-none tracking-tight sm:text-5xl">
+                  <h2 className="text-card-foreground font-display-wide mt-1 text-2xl leading-none tracking-tight sm:text-5xl">
                     Portfolio & Projects
                   </h2>
                 </div>
 
                 <div className="text-muted-foreground font-mono text-[10px] font-bold tracking-widest uppercase">
-                  {data.length} case studies • ← → to switch
+                  {data.length} case studies
+                  <span className="hidden sm:inline"> • ← → to switch</span>
                 </div>
               </div>
 
@@ -107,14 +108,14 @@ export function PortfolioSection() {
                         type="button"
                         onClick={() => handleSelectProject(project.id)}
                         className={cn(
-                          "group border-border relative flex w-44 shrink-0 cursor-pointer flex-col items-stretch border-r-2 text-left transition-all lg:w-full lg:border-r-0 lg:border-b-2",
+                          "group border-border relative flex w-36 shrink-0 cursor-pointer flex-col items-stretch border-r-2 text-left transition-all sm:w-44 lg:w-full lg:border-r-0 lg:border-b-2",
                           isActive
                             ? "bg-primary text-primary-foreground"
                             : "bg-card text-card-foreground hover:bg-muted"
                         )}
                       >
                         {/* Thumbnail */}
-                        <div className="relative h-20 w-full overflow-hidden bg-black">
+                        <div className="relative h-16 w-full overflow-hidden bg-black sm:h-20">
                           {thumb &&
                             (thumb.type === "video" ? (
                               <video
@@ -175,7 +176,7 @@ export function PortfolioSection() {
                 {/* ── DETAIL ─────────────────────────────── */}
                 <div className="bg-card text-card-foreground flex min-h-0 flex-1 flex-col">
                   {/* Title bar + actions */}
-                  <div className="border-border flex shrink-0 flex-col justify-between gap-3 border-b-2 px-5 py-4 sm:flex-row sm:items-end sm:px-8">
+                  <div className="border-border flex shrink-0 flex-col justify-between gap-3 border-b-2 px-4 py-3 sm:flex-row sm:items-end sm:px-8 sm:py-4">
                     <div className="min-w-0">
                       <div className="text-primary mb-0.5 flex flex-wrap items-center gap-2 font-mono text-[10px] font-bold tracking-widest uppercase">
                         <span>
@@ -192,7 +193,7 @@ export function PortfolioSection() {
                         <span>{activeProject.year}</span>
                       </div>
 
-                      <h3 className="font-display-wide truncate text-2xl leading-none tracking-tight sm:text-4xl">
+                      <h3 className="font-display-wide truncate text-xl leading-none tracking-tight sm:text-3xl md:text-4xl">
                         {activeProject.title}
                       </h3>
 
@@ -231,10 +232,10 @@ export function PortfolioSection() {
                   </div>
 
                   {/* Body: media | narrative */}
-                  <div className="grid min-h-0 flex-1 grid-cols-1 gap-5 p-5 sm:p-8 lg:grid-cols-12">
+                  <div className="grid min-h-0 flex-1 grid-cols-1 gap-4 p-4 sm:gap-5 sm:p-8 lg:grid-cols-12">
                     {/* Media */}
                     <div className="flex min-h-0 flex-col gap-3 lg:col-span-7">
-                      <div className="border-border relative flex min-h-64 flex-1 items-center justify-center overflow-hidden border-3 bg-black shadow-[4px_4px_0px_0px_var(--border)]">
+                      <div className="border-border relative flex min-h-52 flex-1 items-center justify-center overflow-hidden border-3 bg-black shadow-[4px_4px_0px_0px_var(--border)] sm:min-h-64">
                         {activeMedia.type === "video" ? (
                           <video
                             key={activeMedia.id}

@@ -10,32 +10,30 @@ export function OverviewSection() {
   return (
     <section
       id="overview"
-      className="border-border bg-primary w-full border-b-2 px-4 py-12 transition-colors sm:px-6 lg:px-8"
+      className="border-border bg-primary relative w-full border-b-2 px-4 py-8 transition-colors sm:px-6 sm:py-12 lg:px-8"
     >
-      <div className="halftone-dots text-primary-foreground pointer-events-none absolute inset-0 opacity-25" />
-
       <div className="mx-auto max-w-7xl">
-        <div className="border-border bg-card text-card-foreground flex border-3 shadow-[8px_8px_0px_0px_var(--border)] transition-colors">
+        <div className="border-border bg-card text-card-foreground flex border-3 shadow-[4px_4px_0px_0px_var(--border)] transition-colors sm:shadow-[8px_8px_0px_0px_var(--border)]">
           {/* Vertical Spine Tab */}
           <SpineTab label="OVERVIEW" theme="background" side="left" />
 
           {/* Main Overview Body */}
-          <div className="bg-secondary text-primary-foreground relative flex-1 overflow-hidden p-6 sm:p-10 md:p-14">
+          <div className="bg-card text-card-foreground relative flex-1 overflow-hidden p-4 sm:p-8 md:p-14">
             {/* Background Graphic Accents */}
-            <div className="halftone-dots text-primary-foreground pointer-events-none absolute inset-0 opacity-20" />
+            <div className="halftone-dots text-card-foreground pointer-events-none absolute inset-0 opacity-15" />
 
             <div className="relative z-10">
               {/* Header */}
-              <div className="border-border mb-8 flex flex-col justify-between gap-4 border-b-2 pb-6 sm:flex-row sm:items-end">
+              <div className="border-border mb-6 flex flex-col justify-between gap-4 border-b-2 pb-4 sm:mb-8 sm:flex-row sm:items-end sm:pb-6">
                 <div>
                   <span className="text-primary font-mono text-xs font-bold tracking-widest uppercase">
                     TABLE OF CONTENTS // SITEMAP
                   </span>
-                  <h2 className="text-primary font-display-wide mt-1 text-4xl leading-none tracking-tight sm:text-6xl">
+                  <h2 className="text-primary font-display-wide mt-1 text-3xl leading-none tracking-tight sm:text-6xl">
                     INDEX DIRECTORY
                   </h2>
                 </div>
-                <div className="text-primary text-right font-mono text-xs uppercase">
+                <div className="text-primary text-left font-mono text-xs uppercase sm:text-right">
                   {data.overviewEdition ?? "VOLUME 01 • EDITION 2025"}
                   <br />
                   CURATED BY {data.firstName}
@@ -43,10 +41,10 @@ export function OverviewSection() {
               </div>
 
               {/* Grid: Left is Collage Art, Right is Numbered Index */}
-              <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
+              <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-12 lg:gap-8">
                 {/* Left: Vintage Collage & Woodcut Elements */}
-                <div className="border-primary-foreground/60 relative h-full w-full border-2 bg-black/40 p-3 backdrop-blur-xs lg:col-span-5">
-                  <div className="border-primary-foreground/40 relative h-full w-full overflow-hidden border">
+                <div className="border-border/60 relative h-72 w-full border-2 bg-black/40 p-3 backdrop-blur-xs sm:h-96 lg:col-span-5 lg:h-full">
+                  <div className="border-border/40 relative h-full w-full overflow-hidden border">
                     <Image
                       src={data.media.portrait[0].url}
                       alt={data.media.portrait[0].alt}
@@ -63,7 +61,7 @@ export function OverviewSection() {
                     <a
                       key={sec.id}
                       href={`#${sec.id}`}
-                      className="group border-border bg-card text-card-foreground hover:bg-background flex items-center justify-between border-2 p-3.5 shadow-[3px_3px_0px_0px_var(--border)] transition-all hover:translate-x-2 sm:p-4"
+                      className="group border-border bg-card text-card-foreground hover:bg-background flex items-center justify-between border-2 p-3 shadow-[3px_3px_0px_0px_var(--border)] transition-all hover:translate-x-2 sm:p-4"
                     >
                       <div className="flex items-baseline gap-4">
                         <span className="font-display-condensed text-primary text-3xl leading-none font-bold sm:text-4xl">

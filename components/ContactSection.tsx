@@ -123,34 +123,34 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="border-border bg-primary w-full border-b-2 px-4 py-16 transition-colors sm:px-6 lg:px-8"
+      className="border-border bg-primary w-full border-b-2 px-4 py-10 transition-colors sm:px-6 sm:py-16 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="border-border bg-secondary text-primary-foreground flex border-3 shadow-[8px_8px_0px_0px_var(--border)] transition-colors">
+        <div className="border-border bg-card text-card-foreground flex border-3 shadow-[4px_4px_0px_0px_var(--border)] transition-colors sm:shadow-[8px_8px_0px_0px_var(--border)]">
           <SpineTab
             label="CONTACT // INQUIRIES"
             theme="background"
             side="left"
           />
-          {/* Main Education Body */}
-          <div className="bg-card text-card-foreground relative flex-1 overflow-hidden p-6 sm:p-10 md:p-14">
-            {/* Celestial Starry Night Background Pattern */}
-            <div className="halftone-dots text-card-foreground pointer-events-none absolute inset-0 opacity-20" />
+          {/* Main Contact Body */}
+          <div className="bg-card text-card-foreground relative flex-1 overflow-hidden p-4 sm:p-8 md:p-14">
+            {/* Background Halftone Pattern */}
+            <div className="halftone-dots text-card-foreground pointer-events-none absolute inset-0 opacity-15" />
             <div className="relative z-10">
               {/* Header */}
-              <div className="border-primary-foreground/80 mb-10 border-b-2 pb-6">
-                <h2 className="text-foreground font-display-wide mt-2 text-4xl leading-none tracking-tight sm:text-6xl md:text-7xl">
+              <div className="border-border mb-8 border-b-2 pb-4 sm:mb-10 sm:pb-6">
+                <h2 className="text-card-foreground font-display-wide mt-2 text-3xl leading-none tracking-tight sm:text-6xl md:text-7xl">
                   Contact
                 </h2>
               </div>
 
-              <div className="grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12">
+              <div className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-12 lg:gap-10">
                 {/* Left Column */}
                 <div className="flex flex-col justify-between space-y-6 lg:col-span-5">
                   {/* Personal Media */}
                   {contactMedia && (
-                    <div className="border-primary-foreground/60 border-2 bg-black p-3 shadow-[4px_4px_0px_0px_var(--border)]">
-                      <div className="border-primary-foreground/40 relative h-56 w-full overflow-hidden border sm:h-64">
+                    <div className="border-border border-2 bg-black p-3 shadow-[4px_4px_0px_0px_var(--border)]">
+                      <div className="border-border/40 relative h-48 w-full overflow-hidden border sm:h-64">
                         <Image
                           src={contactMedia.url}
                           alt={contactMedia.alt}
@@ -158,10 +158,6 @@ export function ContactSection() {
                           className="object-cover object-center"
                           sizes="(max-width: 1024px) 100vw, 40vw"
                         />
-
-                        <div className="bg-primary text-primary-foreground absolute bottom-2 left-2 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider uppercase">
-                          DISPATCH TERMINAL
-                        </div>
                       </div>
 
                       <div className="px-1 pt-3">
@@ -219,10 +215,10 @@ export function ContactSection() {
                 </div>
 
                 {/* Contact Form */}
-                <div className="border-primary bg-card text-card-foreground flex flex-col justify-between border-2 p-6 shadow-[6px_6px_0px_0px_var(--border)] sm:p-8 md:p-10 lg:col-span-7">
+                <div className="border-primary bg-card text-card-foreground flex flex-col justify-between border-2 p-4 shadow-[4px_4px_0px_0px_var(--border)] sm:p-8 sm:shadow-[6px_6px_0px_0px_var(--border)] md:p-10 lg:col-span-7">
                   <div>
                     <div className="border-border mb-6 flex items-baseline justify-between border-b-2 pb-3">
-                      <span className="font-display-condensed text-card-foreground text-2xl tracking-wide sm:text-3xl">
+                      <span className="font-display-condensed text-card-foreground text-xl tracking-wide sm:text-3xl">
                         TRANSMIT INQUIRY
                       </span>
                     </div>
@@ -374,7 +370,7 @@ export function ContactSection() {
                     )}
                   </div>
 
-                  <div className="border-border/20 text-muted-foreground mt-6 flex justify-between border-t pt-6 font-mono text-[11px]">
+                  <div className="border-border/20 text-muted-foreground mt-6 flex flex-col gap-2 border-t pt-4 font-mono text-[11px] sm:flex-row sm:justify-between sm:pt-6">
                     <span>
                       {data.contactMeta?.security ?? "SECURITY: SSL ENCRYPTED"}
                     </span>
@@ -387,12 +383,12 @@ export function ContactSection() {
               </div>
 
               {/* Footer */}
-              <div className="border-primary-foreground/60 mt-14 border-t-2 pt-8 text-center">
-                <div className="font-display-condensed text-foreground mb-2 text-5xl leading-none tracking-tight sm:text-7xl md:text-8xl">
+              <div className="border-border mt-14 border-t-2 pt-8 text-center">
+                <div className="font-display-condensed text-card-foreground mb-2 text-4xl leading-none tracking-tight sm:text-7xl md:text-8xl">
                   THANK YOU
                 </div>
 
-                <p className="text-foreground/80 font-mono text-xs tracking-widest uppercase">
+                <p className="text-card-foreground/80 font-mono text-xs tracking-widest uppercase">
                   PORTFOLIO DESIGN & CODE BY {data.name} • ALL RIGHTS RESERVED ©{" "}
                   {new Date().getFullYear()}
                 </p>

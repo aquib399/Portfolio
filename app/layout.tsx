@@ -2,7 +2,7 @@ import { Bebas_Neue, Syne } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import ThemeProvider from "@/providers/theme";
 import { portfolio } from "@/data/portfolio";
-import { SITE_URL } from "@/lib/constant";
+import { GOOGLE_SITE_VERIFICATION, SITE_URL } from "@/lib/constant";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -32,7 +32,7 @@ const buildJsonLdSchemas = () => {
       jobTitle: personal.role,
       description: personal.shortBio,
       email: personal.email,
-      image: `${siteUrl}/overview/og-cover.png`,
+      image: `${siteUrl}/me/1.png`,
       homeLocation: {
         "@type": "Place",
         name: personal.location
@@ -57,7 +57,7 @@ const buildJsonLdSchemas = () => {
       url: siteUrl,
       description: personal.shortBio,
       logo: `${siteUrl}/android-chrome-512x512.png`,
-      image: `${siteUrl}/overview/og-cover.png`,
+      image: `${siteUrl}/me/1.png`,
       sameAs: portfolio.social.map((social) => social.url),
       contactPoint: {
         "@type": "ContactPoint",
@@ -145,6 +145,10 @@ export const metadata: Metadata = {
     "PostgreSQL",
     "Portfolio"
   ],
+  verification: {
+    google: GOOGLE_SITE_VERIFICATION,
+    me: portfolio.social[0].url
+  },
   authors: [{ name: personal.name }],
   creator: personal.name,
   publisher: personal.name,

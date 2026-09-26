@@ -2,7 +2,7 @@ import { Bebas_Neue, Syne } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import ThemeProvider from "@/providers/theme";
 import { portfolio } from "@/data/portfolio";
-import { GOOGLE_SITE_VERIFICATION, SITE_URL } from "@/lib/constant";
+import { SITE_URL } from "@/lib/constant";
 import type { Metadata } from "next";
 import "./globals.css";
 

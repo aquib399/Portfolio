@@ -146,7 +146,6 @@ export const metadata: Metadata = {
     "Portfolio"
   ],
   verification: {
-    google: GOOGLE_SITE_VERIFICATION,
     me: portfolio.social[0].url
   },
   authors: [{ name: personal.name }],

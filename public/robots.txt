@@ -3,8 +3,8 @@ User-agent: *
 Allow: /
 
 # Host
-Host: http://localhost:3001
+Host: https://aquibalam.tech
 
 # Sitemaps
-Sitemap: http://localhost:3001/sitemap.xml
-Sitemap: http://localhost:3001/api/sitemap-images.xml
+Sitemap: https://aquibalam.tech/sitemap.xml
+Sitemap: https://aquibalam.tech/api/sitemap-images.xml

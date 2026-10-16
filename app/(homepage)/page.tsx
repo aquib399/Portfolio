@@ -1,4 +1,3 @@
-"use client";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { EducationSection } from "@/components/EducationSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
@@ -8,12 +7,8 @@ import { SkillsSection } from "@/components/SkillsSection";
 import { AboutSection } from "@/components/AboutSection";
 import { HeroSection } from "@/components/HeroSection";
 import { Navbar } from "@/components/Navbar";
-import { useOffline } from "next/offline";
 
 export default function Home() {
-  const isOffline = useOffline();
-
-  console.log({ isOffline });
   return (
     <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground flex min-h-screen flex-col font-sans">
       {/* Sticky Editorial Header */}

@@ -3,6 +3,9 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   allowedDevOrigins: ["app.aquibalam.tech"],
 
+  experimental: {
+    useOffline: true
+  },
   images: {
     remotePatterns: [
       {
